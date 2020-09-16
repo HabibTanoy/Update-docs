@@ -1,0 +1,79 @@
+.lefting {
+  padding-left: 8px;
+}
+ul {
+  margin-bottom: 0.5rem !important
+}
+
+ul li {
+    list-style-type: none;
+    line-height: 25px;
+}
+ul li a {
+    text-decoration: none !important;
+    color: #606770;
+}
+
+
+.sidebar {
+    max-width: 28.333333% !important
+}
+
+.scrolling::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  width: 26px;
+  border-radius: 13px;
+  background-clip: padding-box;
+  border: 9px solid transparent;
+  
+}
+
+::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
+}
+
+.scrolling:hover {
+  color: rgba(0, 0, 0, 0.3) !important
+}
+
+.scrolling {
+  position: sticky !important;
+  /* background: white; */
+  padding: 0.5rem;
+  width: 100px;
+  height: 590px;
+  border-radius: 3px;
+  overflow-y: auto;
+  color: rgba(0, 0, 0, 0);
+  transition: color .3s ease;
+  border-right: 2px solid whitesmoke;
+}
+
+.textCover {
+  color: #606770;
+  cursor: pointer;
+}
+
+.textCover:hover {
+  color: #606770;
+}
+
+.subHeader {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  padding:4px 13px;
+  margin:0;
+  border-radius:.25rem;
+}
+
+.subHeader:hover {
+  background-color: rgba(0,0,0,.05);
+}
+
+.textCover a:active,
+.textCover a.active{
+  color: #2ddbac;
+  background-color: rgba(0,0,0,.05);
+  
+}

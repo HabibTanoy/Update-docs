@@ -1,0 +1,13 @@
+.linked {
+  padding:4px 13px;
+  margin:0;
+  border-radius:.25rem;
+}
+
+.linked:hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+.subUl ul {
+  margin-bottom: 0.3rem !important
+}
