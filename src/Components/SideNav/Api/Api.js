@@ -56,7 +56,7 @@ const Api = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked} >
-                        <NavLink exact to='/intro' style={routeStyle}>Barikoi Places API</NavLink>
+                        <NavLink exact to='/intro' >Barikoi Places API</NavLink>
                         </li>
                     </ul>
                 </ul>
@@ -71,17 +71,17 @@ const Api = props => {
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link>Reverse Geocoding (Server)</Link>
+                        <Link exact to='/geo-server'>Reverse Geocoding (Server)</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Geocoding</a>
+                        <Link exact to='/geo-code'>Geocoding</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Autocomplete</a>
+                        <Link exact to='/autocomplete'>Autocomplete</Link>
                         </li>
                     </ul>
                     <ul>

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import placeStyle from '../PlaceApi/Place.module.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+
 
 const PlaceApi = props => {
     return ( 
@@ -117,7 +120,9 @@ const PlaceApi = props => {
             <div className={`mb-4 ${placeStyle.bttn}`}>
                 <Link to='/rev' className={placeStyle.next}>
                     <h5 className={placeStyle.onlyNext}>Next</h5>
-                    <h4 className={`mb-0 ${placeStyle.rev}`}>Reverse Geocode</h4>
+                    <h4 className={`mb-0 ${placeStyle.rev}`}>Reverse Geocode
+                    <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />
+                    </h4>
                 </Link>
             </div>
         </div>

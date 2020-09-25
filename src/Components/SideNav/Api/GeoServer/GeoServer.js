@@ -1,28 +1,28 @@
-import React  from 'react';
-import geoStyle from '../RevGeo/Geo.module.css'
-import { Row, Col, Table } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import serverStyle from '../GeoServer/server.module.css';
+import { Table, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
-const RevGeo = (props) => {
-  return ( 
-      <div>
-          <h1 className={`mt-4 ${geoStyle.api}`}>Reverse Geocode</h1>
-          <p style={{fontSize:"25px"}} className="mt-5 mb-3">
-              <code className={geoStyle.get}>GET</code>
-              Reverse Geocoding API
+const GeoServer = props => {
+    return ( 
+        <div>
+            <h1 className={`mt-4 ${serverStyle.api}`}>Reverse Geocoding (Server)</h1>
+            <p style={{fontSize:"25px"}} className="mt-5 mb-3">
+              <code className={serverStyle.get}>GET</code>
+              Reverse Geocoding Server API
           </p>
-          <pre className={geoStyle.coding}>
+          <pre className={serverStyle.coding}>
               <code>
                   <div>
-                      <span>https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true</span>
+                      <span>https://barikoi.xyz/v1/api/search/reverse/geocode/server/API_KEY/place?longitude=90.1224&latitude=23.7567&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true</span>
                   </div>
-                  <button type="button" className={geoStyle.copyBtn}>Copy</button>
+                  <button type="button" className={serverStyle.copyBtn}>Copy</button>
               </code>
           </pre>
           <p>Returns an address given longitude and latitude.</p>
-          <h2 className={`mt-4 mb-3 ${geoStyle.intro}`}>API PARAMS</h2>
+          <h2 className={`mt-4 mb-3 ${serverStyle.intro}`}>API PARAMS</h2>
           <div className="w-50">
             <Table striped bordered hover>
             <thead>
@@ -81,15 +81,11 @@ const RevGeo = (props) => {
               </tbody>
             </Table>
           </div>
-          <div>
-          <h2 className={`mt-3 mb-3 ${geoStyle.intro}`}>Rate Limit</h2>
-          <p className="mt-3">2000 Requests per minute</p>
-          </div>
-          <h2 className={`mt-3 mb-3 ${geoStyle.intro}`}>Reverse Geocoding API Request Example</h2>
-          <pre className={geoStyle.coding}>
+          <h2 className={`mt-5 mb-3 ${serverStyle.intro}`}>Reverse Geocoding Server API Request Example</h2>
+          <pre className={serverStyle.coding}>
               <code>
                   <div>
-                      <span className="mr-3">fetch('https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true')</span>
+                      <span className="mr-3">fetch('https://barikoi.xyz/v1/api/search/reverse/geocode/server/API_KEY/place?longitude=90.1224&latitude=23.7567&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true')</span>
                       </div>
                       <div>
                       <span>.then(response ={'>'} response.json())</span>
@@ -100,89 +96,95 @@ const RevGeo = (props) => {
                       <div>
                       <span>.then(response ={'>'} console.log('Success:', response))</span>
                       </div>
-                      <button type="button" className={geoStyle.copyBtn}>Copy</button>
+                      <button type="button" className={serverStyle.copyBtn}>Copy</button>
               </code>
           </pre>
 
-          <h2 className={`mt-3 mb-3 ${geoStyle.intro}`}>Example Response</h2>
+          <h2 className={`mt-3 mb-3 ${serverStyle.intro}`}>Example Response</h2>
           <div className="mt-3">
-          <pre className={geoStyle.coding}>
+          <pre className={serverStyle.coding}>
               <code>
                   <div>
-                  <span className={geoStyle.smsColor}>{props.brek}</span>
+                  <span className={serverStyle.smsColor}>{props.brek}</span>
                   </div>
                   <div className="ml-4">
                   <div>
                   <span>"place": {props.brek}</span>
                   </div>
                   <div>
-                  <span>"id": 177936,</span>
+                  <span>"id": 394605,</span>
                   </div>
                   <div>
-                  <span>"distance_within_meters": 1.167,</span> 
+                  <span>"distance_within_meters": 0,</span> 
                   </div>
                   <div>
-                  <span>"address": "Mohosin Uddin, House 462, West Shewrapara",</span> 
+                  <span>"address": "Charigram",</span> 
                   </div>
                   <div>
-                  <span>"area": "Mirpur",</span> 
+                  <span>"area": " Singair",</span> 
                   </div>
                   <div>
-                  <span>"city": "Dhaka",</span> 
+                  <span>"city": " Manikganj",</span> 
                   </div>
                   <div>
-                  <span>"postCode": 1216,</span> 
+                  <span>"postCode": 1820,</span> 
                   </div>
                   <div>
-                  <span>"location_type": "Urban",</span> 
+                  <span>"location_type": "Rural",</span> 
                   </div>
                   <div>
-                  <span>"district": "Dhaka",</span> 
+                  <span>"district": "Manikganj",</span> 
                   </div>
                   <div>
-                  <span>"country": "Bangladesh"</span> 
+                  <span>"country": "Bangladesh",</span> 
                   </div> 
                   <div>
-                  <span>"sub_district": "Kafrul"</span> 
+                  <span>"sub_district": "Singair",</span> 
                   </div>
                   <div>
-                  <span className={geoStyle.smsColor}>{props.endBrk},</span>
+                  <span>"union": "Charigram",</span> 
+                  </div>
+                  <div>
+                  <span>"pauroshova": null</span> 
+                  </div>
+                  <div>
+                  <span className={serverStyle.smsColor}>{props.endBrk},</span>
                   </div>
                   <div>
                   <span>"status": 200</span> 
                   </div>
                   </div>
                   <div>
-                  <span className={geoStyle.smsColor}>{props.endBrk}</span>
+                  <span className={serverStyle.smsColor}>{props.endBrk}</span>
                   </div>
-                  <button type="button" className={geoStyle.copyBtn}>Copy</button>  
+                  <button type="button" className={serverStyle.copyBtn}>Copy</button>  
               </code>
           </pre>
           </div>
-          <Row className={geoStyle.testing}>
+          <Row className={serverStyle.testing}>
             <Col sm={6}> 
-            <div className={`mb-4 ${geoStyle.previous}`}>
-              <Link to='/intro' className={geoStyle.next}>
-                  <h5 className={geoStyle.onlyNext}>Previous</h5>
-                  <h4 className={`mb-0 ${geoStyle.rev}`}>
+            <div className={`mb-4 ${serverStyle.previous}`}>
+              <Link to='/rev' className={serverStyle.next}>
+                  <h5 className={serverStyle.onlyNext}>Previous</h5>
+                  <h4 className={`mb-0 ${serverStyle.rev}`}>
                   <FontAwesomeIcon className="pr-1" icon={faAngleDoubleLeft} />
-                    Barikoi Places API</h4>
+                    Reverse Geocode</h4>
               </Link>
           </div>
             </Col>
             <Col sm={6}>
-            <div className={`mb-4 nxt ${geoStyle.previous}`}>
-              <Link to='/geo-server' className={geoStyle.next}>
-                  <h5 className={geoStyle.onlyNext}>Next</h5>
-                  <h4 className={`mb-0 ${geoStyle.rev}`}>Reverse Geocoding (Server)
+            <div className={`mb-4 nxt ${serverStyle.previous}`}>
+              <Link to='/geo-code' className={serverStyle.next}>
+                  <h5 className={serverStyle.onlyNext}>Next</h5>
+                  <h4 className={`mb-0 ${serverStyle.rev}`}>Geocoding
                   <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />
                   </h4>
               </Link>
           </div>
             </Col>
           </Row>
-      </div>
-   );
+        </div>
+     );
 }
-
-export default RevGeo;
+ 
+export default GeoServer;

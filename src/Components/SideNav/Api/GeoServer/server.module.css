@@ -1,0 +1,99 @@
+.api {
+    color:#1c1e21;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.get {
+    font-size: 20px;
+    background-color: #2ddbac;
+    color: #fff;
+    padding: 3px 8px ;
+    margin: 5px;
+    font-weight: lighter;
+}
+
+.coding {
+    color: rgb(191, 199, 213);
+    background-color: rgb(41, 45, 62);
+    border-radius: 5px;
+    padding: 1.5rem 1.5rem;
+    padding-bottom: 0px;
+}
+
+.copyBtn {
+    background: #011627;
+    border: 1px solid #d6deeb;
+    border-radius: 8px;
+    line-height:12px;
+    padding: 4px 8px;
+    color:#d6deeb;
+    /* opacity:0; */
+    left: 94%;
+    bottom: 88px;
+    position: relative;
+    /* visibility: hidden; */
+}
+
+.intro {
+    color: rgb(28, 30, 33);
+    font-size: 26px;
+    font-weight: 600;
+    /* line-height: 24px; */
+}
+
+.coding {
+    color: rgb(191, 199, 213);
+    background-color: rgb(41, 45, 62);
+    border-radius: 5px;
+    padding: 1.5rem 1.5rem;
+    padding-bottom: 0px;
+}
+
+.copyBtn {
+    background: #011627;
+    border: 1px solid #d6deeb;
+    border-radius: 8px;
+    line-height:12px;
+    padding: 4px 8px;
+    color:#d6deeb;
+    /* opacity:0; */
+    left: 94%;
+    bottom: 88px;
+    position: relative;
+    /* visibility: hidden; */
+}
+
+.smsColor {
+    color: #f8f8f2;
+}
+
+.previous {
+    border: 1px solid #dadde1;
+    border-radius: 5px;
+    border-color: #dadde1;
+    text-align: left;
+    /* margin-left: 54%; */
+    padding: 1rem;
+}
+
+.previous:hover {
+    border-color: #2ddbac;
+}
+
+.next {
+    text-decoration: none !important;
+}
+
+.onlyNext {
+    color: #606770;
+    font-weight: 500;
+    font-size: .975rem;
+}
+
+.rev {
+    font-size: 1rem;
+    color: #2ddbac;
+    font-weight: 600;
+    line-height: 20px;
+}

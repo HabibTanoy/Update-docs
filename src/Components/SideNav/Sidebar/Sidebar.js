@@ -6,7 +6,10 @@ import JsApi from '../JsApi/JsLibApi';
 import AndriodApi from '../AndriodApi/AndriodApi';
 import Pricing from '../Pricing/Pricing'
 import PlaceApi from '../Api/PlaceApi/PlaceApi';
-import RevGeo from '../Api/RevGeo/RevGeo'
+import RevGeo from '../Api/RevGeo/RevGeo';
+import GeoServer from '../Api/GeoServer/GeoServer';
+import GeoCoding from '../Api/GeoCoding/Geocoding';
+import AutoComplete from '../Api/AutoComplete/AutoComplete'
 
 
 class SideNav extends Component {
@@ -65,6 +68,27 @@ class SideNav extends Component {
                             path='/rev'
                             render={(props) => (
                                 <RevGeo brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/geo-server'
+                            render={(props) => (
+                                <GeoServer brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/geo-code'
+                            render={(props) => (
+                                <GeoCoding brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/autocomplete'
+                            render={(props) => (
+                                <AutoComplete brek={this.state.brak} endBrk={this.state.endBrk} />
                             )}
                             />
                             </Switch>
