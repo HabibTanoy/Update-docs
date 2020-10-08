@@ -23,7 +23,7 @@ const GeoCoding = (props) => {
               </code>
           </pre>
           <p>Geocode API for Developers. This returns location data of a specific place.</p>
-          <h2 className={`mt-4 mb-3 ${GeoStyle.intro}`}>URL PARAM</h2>
+          <h2 className={`mt-4 mb-3 ${GeoStyle.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
             <Table striped bordered>
@@ -124,7 +124,7 @@ const GeoCoding = (props) => {
               </code>
           </pre>
           </div>
-          <Row className={GeoStyle.testing}>
+          <Row>
             <Col sm={6}> 
             <div className={`mb-4 ${GeoStyle.previous}`}>
               <Link to='/geo-server' className={GeoStyle.next}>
@@ -137,7 +137,7 @@ const GeoCoding = (props) => {
             </Col>
             <Col sm={6}>
             <div className={`mb-4 nxt ${GeoStyle.previous}`}>
-              <Link to='/geo-code' className={GeoStyle.next}>
+              <Link to='/autocomplete' className={GeoStyle.next}>
                   <h5 className={GeoStyle.onlyNext}>Next</h5>
                   <h4 className={`mb-0 ${GeoStyle.rev}`}>Autocomplete
                   <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />

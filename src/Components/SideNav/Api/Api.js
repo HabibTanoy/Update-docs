@@ -86,22 +86,22 @@ const Api = props => {
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Nearby</a>
+                        <Link exact to='/nearby'>Nearby</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Distance</a>
+                        <Link exact to='/distance'>Distance</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Rupantor Geocoder</a>
+                        <Link exact to='/rupantor'>Rupantor Geocoder</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Routing Api</a>
+                        <Link exact to='/route-api'>Routing Api</Link>
                         </li>
                     </ul>
                     <ul>

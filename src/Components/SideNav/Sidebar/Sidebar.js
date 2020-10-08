@@ -9,7 +9,11 @@ import PlaceApi from '../Api/PlaceApi/PlaceApi';
 import RevGeo from '../Api/RevGeo/RevGeo';
 import GeoServer from '../Api/GeoServer/GeoServer';
 import GeoCoding from '../Api/GeoCoding/Geocoding';
-import AutoComplete from '../Api/AutoComplete/AutoComplete'
+import AutoComplete from '../Api/AutoComplete/AutoComplete';
+import Nearby from '../Api/Nearby/Nearby';
+import Distance from '../Api/Distance/Distance';
+import Rupantor from '../Api/Rupantor/Rupantor';
+import RoutingApi from '../Api/RoutingApi/Routing';
 
 
 class SideNav extends Component {
@@ -89,6 +93,34 @@ class SideNav extends Component {
                             path='/autocomplete'
                             render={(props) => (
                                 <AutoComplete brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/nearby'
+                            render={(props) => (
+                                <Nearby brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/distance'
+                            render={(props) => (
+                                <Distance brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/rupantor'
+                            render={(props) => (
+                                <Rupantor brek={this.state.brak} endBrk={this.state.endBrk} />
+                            )}
+                            />
+                            <Route
+                            exact
+                            path='/route-api'
+                            render={(props) => (
+                                <RoutingApi brek={this.state.brak} endBrk={this.state.endBrk} />
                             )}
                             />
                             </Switch>

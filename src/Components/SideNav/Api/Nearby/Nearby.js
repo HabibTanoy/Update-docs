@@ -1,30 +1,30 @@
 import React from 'react';
-import AutoStyle from '../AutoComplete/Auto.module.css';
+import NearStyle from '../Nearby/Nearby.module.css';
 import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
-
-const AutoComplete = props => {
+const Nearby = props => {
     return ( 
         <div>
-            <h1 className={`mt-4 ${AutoStyle.api}`}>Autocomplete</h1>
+            <h1 className={`mt-4 ${NearStyle.api}`}>Nearby</h1>
             <p style={{fontSize:"25px"}} className="mt-5 mb-3">
-              <code className={AutoStyle.get}>GET</code>
-              Autocomplete API
+              <code className={NearStyle.get}>GET</code>
+              Nearby API
             </p>
 
-            <pre className={AutoStyle.coding}>
+            <pre className={NearStyle.coding}>
               <code>
                   <div>
-                      <span>https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=shopno&latitude=23.873751&longitude=90.396454&scale=0.5</span>
+                      <span>https://barikoi.xyz/v2/api/search/nearby/API_KEY/DISTANCE/LIMIT?longitude=TARGET_LONGITUDE&latitude=TARGET_LATITUDE</span>
                   </div>
-                  <button type="button" className={AutoStyle.copyBtn}>Copy</button>
+                  <button type="button" className={NearStyle.copyBtn}>Copy</button>
               </code>
           </pre>
-          <p>Barikoi Autocomplete. Returns a place's id, longitude, latitude, address, city, area, postCode, pType & uCode</p>
-          <h2 className={`mt-4 mb-3 ${AutoStyle.intro}`}>API PARAMS</h2>
+          <p>All Nearby API counts according to the limit parameter or number of places returned in response data</p>
+
+          <h2 className={`mt-4 mb-3 ${NearStyle.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
             <Table striped bordered hover>
@@ -37,33 +37,32 @@ const AutoComplete = props => {
               </thead>
               <tbody>
                 <tr>
-                  <td>q</td>
-                  <td>shopno</td>
-                  <td>Required</td>
-                </tr>
-                <tr>
                   <td>longitude</td>
-                  <td>90.3964</td>
-                  <td></td>
+                  <td>90.36668110638857</td>
+                  <td>Required</td>
                 </tr>
                 <tr>
                   <td>latitude</td>
-                  <td>23.8737</td>
-                  <td></td>
+                  <td>23.83723803415923</td>
+                  <td>Required</td>
                 </tr>
                 <tr>
-                  <td>scale</td>
-                  <td>0.5</td>
-                  <td></td>
+                  <td>distance</td>
+                  <td>0.5 (km)</td>
+                  <td>Required</td>
+                </tr>
+                <tr>
+                  <td>limit</td>
+                  <td>10</td>
+                  <td>Required</td>
                 </tr>
               </tbody>
             </Table>
           </div>
-          <p>Here, Latitude and Longitude and Scale are optional parameters.When Latitude and Longitude are provided in the request parameter then the search result is returned based on the provided longitude latitude.When Scale is provided system will search inside the particular area (in Kilometer) radius.</p>
 
-          <h2 className={`mt-5 mb-3 ${AutoStyle.intro}`}>Geocoding API Request Example</h2>
+          <h2 className={`mt-5 mb-3 ${NearStyle.intro}`}>Nearby API Request Example</h2>
 
-          <pre className={AutoStyle.coding}>
+          <pre className={NearStyle.coding}>
               <code>
                   <div>
                       <span className="mr-3">fetch('https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/3354')</span>
@@ -77,15 +76,15 @@ const AutoComplete = props => {
                       <div>
                       <span>.then(response ={'>'} console.log('Success:', response))</span>
                       </div>
-                      <button type="button" className={AutoStyle.copyBtn}>Copy</button>
+                      <button type="button" className={NearStyle.copyBtn}>Copy</button>
               </code>
           </pre>
-          <h2 className={`mt-3 mb-3 ${AutoStyle.intro}`}>Example Response</h2>
+          <h2 className={`mt-3 mb-3 ${NearStyle.intro}`}>Example Response</h2>
           <div className="mt-3">
-          <pre className={AutoStyle.coding}>
+          <pre className={NearStyle.coding}>
               <code>
                   <div>
-                  <span className={AutoStyle.smsColor}>{props.brek}</span>
+                  <span className={NearStyle.smsColor}>{props.brek}</span>
                   </div>
                   <div className="ml-4">
                   <div>
@@ -128,36 +127,35 @@ const AutoComplete = props => {
                   <span>"pauroshova": null</span> 
                   </div>
                   <div>
-                  <span className={AutoStyle.smsColor}>{props.endBrk},</span>
+                  <span className={NearStyle.smsColor}>{props.endBrk},</span>
                   </div>
                   <div>
                   <span>"status": 200</span> 
                   </div>
                   </div>
                   <div>
-                  <span className={AutoStyle.smsColor}>{props.endBrk}</span>
+                  <span className={NearStyle.smsColor}>{props.endBrk}</span>
                   </div>
-                  <button type="button" className={AutoStyle.copyBtn}>Copy</button>  
+                  <button type="button" className={NearStyle.copyBtn}>Copy</button>  
               </code>
           </pre>
           </div>
-          <p>To get post office autocomplete just add post_office param to request body with the value true</p>
-          {/* post office Api */}
-          <h2 className={`mt-4 mb-3 ${AutoStyle.intro}`}>Post Office Autocomplete API</h2>
+          {/* nearby api with Multiple types */}
+          <h2 className={`mt-4 mb-3 ${NearStyle.intro}`}>Nearby API with Multiple Types</h2>
           <p style={{fontSize:"25px"}} className="mt-2 mb-3">
-              <code className={AutoStyle.get}>GET</code>
-              Post Office API
+              <code className={NearStyle.get}>GET</code>
+              Nearby API with Multiple Types
             </p>
-          <pre className={AutoStyle.coding}>
+            <pre className={NearStyle.coding}>
               <code>
                   <div>
-                      <span>https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=Mirpur&post_office=true</span>
+                      <span>https://barikoi.xyz/v2/api/search/nearby/multi/type/API_KEY/DISTANCE/LIMIT?q=PLACE_TYPES&longitude=TARGET_LONGITUDE&latitude=TARGET_LATITUDE</span>
                   </div>
-                  <button type="button" className={AutoStyle.copyBtn}>Copy</button>
+                  <button type="button" className={NearStyle.copyBtn}>Copy</button>
               </code>
           </pre>
-          <p>Barikoi Post Office Autocomplete.This API will return only post offices. Returns a place's id, longitude, latitude, address, city, area, postCode, pType & uCode</p>
-          <h2 className={`mt-4 mb-3 ${AutoStyle.intro}`}>API PARAMS</h2>
+          <p>This returns data with specific place types</p>
+          <h2 className={`mt-4 mb-3 ${NearStyle.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
             <Table striped bordered hover>
@@ -170,24 +168,39 @@ const AutoComplete = props => {
               </thead>
               <tbody>
                 <tr>
-                  <td>q</td>
-                  <td>Mirpur</td>
+                  <td>longitude</td>
+                  <td>90.36668110638857	</td>
                   <td>Required</td>
                 </tr>
                 <tr>
-                  <td>post_office</td>
-                  <td>true</td>
+                  <td>latitude</td>
+                  <td>23.83723803415923</td>
+                  <td>Required</td>
+                </tr>
+                <tr>
+                  <td>q</td>
+                  <td>atm,school</td>
+                  <td>Required</td>
+                </tr>
+                <tr>
+                  <td>distance	</td>
+                  <td>5 (km)</td>
+                  <td>Required</td>
+                </tr>
+                <tr>
+                  <td>limit</td>
+                  <td>5	</td>
                   <td>Required</td>
                 </tr>
               </tbody>
             </Table>
           </div>
-          <h2 className={`mt-5 mb-3 ${AutoStyle.intro}`}>Autocomplete API Request Example</h2>
+          <h2 className={`mt-5 mb-3 ${NearStyle.intro}`}>Nearby API with Multiple Types Request Example</h2>
 
-          <pre className={AutoStyle.coding}>
+          <pre className={NearStyle.coding}>
               <code>
                   <div>
-                      <span className="mr-3">fetch('https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/3354')</span>
+                      <span className="mr-3">fetch('https://barikoi.xyz/v2/api/search/nearby/multi/type/API_KEY/5/5?q=atm,school&longitude=90.41634254157543&latitude=23.832393074088362')</span>
                       </div>
                       <div>
                       <span>.then(response ={'>'} response.json())</span>
@@ -198,16 +211,15 @@ const AutoComplete = props => {
                       <div>
                       <span>.then(response ={'>'} console.log('Success:', response))</span>
                       </div>
-                      <button type="button" className={AutoStyle.copyBtn}>Copy</button>
+                      <button type="button" className={NearStyle.copyBtn}>Copy</button>
               </code>
           </pre>
-
-          <h2 className={`mt-3 mb-3 ${AutoStyle.intro}`}>Example Response</h2>
+          <h2 className={`mt-3 mb-3 ${NearStyle.intro}`}>Example Response</h2>
           <div className="mt-3">
-          <pre className={AutoStyle.coding}>
+          <pre className={NearStyle.coding}>
               <code>
                   <div>
-                  <span className={AutoStyle.smsColor}>{props.brek}</span>
+                  <span className={NearStyle.smsColor}>{props.brek}</span>
                   </div>
                   <div className="ml-4">
                   <div>
@@ -250,35 +262,35 @@ const AutoComplete = props => {
                   <span>"pauroshova": null</span> 
                   </div>
                   <div>
-                  <span className={AutoStyle.smsColor}>{props.endBrk},</span>
+                  <span className={NearStyle.smsColor}>{props.endBrk},</span>
                   </div>
                   <div>
                   <span>"status": 200</span> 
                   </div>
                   </div>
                   <div>
-                  <span className={AutoStyle.smsColor}>{props.endBrk}</span>
+                  <span className={NearStyle.smsColor}>{props.endBrk}</span>
                   </div>
-                  <button type="button" className={AutoStyle.copyBtn}>Copy</button>  
+                  <button type="button" className={NearStyle.copyBtn}>Copy</button>  
               </code>
           </pre>
           </div>
           <Row>
             <Col sm={6}> 
-            <div className={`mb-4 ${AutoStyle.previous}`}>
-              <Link to='/geo-code' className={AutoStyle.next}>
-                  <h5 className={AutoStyle.onlyNext}>Previous</h5>
-                  <h4 className={`mb-0 ${AutoStyle.rev}`}>
+            <div className={`mb-4 ${NearStyle.previous}`}>
+              <Link to='/autocomplete' className={NearStyle.next}>
+                  <h5 className={NearStyle.onlyNext}>Previous</h5>
+                  <h4 className={`mb-0 ${NearStyle.rev}`}>
                   <FontAwesomeIcon className="pr-1" icon={faAngleDoubleLeft} />
-                  Geocoding</h4>
+                  Autocomplete</h4>
               </Link>
           </div>
             </Col>
             <Col sm={6}>
-            <div className={`mb-4 nxt ${AutoStyle.previous}`}>
-              <Link to='/nearby' className={AutoStyle.next}>
-                  <h5 className={AutoStyle.onlyNext}>Next</h5>
-                  <h4 className={`mb-0 ${AutoStyle.rev}`}>Nearby
+            <div className={`mb-4 nxt ${NearStyle.previous}`}>
+              <Link to='/distance' className={NearStyle.next}>
+                  <h5 className={NearStyle.onlyNext}>Next</h5>
+                  <h4 className={`mb-0 ${NearStyle.rev}`}>Distance
                   <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />
                   </h4>
               </Link>
@@ -289,4 +301,4 @@ const AutoComplete = props => {
      );
 }
  
-export default AutoComplete;
+export default Nearby;
