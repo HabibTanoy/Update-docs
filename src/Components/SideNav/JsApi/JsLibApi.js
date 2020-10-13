@@ -4,6 +4,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Radium from 'radium'
 import ApiStyle from '../Api/Api.module.css'
+import { Link } from 'react-router-dom';
 
 const JsApi = props => {
     const toggler = props.toggle;
@@ -48,7 +49,7 @@ const JsApi = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Getting started</a>
+                        <Link exact to="/library-intro">Getting started</Link>
                         </li>
                     </ul>
                 </ul>
@@ -58,27 +59,27 @@ const JsApi = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Search</a>
+                        <Link exact to="/search-js">Search</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Geocoding</a>
+                        <Link exact to="/geocoding-js">Geocoding</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Reverse Geocoding</a>
+                        <Link exact to="/rev-geo-js">Reverse Geocoding</Link>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li className={ApiStyle.linked}> 
+                        <Link exact to="/nearby-js">Nearby</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Nearby</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li className={ApiStyle.linked}>
-                        <a>Autocomplete Tutorial</a>
+                        <Link exact to="/autocomplete-js">Autocomplete Tutorial</Link> 
                         </li>
                     </ul>
                 </ul>

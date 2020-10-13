@@ -1,5 +1,5 @@
 import React from 'react';
-import RupStyle from '../Rupantor/Rupantor.module.css';
+import Style from '../Style.module.css'
 import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,24 +8,24 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-s
 const Rupantor = props => {
     return ( 
         <div>
-            <h1 className={`mt-4 ${RupStyle.api}`}>Rupantor Geocoder</h1>
+            <h1 className={`mt-4 ${Style.api}`}>Rupantor Geocoder</h1>
             <p style={{fontSize:"25px"}} className="mt-5 mb-3">
-              <code className={RupStyle.get}>POST</code>
+              <code className={Style.get}>POST</code>
               Rupantor Geocoder
             </p>
-            <pre className={RupStyle.coding}>
+            <pre className={Style.coding}>
               <code>
-                  <div>
+                  <div className="txtColor">
                       <span>https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode</span>
                   </div>
-                  <button type="button" className={RupStyle.copyBtn}>Copy</button>
+                  {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
-          <p>Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete of not.</p>
-          <p>Rupantor Geocoder only supports FormData. So use FormData object to send your data.</p>
-          <p>Rupantor also has a Address Matching API. Details can be found here.</p>
-          <p>Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.</p>
-          <h2 className={`mt-4 mb-3 ${RupStyle.intro}`}>FormData Key and Value</h2>
+          <p className={Style.text}>Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete of not.</p>
+          <p className={Style.text}>Rupantor Geocoder only supports FormData. So use FormData object to send your data.</p>
+          <p className={Style.text}>Rupantor also has a Address Matching API. Details can be found here.</p>
+          <p className={Style.text}>Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.</p>
+          <h2 className={`mt-4 mb-3 ${Style.intro}`}>FormData Key and Value</h2>
           <div className="w-75">
             <Table striped bordered hover>
             <thead>
@@ -59,8 +59,8 @@ const Rupantor = props => {
               </tbody>
             </Table>
           </div>
-          <h2 className={`mt-4 mb-3 ${RupStyle.intro}`}>Rupantor Geocoder API Request Example</h2>
-          <pre className={RupStyle.coding}>
+          <h2 className={`mt-4 mb-3 ${Style.intro}`}>Rupantor Geocoder API Request Example</h2>
+          <pre className={Style.coding}>
               <code>
                   <div>
                       <span className="mr-3">fetch('https://barikoi.xyz/v1/api/distance/API_KEY/90.39534587,23.86448886/90.3673,23.8340')</span>
@@ -74,15 +74,15 @@ const Rupantor = props => {
                       <div>
                       <span>.then(response ={'>'} console.log('Success:', response))</span>
                       </div>
-                      <button type="button" className={RupStyle.copyBtn}>Copy</button>
+                      {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
 
-          <h2 className={`mt-3 mb-3 ${RupStyle.intro}`}>Example Response</h2>
+          <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
-          <pre className={RupStyle.coding}>
+          <pre className={Style.coding}>
               <code>
-                  <div>
+                  {/* <div>
                   <span className={RupStyle.smsColor}>{props.brek}</span>
                   </div>
                   <div className="ml-4">
@@ -95,30 +95,30 @@ const Rupantor = props => {
                   </div>
                   <div>
                   <span className={RupStyle.smsColor}>{props.endBrk}</span>
-                  </div>
-                  <button type="button" className={RupStyle.copyBtn}>Copy</button>  
+                  </div> */}
+                  {/* <button type="button" className={RupStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
           </div>
-          <p className={RupStyle.pText}>Address_status denotes whether a given/input address is complete or not based on area. Confidence_score_percentage determines the accuracy level of the geocoded address A complete address might get the maximum confidence_score_percentage. confidence_score_percentage {">"} 95 --- = Exact or be the closest one confidence_score_percentage {">"}= 70 --- = Within the the specific area, subarea , Can be used for zoning confidence_score_percentage {"<"} 70 --- = Not reliable</p>
-          <p>Rupantor Geocoder returns thana and district only if thana and district are added to request body with the value 'yes'. Rupantor Geocoder returns <span className={RupStyle.pText} >null</span> geocoded_address if no geocoded address is found.</p>
+          <p className={Style.pText}>Address_status denotes whether a given/input address is complete or not based on area. Confidence_score_percentage determines the accuracy level of the geocoded address A complete address might get the maximum confidence_score_percentage. confidence_score_percentage {">"} 95 --- = Exact or be the closest one confidence_score_percentage {">"}= 70 --- = Within the the specific area, subarea , Can be used for zoning confidence_score_percentage {"<"} 70 --- = Not reliable</p>
+          <p className={Style.text}>Rupantor Geocoder returns thana and district only if thana and district are added to request body with the value 'yes'. Rupantor Geocoder returns <span className={Style.pText} >null</span> geocoded_address if no geocoded address is found.</p>
 
           <p style={{fontSize:"25px"}} className="mt-5 mb-3">
-              <code className={RupStyle.get}>POST</code>
+              <code className={Style.get}>POST</code>
               Rupantor Address Match
             </p>
 
-            <pre className={RupStyle.coding}>
+            <pre className={Style.coding}>
               <code>
-                  <div>
+                  <div className="txtColor">
                       <span>https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode</span>
                   </div>
-                  <button type="button" className={RupStyle.copyBtn}>Copy</button>
+                  {/* <button type="button" className={Style.copyBtn}>Copy</button> */}
               </code>
           </pre>
-          <p>Rupantor Address Matcher API matches two different given address and returns match percantage and match status.</p>
+          <p className={Style.text}>Rupantor Address Matcher API matches two different given address and returns match percantage and match status.</p>
 
-          <h2 className={`mt-4 mb-3 ${RupStyle.intro}`}>FormData Key and Value</h2>
+          <h2 className={`mt-4 mb-3 ${Style.intro}`}>FormData Key and Value</h2>
           <div className="w-75">
             <Table striped bordered hover>
             <thead>
@@ -144,9 +144,9 @@ const Rupantor = props => {
             </Table>
           </div>
 
-          <h2 className={`mt-4 mb-3 ${RupStyle.intro}`}>Rupantor Address Matcher API Request Example</h2>
+          <h2 className={`mt-4 mb-3 ${Style.intro}`}>Rupantor Address Matcher API Request Example</h2>
 
-          <pre className={RupStyle.coding}>
+          <pre className={Style.coding}>
               <code>
                   <div>
                       <span className="mr-3">fetch('https://barikoi.xyz/v1/api/distance/API_KEY/90.39534587,23.86448886/90.3673,23.8340')</span>
@@ -160,49 +160,73 @@ const Rupantor = props => {
                       <div>
                       <span>.then(response ={'>'} console.log('Success:', response))</span>
                       </div>
-                      <button type="button" className={RupStyle.copyBtn}>Copy</button>
+                      {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
 
-          <h2 className={`mt-3 mb-3 ${RupStyle.intro}`}>Example Response</h2>
+          <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
-          <pre className={RupStyle.coding}>
-              <code>
-                  <div>
-                  <span className={RupStyle.smsColor}>{props.brek}</span>
-                  </div>
+          <pre className={`mb-5 ${Style.coding}`}>
+          <code>
+                  <div className="mb-3">
+                  <div className="txtColor">
+                  <span> {"{"} </span><br />
                   <div className="ml-4">
+                  <span>"match": {"{"}</span><br />
+                  </div>
+                  </div>
+                  <div className="ml-5 pl-4">
                   <div>
-                  <span>"Distance": "7.8473 KM",</span>
+                    <span className="txtColor">"address 1": </span>
+                    <span className="url">"হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর",</span>
                   </div>
                   <div>
-                  <span>"status": 200</span> 
-                  </div>
+                    <span className="txtColor">"address 2": </span>
+                    <span className="url">"house 18, road 5, block G, section 2, mirpur",</span>
                   </div>
                   <div>
-                  <span className={RupStyle.smsColor}>{props.endBrk}</span>
+                    <span className="txtColor">"match percentage": </span>
+                    <span className="url">"100%",</span><br />
                   </div>
-                  <button type="button" className={RupStyle.copyBtn}>Copy</button>  
+                  <div>
+                    <span className="txtColor">"match status": </span>
+                    <span className="url">"exact",</span>
+                  </div>
+                  </div>
+                  <div className="txtColor ml-4">
+                  <span> {"},"} </span><br />
+                  <span> "status": 200</span><br />
+                  </div>
+                  <span className="txtColor"> {"}"} </span>
+                  
+                  </div>
+                  <div className="override">
+                    <span>// match_status defination</span><br />
+                    <span>// match percentage {">"}= 97-100 = exact</span><br />
+                    <span>// match percentage {">"}75-96 = approximate</span><br />
+                    <span>// match percentage {"<"}75 = not matched</span>
+                  </div>
+                  {/* <button type="button" className={geoStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
           </div>
 
           <Row>
             <Col sm={6}> 
-            <div className={`mb-4 ${RupStyle.previous}`}>
-              <Link to='/distance' className={RupStyle.next}>
-                  <h5 className={RupStyle.onlyNext}>Previous</h5>
-                  <h4 className={`mb-0 ${RupStyle.rev}`}>
+            <div className={`mb-4 ${Style.previous}`}>
+              <Link to='/distance'>
+                  <h5>Previous</h5>
+                  <h4 className="mb-0">
                   <FontAwesomeIcon className="pr-1" icon={faAngleDoubleLeft} />
                   Distance</h4>
               </Link>
           </div>
             </Col>
             <Col sm={6}>
-            <div className={`mb-4 nxt ${RupStyle.previous}`}>
-              <Link to='/route-api' className={RupStyle.next}>
-                  <h5 className={RupStyle.onlyNext}>Next</h5>
-                  <h4 className={`mb-0 ${RupStyle.rev}`}>Routing Api
+            <div className={`mb-4 nxt ${Style.previous} ${Style.next}`}>
+              <Link to='/route-api'>
+                  <h5>Next</h5>
+                  <h4 className="mb-0">Routing Api
                   <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />
                   </h4>
               </Link>

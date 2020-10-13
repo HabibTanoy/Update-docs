@@ -4,6 +4,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Radium from 'radium'
 import ApiStyle from '../Api/Api.module.css'
+import { Link } from 'react-router-dom';
 
 const AndriodApi = props => {
     const toggler = props.toggle;
@@ -48,7 +49,7 @@ const AndriodApi = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Getting started</a>
+                        <Link to="/android-intro">Getting started</Link>
                         </li>
                     </ul>
                 </ul>
@@ -58,37 +59,37 @@ const AndriodApi = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Create an Android Studio project</a>
+                        <Link to="/android-project">Create an Android Studio project</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Barikoi Location Library</a>
+                        <Link to="/android-location">Barikoi Location Library</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Get an access token</a>
+                        <Link to="/android-token">Get an access token</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Search</a>
+                        <Link to="/android-search">Search</Link> 
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}> 
-                        <a>Geocoding</a>
+                        <Link to="/android-geocoding">Geocoding</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Reverse Geocoding</a>
+                        <Link to="/android-rev-geocoding">Reverse Geocoding</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Nearby</a>
+                        <Link to="/android-nearby">Nearby</Link>
                         </li>
                     </ul>
                 </ul>

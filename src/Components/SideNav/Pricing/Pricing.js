@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Radium from 'radium'
 import ApiStyle from '../Api/Api.module.css'
 
@@ -48,22 +48,22 @@ const Pricing = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Getting started</a>
+                        <Link to="/pricing-intro">Getting started</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a >General information about our pricing</a>
+                        <Link to="/pricing-general">General information about our pricing</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>What is one call</a>
+                        <Link to="/pricing-call">API usage and pricing clearification</Link>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>What happens when i go over the call limit</a>
+                        <Link to="/pricing-limit">What happens when i go over the call limit</Link>
                         </li>
                     </ul>
                 </ul>
@@ -73,7 +73,7 @@ const Pricing = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <a>Billing Cycle</a>
+                        <Link to="/pricing-details">Billing Cycle</Link>
                         </li>
                     </ul> 
                 </ul>

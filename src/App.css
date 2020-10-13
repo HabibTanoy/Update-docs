@@ -77,3 +77,21 @@ ul li a {
   background-color: rgba(0,0,0,.05);
 }
 
+.txt {
+  color: #2ddbac;
+  font-weight: bold;
+}
+
+.txtColor {
+  color: #f8f8f2;
+}
+.url {
+  color: #f1fa8c;
+}
+.function {
+  color: #ff79c6;
+  font-weight: bold;
+}
+.override {
+  color: #6272a4;
+}

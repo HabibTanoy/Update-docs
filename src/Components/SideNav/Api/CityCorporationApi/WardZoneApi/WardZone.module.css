@@ -4,26 +4,13 @@
     font-weight: bold;
 }
 
-.sidebar {
-    max-width: 28.333333% !important
-}
-
-.intro {
-    color: rgb(28, 30, 33);
-    font-size: 26px;
-    font-weight: 600;
-    /* line-height: 24px; */
-}
-
-.introPtag {
-    color: rgb(28, 30, 33);
-    line-height: 28px;
-}
-
-.limit {
-    color: rgb(28, 30, 33);
-    font-size: 18px;
-    font-weight: 600;
+.get {
+    font-size: 20px;
+    background-color: #2ddbac;
+    color: #fff;
+    padding: 3px 8px ;
+    margin: 5px;
+    font-weight: lighter;
 }
 
 .coding {
@@ -48,21 +35,32 @@
     /* visibility: hidden; */
 }
 
-.bttn {
+.intro {
+    color: rgb(28, 30, 33);
+    font-size: 26px;
+    font-weight: 600;
+    /* line-height: 24px; */
+}
+
+.smsColor {
+    color: #f8f8f2;
+}
+
+.previous {
     border: 1px solid #dadde1;
     border-radius: 5px;
     border-color: #dadde1;
-    text-align: right;
-    margin-left: 54%;
+    text-align: left;
+    /* margin-left: 54%; */
     padding: 1rem;
+}
+
+.previous:hover {
+    border-color: #2ddbac;
 }
 
 .next {
     text-decoration: none !important;
-}
-
-.bttn:hover {
-    border-color: #2ddbac;
 }
 
 .onlyNext {
@@ -76,21 +74,4 @@
     color: #2ddbac;
     font-weight: 600;
     line-height: 20px;
-}
-
-.textColor {
-    color: #f1fa8c;
-}
-
-.smsColor {
-    color: #f8f8f2;
-}
-
-.get {
-    font-size: 20px;
-    background-color: #2ddbac;
-    color: #fff;
-    padding: 3px 8px ;
-    margin: 5px;
-    font-weight: lighter;
 }

@@ -35,13 +35,6 @@
     /* visibility: hidden; */
 }
 
-.pText {
-    /* background-color: rgba(27,31,35,.05); */
-    border-radius: 3px;
-    padding:5px;
-    color: #6a737d;
-}
-
 .intro {
     color: rgb(28, 30, 33);
     font-size: 26px;

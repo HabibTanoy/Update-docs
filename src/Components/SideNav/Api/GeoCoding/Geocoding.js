@@ -1,5 +1,5 @@
 import React from 'react';
-import GeoStyle from '../GeoCoding/Geocode.module.css';
+import Style from '../Style.module.css'
 import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,22 +8,22 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-s
 const GeoCoding = (props) => {
     return ( 
         <div>
-            <h1 className={`mt-4 ${GeoStyle.api}`}>Geocoding</h1>
+            <h1 className={`mt-4 ${Style.api}`}>Geocoding</h1>
             <p style={{fontSize:"25px"}} className="mt-5 mb-3">
-              <code className={GeoStyle.get}>GET</code>
+              <code className={Style.get}>GET</code>
               Geocoding API
           </p>
 
-          <pre className={GeoStyle.coding}>
+          <pre className={Style.coding}>
               <code>
                   <div>
-                      <span>https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/place_id</span>
+                      <span className="txtColor">https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/place_id</span>
                   </div>
-                  <button type="button" className={GeoStyle.copyBtn}>Copy</button>
+                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
-          <p>Geocode API for Developers. This returns location data of a specific place.</p>
-          <h2 className={`mt-4 mb-3 ${GeoStyle.intro}`}>API PARAMS</h2>
+          <p className={Style.text}>Geocode API for Developers. This returns location data of a specific place.</p>
+          <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
             <Table striped bordered>
@@ -44,102 +44,102 @@ const GeoCoding = (props) => {
             </Table>
           </div>
 
-          <h2 className={`mt-5 mb-3 ${GeoStyle.intro}`}>Geocoding API Request Example</h2>
-          <pre className={GeoStyle.coding}>
-              <code>
-                  <div>
-                      <span className="mr-3">fetch('https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/3354')</span>
-                      </div>
-                      <div>
-                      <span>.then(response ={'>'} response.json())</span>
-                      </div>
-                      <div>
-                      <span>.catch(error ={'>'} console.error('Error:', error))</span>
-                      </div>
-                      <div>
-                      <span>.then(response ={'>'} console.log('Success:', response))</span>
-                      </div>
-                      <button type="button" className={GeoStyle.copyBtn}>Copy</button>
+          <h2 className={`mt-5 mb-3 ${Style.intro}`}>Geocoding API Request Example</h2>
+          <pre className={Style.coding}>
+          <code>
+              <div>
+                  <span className="mr-3">
+                    <span className="txtColor">fetch(</span>
+                    <span className="url">'https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/3354'</span>
+                    <span className="txtColor">)</span>
+                    </span> <br />
+                    <div className="ml-3">
+                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
+                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
+                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
+                  </div>
+                  </div>
+                      {/* <button type="button" className={geoStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
 
-          <h2 className={`mt-3 mb-3 ${GeoStyle.intro}`}>Example Response</h2>
-          <div className="mt-3">
-          <pre className={GeoStyle.coding}>
+          <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
+          <div className="mt-3 mb-5">
+          <pre className={Style.coding}>
               <code>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.brek}</span>
-                  </div>
-                  <div className="ml-4">
-                  <div>
-                  <span>"place": {props.brek}</span>
-                  </div>
-                  <div>
-                  <span>"id": 394605,</span>
-                  </div>
-                  <div>
-                  <span>"distance_within_meters": 0,</span> 
-                  </div>
-                  <div>
-                  <span>"address": "Charigram",</span> 
-                  </div>
-                  <div>
-                  <span>"area": " Singair",</span> 
-                  </div>
-                  <div>
-                  <span>"city": " Manikganj",</span> 
-                  </div>
-                  <div>
-                  <span>"postCode": 1820,</span> 
-                  </div>
-                  <div>
-                  <span>"location_type": "Rural",</span> 
-                  </div>
-                  <div>
-                  <span>"district": "Manikganj",</span> 
-                  </div>
-                  <div>
-                  <span>"country": "Bangladesh",</span> 
-                  </div> 
-                  <div>
-                  <span>"sub_district": "Singair",</span> 
-                  </div>
-                  <div>
-                  <span>"union": "Charigram",</span> 
-                  </div>
-                  <div>
-                  <span>"pauroshova": null</span> 
-                  </div>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.endBrk},</span>
-                  </div>
-                  <div>
-                  <span>"status": 200</span> 
-                  </div>
-                  </div>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.endBrk}</span>
-                  </div>
-                  <button type="button" className={GeoStyle.copyBtn}>Copy</button>  
+              <div>
+              <div className="txtColor">
+              <span> {"{"} </span><br />
+              <div className="ml-4">
+              <span>"place": {"{"}</span><br />
+              <div className="ml-5">
+              <span>"id": 3354,</span><br/>
+              {/* <span>"distance_within_meters": 0,</span><br /> */}
+              </div>
+              </div>
+              </div>
+              <div className="ml-5 pl-4">
+              <div>
+                <span className="txtColor">"address": </span>
+                <span className="url">"Barikoi Office, House 192, Road 2",</span>
+              </div>
+              <div>
+                <span className="txtColor">"area": </span>
+                <span className="url">"Mirpur Dohs",</span>
+              </div>
+              <div>
+                <span className="txtColor">"city": </span>
+                <span className="url">"Dhaka",</span><br />
+                <span className="txtColor">"postCode": 1216,</span>
+              </div>
+              <div>
+                <span className="txtColor">"ucode": </span>
+                <span className="url">"BKOI2017",</span>
+              </div>
+              <div>
+                <span className="txtColor">"longitude": </span>
+                <span className="url">"90.3673348642485",</span>
+              </div>
+              <div>
+                <span className="txtColor">"latitude": </span>
+                <span className="url">"23.8340107016275",</span>
+              </div>
+              <div>
+                <span className="txtColor">"pType": </span>
+                <span className="url">"Office",</span>
+              </div>
+              <div>
+                <span className="txtColor">"subType": </span>
+                <span className="url">"Head Office"</span>
+              </div>
+              </div>
+              <div className="txtColor ml-4">
+              <span> {"},"} </span><br />
+              <span> "status": 200</span><br />
+              
+              </div>
+              <span> {"}"} </span><br />
+              </div>
+                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
           </div>
           <Row>
             <Col sm={6}> 
-            <div className={`mb-4 ${GeoStyle.previous}`}>
-              <Link to='/geo-server' className={GeoStyle.next}>
-                  <h5 className={GeoStyle.onlyNext}>Previous</h5>
-                  <h4 className={`mb-0 ${GeoStyle.rev}`}>
+            <div className={`mb-4 ${Style.previous}`}>
+              <Link to='/geo-server'>
+                  <h5>Previous</h5>
+                  <h4 className="mb-0">
                   <FontAwesomeIcon className="pr-1" icon={faAngleDoubleLeft} />
                     Reverse Geocoding (Server)</h4>
               </Link>
           </div>
             </Col>
             <Col sm={6}>
-            <div className={`mb-4 nxt ${GeoStyle.previous}`}>
-              <Link to='/autocomplete' className={GeoStyle.next}>
-                  <h5 className={GeoStyle.onlyNext}>Next</h5>
-                  <h4 className={`mb-0 ${GeoStyle.rev}`}>Autocomplete
+            <div className={`mb-4 nxt ${Style.previous} ${Style.next}`}>
+              <Link to='/autocomplete'>
+                  <h5>Next</h5>
+                  <h4 className="mb-0">Autocomplete
                   <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />
                   </h4>
               </Link>

@@ -1,0 +1,44 @@
+.api {
+    color:#1c1e21;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+.text {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.previous {
+    border: 1px solid #dadde1;
+    border-radius: 5px;
+    border-color: #dadde1;
+    text-align: left;
+    padding: 1rem;
+}
+
+.previous:hover {
+    border-color: #2ddbac;
+}
+
+.previous a {
+    text-decoration: none !important;
+}
+
+.previous h5 {
+    color: #606770;
+    font-weight: 500;
+    font-size: .975rem;
+}
+
+.previous h4 {
+    font-size: 1rem;
+    color: #2ddbac;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.next {
+    text-align: right !important
+}
