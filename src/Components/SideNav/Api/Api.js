@@ -56,7 +56,7 @@ const Api = props => {
                     </li>
                     <ul>
                         <li className={ApiStyle.linked} >
-                        <NavLink exact to='/intro' >Barikoi Places API</NavLink>
+                        <NavLink exact to='/intro'>Barikoi Places API</NavLink>
                         </li>
                     </ul>
                 </ul>

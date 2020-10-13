@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import ScrollToTopRoute from '../ScrollToTopRoute';
 import { Container, Row, Col } from 'react-bootstrap'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Api from '../Api/Api';
 import JsApi from '../JsApi/JsLibApi';
 import AndriodApi from '../AndriodApi/AndriodApi';
@@ -66,7 +67,7 @@ class SideNav extends Component {
             <div className="mt-5 pt-4">
                 <Container fluid>
                     <Row>
-                        <Col sm={4} className="pl-0 sidebar scrolling">
+                        <Col sm={4} id="demo" className="pl-0 sidebar scrolling">
                             <div className="mt-2">
                             <Api 
                             isToggle={() =>this.toggleHandle("toggle", this.state.toggle)} 
@@ -88,46 +89,46 @@ class SideNav extends Component {
                         </Col>
                         <Col sm={8}>
                             <Switch>
-                            <Route path="/intro" component={PlaceApi} />
-                            <Route path="/rev-geo" component={RevGeo} />
-                            <Route path="/geo-server" component={GeoServer} />
-                            <Route path="/geo-code" component={GeoCoding} />
-                            <Route path="/autocomplete" component={AutoComplete} />
-                            <Route path="/nearby" component={Nearby} />
-                            <Route path="/distance" component={Distance} />
-                            <Route path="/rupantor" component={Rupantor} />
-                            <Route path="/route-api" component={RoutingApi} />
-                            <Route path="/add-place" component={AddApi} />
-                            <Route path="/district" component={DistrictApi} />
-                            <Route path="/sub-district" component={SubDistrict} />
-                            <Route path="/city-api" component={CityApi} />
-                            <Route path="/union-api" component={UnionApi} />
-                            <Route path="/ward-by-location" component={WardApi} />
-                            <Route path="/zone-by-location" component={ZoneApi} />
-                            <Route path="/ward-zone-by-location" component={WardZoneApi} />
-                            <Route path="/city-corp-by-location" component={GeoLocApi} />
+                            <ScrollToTopRoute path="/intro" component={PlaceApi}/>
+                            <ScrollToTopRoute path="/rev-geo" component={RevGeo} />
+                            <ScrollToTopRoute path="/geo-server" component={GeoServer} />
+                            <ScrollToTopRoute path="/geo-code" component={GeoCoding} />
+                            <ScrollToTopRoute path="/autocomplete" component={AutoComplete} />
+                            <ScrollToTopRoute path="/nearby" component={Nearby} />
+                            <ScrollToTopRoute path="/distance" component={Distance} />
+                            <ScrollToTopRoute path="/rupantor" component={Rupantor} />
+                            <ScrollToTopRoute path="/route-api" component={RoutingApi} />
+                            <ScrollToTopRoute path="/add-place" component={AddApi} />
+                            <ScrollToTopRoute path="/district" component={DistrictApi} />
+                            <ScrollToTopRoute path="/sub-district" component={SubDistrict} />
+                            <ScrollToTopRoute path="/city-api" component={CityApi} />
+                            <ScrollToTopRoute path="/union-api" component={UnionApi} />
+                            <ScrollToTopRoute path="/ward-by-location" component={WardApi} />
+                            <ScrollToTopRoute path="/zone-by-location" component={ZoneApi} />
+                            <ScrollToTopRoute path="/ward-zone-by-location" component={WardZoneApi} />
+                            <ScrollToTopRoute path="/city-corp-by-location" component={GeoLocApi} />
                           
-                            <Route path="/library-intro" component={JsStart} />
-                            <Route path="/search-js" component={SearchJs} />
-                            <Route path="/geocoding-js" component={GeoJs} />
-                            <Route path="/rev-geo-js" component={RevGeoJs} />
-                            <Route path="/nearby-js" component={NearbyJs} />
-                            <Route path="/autocomplete-js" component={AutoCompleteJs} />
+                            <ScrollToTopRoute path="/library-intro" component={JsStart} />
+                            <ScrollToTopRoute path="/search-js" component={SearchJs} />
+                            <ScrollToTopRoute path="/geocoding-js" component={GeoJs} />
+                            <ScrollToTopRoute path="/rev-geo-js" component={RevGeoJs} />
+                            <ScrollToTopRoute path="/nearby-js" component={NearbyJs} />
+                            <ScrollToTopRoute path="/autocomplete-js" component={AutoCompleteJs} />
                             
-                            <Route path="/android-intro" component={AndriodStart} />
-                            <Route path="/android-project" component={AndriodProject} />
-                            <Route path="/android-location" component={LocationAndriod} />
-                            <Route path="/android-token" component={TokenAndriod} />
-                            <Route path="/android-search" component={SearchAndriod} />
-                            <Route path="/android-geocoding" component={GeoAndriod} />
-                            <Route path="/android-rev-geocoding" component={RevAndriod} />
-                            <Route path="/android-nearby" component={NearbyAndriod} />
+                            <ScrollToTopRoute path="/android-intro" component={AndriodStart} />
+                            <ScrollToTopRoute path="/android-project" component={AndriodProject} />
+                            <ScrollToTopRoute path="/android-location" component={LocationAndriod} />
+                            <ScrollToTopRoute path="/android-token" component={TokenAndriod} />
+                            <ScrollToTopRoute path="/android-search" component={SearchAndriod} />
+                            <ScrollToTopRoute path="/android-geocoding" component={GeoAndriod} />
+                            <ScrollToTopRoute path="/android-rev-geocoding" component={RevAndriod} />
+                            <ScrollToTopRoute path="/android-nearby" component={NearbyAndriod} />
 
-                            <Route path="/pricing-intro" component={PricingStart} />
-                            <Route path="/pricing-general" component={AboutPricing} />
-                            <Route path="/pricing-call" component={PricingApi} />
-                            <Route path="/pricing-limit" component={LimitCall} />
-                            <Route path="/pricing-details" component={BillCycle} />
+                            <ScrollToTopRoute path="/pricing-intro" component={PricingStart} />
+                            <ScrollToTopRoute path="/pricing-general" component={AboutPricing} />
+                            <ScrollToTopRoute path="/pricing-call" component={PricingApi} />
+                            <ScrollToTopRoute path="/pricing-limit" component={LimitCall} />
+                            <ScrollToTopRoute path="/pricing-details" component={BillCycle} />
                             </Switch>
                         </Col>
                     </Row>
