@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 const JsStart = () => {
+  document.title = "Getting Started . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Getting Started</h1>

@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 
-const PlaceApi = (props) => {
-
+const PlaceApi = () => {
+    document.title = "Barikoi Places API . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Barikoi Places API</h1>

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 const RoutingApi = () => {
+  document.title = "Routing Api . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Routing Api</h1>
@@ -132,20 +133,30 @@ const RoutingApi = () => {
           <div className="mt-3">
           <pre className={Style.coding}>
               <code>
-                  {/* <div>
-                  <span className={RoutStyle.smsColor}>{props.brek}</span>
+              <div className="mb-3">
+                  <div className="txtColor">
+                  <span> {"{"} </span><br />
                   </div>
-                  <div className="ml-4">
+                  <div className="ml-5">
                   <div>
-                  <span>"Distance": "7.8473 KM",</span>
+                    <span className="txtColor">"coordinates": [</span>
                   </div>
-                  <div>
-                  <span>"status": 200</span> 
+                  <div className="ml-5 pl-4">
+              <div>
+                <span className="txtColor">90.36288202934098,</span>
+              </div>
+              <div>
+                <span className="txtColor">23.804755823392888</span>
+              </div>
+              </div>
                   </div>
+                  <div className="txtColor ml-5 pl-3">
+                  <span> ], </span><br />
+                  <span>"distance": 1.2604423448728288,</span><br />
+                  <span>"type": <span className="url">"Point"</span></span>
                   </div>
-                  <div>
-                  <span className={RoutStyle.smsColor}>{props.endBrk}</span>
-                  </div> */}
+                  <span className="txtColor"> {"}"} </span>
+                  </div>
                   {/* <button type="button" className={RoutStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
@@ -189,20 +200,52 @@ const RoutingApi = () => {
           <div className="mt-3">
           <pre className={`mb-5 ${Style.coding}`}>
               <code>
-                  {/* <div>
-                  <span className={RoutStyle.smsColor}>{props.brek}</span>
+              <div className="mb-3">
+                  <div className="txtColor">
+                  <span> {"{"} </span><br />
                   </div>
-                  <div className="ml-4">
-                  <div>
-                  <span>"Distance": "7.8473 KM",</span>
+                  <div className="ml-5">
+                  <div className="txtColor">
+                    <span>"geometry": {"{"} </span>
+                    <div className="ml-4">
+                      <span>"coordinates": [</span>
+                    </div>
                   </div>
-                  <div>
-                  <span>"status": 200</span> 
+                  <div className="ml-5 pl-4">
+              <div>
+                <span className="txtColor">[</span>
+              </div>
+              <div className="ml-4 txtColor">
+                <span>90.384425,</span><br />
+                <span>23.726761</span>
+              </div>
+              <div>
+                <span className="txtColor">],</span>
+              </div>
+              <div>
+                <span className="txtColor">[</span>
+              </div>
+              <div className="ml-4 txtColor">
+                <span>90.384427,</span><br />
+                <span>23.726622</span>
+              </div>
+              <div>
+                <span className="txtColor">]</span>
+              </div>
+              </div>
                   </div>
+                  <div className="txtColor ml-5 pl-3">
+                  <span> ], </span><br />
+                  {/* <span>"type": 1.2604423448728288,</span><br /> */}
+                  <span>"type": <span className="url">"LineString"</span></span>
                   </div>
-                  <div>
-                  <span className={RoutStyle.smsColor}>{props.endBrk}</span>
-                  </div> */}
+                  <div className="txtColor ml-4">
+                  <span> {"},"} </span><br />
+                  <span> "distance": 15.5,</span><br />
+                  <span> "status": 200</span>
+                  </div>
+                  <span className="ml-3 txtColor">{"}"}</span>
+                  </div>
                   {/* <button type="button" className={RoutStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>

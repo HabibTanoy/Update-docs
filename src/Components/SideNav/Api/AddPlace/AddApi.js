@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 const AddApi = () => {
+  document.title = "Add Place . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Add Place</h1>
@@ -104,7 +105,7 @@ const AddApi = () => {
           </div>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
-          <div className="mt-3">
+          <div className="mt-3 mb-5">
           <pre className={Style.coding}>
           <code>
               <div>

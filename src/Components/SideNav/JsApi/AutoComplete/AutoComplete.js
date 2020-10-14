@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons"
 
 const AutoCompleteJs = () => {
+  document.title = "Autocomplete Tutoria . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Autocomplete Tutorial</h1>

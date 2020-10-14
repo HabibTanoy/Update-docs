@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 const AboutPricing = () => {
+  document.title = "General information about our pricing . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 mb-5 ${Style.api}`}>General information about our pricing</h1>

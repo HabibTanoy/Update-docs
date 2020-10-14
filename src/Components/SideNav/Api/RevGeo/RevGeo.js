@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
-const RevGeo = (props) => {
+const RevGeo = () => {
+  document.title = "Reverse Geocode . Barikoi Documentation";
   return ( 
       <div>
           <h1 className={`mt-4 ${Style.api}`}>Reverse Geocode</h1>

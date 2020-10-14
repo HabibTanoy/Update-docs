@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 const Distance = () => {
+  document.title = "Distance . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Distance</h1>
@@ -16,7 +17,7 @@ const Distance = () => {
 
             <pre className={Style.coding}>
               <code>
-                  <div>
+                  <div className="txtColor">
                       <span>https://barikoi.xyz/v1/api/distance/API_KEY/SOURCE_LONGITUDE,SOURCE_LATITUDE/TARGET_LONGITUDE,TARGET_LATITUDE</span>
                   </div>
                   {/* <button type="button" className={DistStyle.copyBtn}>Copy</button> */}

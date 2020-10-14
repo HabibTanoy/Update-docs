@@ -7,6 +7,7 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-s
 
 
 const AutoComplete = () => {
+  document.title = "Autocomplete . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Autocomplete</h1>

@@ -32,11 +32,14 @@ const Api = props => {
         }
        }
 
-       const routeStyle = {
-        padding:"4px 13px",
-        margin:"0",
-        borderRadius:".25rem"
-       }
+    //    const routeStyle = {
+    //     padding:"4px 13px",
+    //     margin:"0",
+    //     ':active': {
+    //         color: "#2ddbac",
+    //         backgroundColor: "rgba(0,0,0,.05)"
+    //     }
+    //    }
        
     return ( 
         <div className="textCover">
@@ -71,62 +74,62 @@ const Api = props => {
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/geo-server'>Reverse Geocoding (Server)</Link>
+                        <NavLink exact to='/geo-server'>Reverse Geocoding (Server)</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/geo-code'>Geocoding</Link>
+                        <NavLink exact to='/geo-code'>Geocoding</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/autocomplete'>Autocomplete</Link>
+                        <NavLink exact to='/autocomplete'>Autocomplete</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/nearby'>Nearby</Link>
+                        <NavLink exact to='/nearby'>Nearby</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/distance'>Distance</Link>
+                        <NavLink exact to='/distance'>Distance</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/rupantor'>Rupantor Geocoder</Link>
+                        <NavLink exact to='/rupantor'>Rupantor Geocoder</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/route-api'>Routing Api</Link>
+                        <NavLink exact to='/route-api'>Routing Api</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/add-place'>Add Place</Link>
+                        <NavLink exact to='/add-place'>Add Place</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/district'>District Api</Link>
+                        <NavLink exact to='/district'>District Api</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/sub-district'>Sub-District Api</Link>
+                        <NavLink exact to='/sub-district'>Sub-District Api</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/city-api'>City Api</Link>
+                        <NavLink exact to='/city-api'>City Api</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/union-api'>Union Api</Link>
+                        <NavLink exact to='/union-api'>Union Api</NavLink>
                         </li>
                     </ul>
                     

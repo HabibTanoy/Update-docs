@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons"
 
 const BillCycle = () => {
+  document.title = "Billing Cycle . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 mb-5 ${Style.api}`}>Billing Cycle</h1>

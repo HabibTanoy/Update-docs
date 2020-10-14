@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
-const Rupantor = props => {
+const Rupantor = () => {
+  document.title = "Rupantor Geocoder . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Rupantor Geocoder</h1>
@@ -62,40 +63,132 @@ const Rupantor = props => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Rupantor Geocoder API Request Example</h2>
           <pre className={Style.coding}>
               <code>
+                  <div className="txtColor">
+                    <span className="txt">let </span>
+                    <span>formData = </span>
+                    <span className="txt">new </span>
+                    <span>FormData();</span>    
+                  </div>
+                  <div className="mb-3">
+                  <span className="txt">let </span>
+                    <span className="txtColor">url = </span>
+                    <span className="url">'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode'</span>
+                  </div>
+                  <div className="mb-3">
+                  <span className="txt">let </span>
+                    <span className="txtColor">address = </span>
+                    <span className="url">'ave#3 barikoi office house no# 192 rd# 02 mirpur dohs section 12'</span>
+                  </div>
+                  <div className="txtColor">
+                  <span >formData.append(</span>
+                    <span className="url">'q' </span>
+                    <span>address);</span>
+                  </div>
+                  <div className="txtColor">
+                  <span >formData.append(</span>
+                    <span className="url">thana', 'yes' </span>
+                    <span>);</span>
+                  </div>
+                  <div className="txtColor">
+                  <span >formData.append(</span>
+                    <span className="url">'district', 'yes' </span>
+                    <span>);</span>
+                  </div>
+                  <div className="txtColor mb-4">
+                  <span>formData.append(</span>
+                    <span className="url">'bangla', 'yes' </span>
+                    <span>);</span>
+                  </div>
+                  <span className="txtColor">fetch(url, {"{"}</span>
+                  <div className="txtColor ml-5">
+                    <span>method: </span>
+                    <span className="url">'post',</span><br />
+                    <span>body: formData</span>
+                  </div>
+                  <div className="txtColor">
+                  <span className="ml-3">{"}"})</span><br />
+                    <span>.then(response ={">"} response.json())</span>
+                  </div>
                   <div>
-                      <span className="mr-3">fetch('https://barikoi.xyz/v1/api/distance/API_KEY/90.39534587,23.86448886/90.3673,23.8340')</span>
-                      </div>
-                      <div>
-                      <span>.then(response ={'>'} response.json())</span>
-                      </div>
-                      <div>
-                      <span>.catch(error ={'>'} console.error('Error:', error))</span>
-                      </div>
-                      <div>
-                      <span>.then(response ={'>'} console.log('Success:', response))</span>
-                      </div>
+                  <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
+                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
+                  </div>
+                  
                       {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
-          <div className="mt-3">
+          <div className="mt-3"> 
           <pre className={Style.coding}>
               <code>
-                  {/* <div>
-                  <span className={RupStyle.smsColor}>{props.brek}</span>
+              <div className="mb-3">
+                  <div className="txtColor">
+                  <span> {"{"} </span><br />
                   </div>
-                  <div className="ml-4">
+                  <div className="ml-5">
                   <div>
-                  <span>"Distance": "7.8473 KM",</span>
-                  </div>
-                  <div>
-                  <span>"status": 200</span> 
-                  </div>
+                    <span className="txtColor">"given_address": </span>
+                    <span className="url">"ave#3 barikoi office house no#192 rd#02 mirpur dohs section 12",</span>
                   </div>
                   <div>
-                  <span className={RupStyle.smsColor}>{props.endBrk}</span>
-                  </div> */}
+                    <span className="txtColor">"fixed_address": </span>
+                    <span className="url">"barikoi office, house 192, avenue 3, road 2, mirpur dohs, mirpur",</span>
+                  </div>
+                  <div>
+                    <span className="txtColor">"bangla_address": </span>
+                    <span className="url">"বাড়িকই অফিস, হাউস ১৯২, এভিনিউ ৩, রোড ২, মিরপুর ডিওএইচএস, মিরপুর",</span><br />
+                  </div>
+                  <div>
+                    <span className="txtColor">"address_status": </span>
+                    <span className="url">"complete",</span>
+                  </div>
+                  <span className="txtColor">"geocoded_address": {"{"}</span>
+                  <div className="ml-5 pl-4">
+              <div>
+                <span className="txtColor">"address": </span>
+                <span className="url">"House 192, Road 2, Mirpur DOHS, Mirpur, Dhaka",</span>
+              </div>
+              <div>
+                <span className="txtColor">"area": </span>
+                <span className="url">"Mirpur",</span>
+              </div>
+              <div>
+                <span className="txtColor">"city": </span>
+                <span className="url">"Dhaka",</span>
+              </div>
+              <div>
+                <span className="txtColor">"district": </span>
+                <span className="url">"Dhaka",</span>
+              </div>
+              <div>
+                <span className="txtColor">"latitude": </span>
+                <span className="url">"23.833979263544503",</span>
+              </div>
+                <span className="txtColor">"longitude": </span>
+                <span className="url">"90.36733254790306",</span>
+              <div>
+                <span className="txtColor">"pType": </span>
+                <span className="url">"Residential",</span><br />
+                <span className="txtColor">"postCode": 1216,</span>
+              </div>
+              <div>
+                <span className="txtColor">"thana": </span>
+                <span className="url">"Pallabi"</span>
+              </div>
+              <div>
+                <span className="txtColor">"ucode": </span>
+                <span className="url">"BKOI2017",</span>
+              </div>
+              </div>
+                  </div>
+                  <div className="txtColor ml-5 pl-3">
+                  <span> {"},"} </span><br />
+                  <span>"confidence_score_percentage": 95,</span><br />
+                  <span> "status": 200</span>
+                  </div>
+                  <span className="txtColor"> {"}"} </span>
+                  </div>
                   {/* <button type="button" className={RupStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
@@ -147,19 +240,53 @@ const Rupantor = props => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Rupantor Address Matcher API Request Example</h2>
 
           <pre className={Style.coding}>
-              <code>
+          <code>
+                  <div className="txtColor">
+                    <span className="txt">let </span>
+                    <span>formData = </span>
+                    <span className="txt">new </span>
+                    <span>FormData();</span>    
+                  </div>
+                  <div className="mb-3">
+                  <span className="txt">let </span>
+                    <span className="txtColor">url = </span>
+                    <span className="url">'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode'</span>
+                  </div>
+                  <div className="mb-3">
+                  <span className="txt">let </span>
+                    <span className="txtColor">address = </span>
+                    <span className="url">'ave#3 barikoi office house no# 192 rd# 02 mirpur dohs section 12'</span>
+                  </div>
+                  <div className="txtColor">
+                  <span >formData.append(</span>
+                    <span className="url">'q', 'হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর'</span>
+                    <span>);</span>
+                  </div>
+                  <div className="txtColor">
+                  <span >formData.append(</span>
+                    <span className="url">'q2', 'house 18, road 5, block G, section 2, mirpur'</span>
+                    <span>);</span>
+                  </div>
+                  <div className="txtColor mb-3">
+                  <span >formData.append(</span>
+                    <span className="url">'match', 'yes'</span>
+                    <span>);</span>
+                  </div>
+                  <span className="txtColor">fetch(url, {"{"}</span>
+                  <div className="txtColor ml-5">
+                    <span>method: </span>
+                    <span className="url">'post',</span><br />
+                    <span>body: formData</span>
+                  </div>
+                  <div className="txtColor">
+                  <span className="ml-3">{"}"})</span><br />
+                    <span>.then(response ={">"} response.json())</span>
+                  </div>
                   <div>
-                      <span className="mr-3">fetch('https://barikoi.xyz/v1/api/distance/API_KEY/90.39534587,23.86448886/90.3673,23.8340')</span>
-                      </div>
-                      <div>
-                      <span>.then(response ={'>'} response.json())</span>
-                      </div>
-                      <div>
-                      <span>.catch(error ={'>'} console.error('Error:', error))</span>
-                      </div>
-                      <div>
-                      <span>.then(response ={'>'} console.log('Success:', response))</span>
-                      </div>
+                  <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
+                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
+                  </div>
+                  
                       {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
@@ -198,7 +325,6 @@ const Rupantor = props => {
                   <span> "status": 200</span><br />
                   </div>
                   <span className="txtColor"> {"}"} </span>
-                  
                   </div>
                   <div className="override">
                     <span>// match_status defination</span><br />

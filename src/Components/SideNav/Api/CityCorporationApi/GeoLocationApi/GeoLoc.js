@@ -1,29 +1,30 @@
 import React from 'react';
-import GeoStyle from '../WardZoneApi/WardZone.module.css';
+import Style from '../Style.module.css'
 import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
-const GeoLocApi = props => {
+const GeoLocApi = () => {
+  document.title = "City Corporation by Geolocation . Barikoi Documentation";
     return ( 
         <div>
-            <h1 className={`mt-4 ${GeoStyle.api}`}>City Corporation by Geolocation</h1>
+            <h1 className={`mt-4 ${Style.api}`}>City Corporation by Geolocation</h1>
             <p style={{fontSize:"25px"}} className="mt-5 mb-3">
-              <code className={GeoStyle.get}>GET</code>
+              <code className={Style.get}>GET</code>
               City Corporation by Geolocation
             </p>
-            <pre className={GeoStyle.coding}>
+            <pre className={Style.coding}>
               <code>
-                  <div>
-                      <span>https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode</span>
+                  <div className="txtColor">
+                      <span>https://barikoi.xyz/v1/api/search/dncc/API_KEY/LONGITUDE/LATITUDE</span>
                   </div>
-                  <button type="button" className={GeoStyle.copyBtn}>Copy</button>
+                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
-          <p>Returns the City Corporation of given longitude and latitude.</p>
+          <p className={Style.text}>Returns the City Corporation of given longitude and latitude.</p>
 
-          <h2 className={`mt-4 mb-3 ${GeoStyle.intro}`}>API PARAMS</h2>
+          <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
             <Table striped bordered>
@@ -49,58 +50,50 @@ const GeoLocApi = props => {
             </Table>
           </div>
 
-          <h2 className={`mt-3 mb-3 ${GeoStyle.intro}`}>City Corporation by Geolocation API Request Example</h2>
+          <h2 className={`mt-3 mb-3 ${Style.intro}`}>City Corporation by Geolocation API Request Example</h2>
           <div className="mt-3">
-          <pre className={GeoStyle.coding}>
-              <code>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.brek}</span>
+          <pre className={Style.coding}>
+          <code>
+              <div>
+                  <span className="mr-3">
+                    <span className="txtColor">fetch(</span>
+                    <span className="url">'https://barikoi.xyz/v1/api/search/dncc/API_KEY/90.4186194745721/23.83136348674859'</span>
+                    <span className="txtColor">)</span>
+                    </span> <br />
+                    <div className="ml-3">
+                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
+                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
+                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
                   </div>
-                  <div className="ml-4">
-                  <div>
-                  <span>"Distance": "7.8473 KM",</span>
-                  </div>
-                  <div>
-                  <span>"status": 200</span> 
-                  </div>
-                  </div>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.endBrk}</span>
-                  </div>
-                  <button type="button" className={GeoStyle.copyBtn}>Copy</button>  
+              </div>
+                  {/* <button type="button" className={CityStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
           </div> 
 
-          <h2 className={`mt-3 mb-3 ${GeoStyle.intro}`}>Example Response</h2>
-          <div className="mt-3">
-          <pre className={GeoStyle.coding}>
-              <code>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.brek}</span>
+          <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
+          <div className="mt-3 mb-5">
+          <pre className={Style.coding}>
+          <code>
+              <div className="txtColor">
+                  <span>{"{"}</span>
+                      <div className="ml-4">
+                        <span>"message": </span>
+                        <span className="url">"DNCC"</span>
+                      </div> 
+                      <span >{"}"}</span>
                   </div>
-                  <div className="ml-4">
-                  <div>
-                  <span>"Distance": "7.8473 KM",</span>
-                  </div>
-                  <div>
-                  <span>"status": 200</span> 
-                  </div>
-                  </div>
-                  <div>
-                  <span className={GeoStyle.smsColor}>{props.endBrk}</span>
-                  </div>
-                  <button type="button" className={GeoStyle.copyBtn}>Copy</button>  
+                  {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>
           </div>
 
           <Row>
             <Col sm={6}> 
-            <div className={`mb-4 ${GeoStyle.previous}`}>
-              <Link to='/ward-zone-by-location' className={GeoStyle.next}>
-                  <h5 className={GeoStyle.onlyNext}>Previous</h5>
-                  <h4 className={`mb-0 ${GeoStyle.rev}`}>
+            <div className={`mb-4 ${Style.previous}`}>
+              <Link to='/ward-zone-by-location'>
+                  <h5>Previous</h5>
+                  <h4 className="mb-0">
                   <FontAwesomeIcon className="pr-1" icon={faAngleDoubleLeft} />
                   Ward {"&"} Zone by Geolocation</h4>
               </Link>

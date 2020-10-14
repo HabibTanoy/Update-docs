@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 
 const PricingApi = () => {
+  document.title = "API usage and pricing clearification . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 mb-5 ${Style.api}`}>API usage and pricing clearification</h1>
