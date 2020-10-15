@@ -12,7 +12,7 @@ const AndriodProject = () => {
             
             <h2 className={`mt-4 mb-3 ${Style.intro}`}>Create an Android Studio project</h2>
             <p className={Style.text}>Familiarize yourself with Android Studio. You'll need to create a new project with an empty activity. Use the following options when creating a new Android Studio project:</p>
-            <div className={Style.text}>
+            <div className={`mb-5 ${Style.text}`}>
                 <ul>
                     <li className="mb-3" style={{listStyleType: "disc"}}>Under Select the form factors your app will run on, check "Phone and Tablet.</li>
                     <li className="mb-3" style={{listStyleType: "disc"}}>For minimum SDK, select API 16: Android 4.1 (JellyBean). (This is the lowest API level currently supported by Barikoi Location Library for Android.)</li>
@@ -21,6 +21,7 @@ const AndriodProject = () => {
                     <li className="mb-3" style={{listStyleType: "disc"}}>Accept the default Activity Name and Layout Name and click Finish.</li>   
                 </ul>
             </div>
+
             <Row>
             <Col sm={6}> 
             <div className={`mb-4 ${Style.previous}`}>

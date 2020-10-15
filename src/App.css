@@ -99,4 +99,21 @@ ul li a {
 #demo {
   position: fixed;
   top: 50px;
+} 
+
+.btn-outline-info {
+  color: #2ddbac !important;
+  border-color: #2ddbac !important
+}
+
+.btn-outline-info:hover {
+  background-color: #2ddbac !important;
+  color: #f8f8f2 !important
+}
+
+.bdocs {
+  margin-top: 150px;
+  color: #2ddbac;
+  font-weight: bold;
+  font-size: 50px;
 }

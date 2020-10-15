@@ -95,7 +95,7 @@ const PlaceApi = () => {
 
             <h2 className={`mt-3 mb-3 ${Style.intro}`}>API Usage Clarification</h2>
             <p className={`mt-3 ${Style.text}`}>A single API request and a single API call are not always the same. A single API request to the server might call multiple APIs. An API might depend on other internal APIs to deliver the desired response. The number of call depends on the number of parameters of a request and the number of internal API calls needed to make to provide the desired response. For instance, A single request to Rupantor API results in two API calls since Rupantor API uses geocode API to operate. Routing API follows the same formalities as Rupantor.</p>
-            <p className={`mt-3 ${Style.text}`}>For any query or tech support please mail at <span style={{color:"#2ddbac"}} >support@barikoi.com</span> </p>
+            <p className={`mt-3 mb-5 ${Style.text}`}>For any query or tech support please mail at <span style={{color:"#2ddbac"}} >support@barikoi.com</span> </p>
             <Row>
             <Col sm={6}> 
             </Col>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Nav, Navbar} from 'react-bootstrap'
+import {Nav, Navbar} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 import NavStyle from '../Navbar/Nav.module.css'
@@ -23,15 +24,13 @@ class MainNav extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                        <Nav.Link href="#features" className={`${NavStyle.docs} pl-0`}>docs</Nav.Link>
+                        <Link to="/" className={`${NavStyle.docs} pl-0`}>docs</Link>
                         </Nav>
                         <Nav>
-                        {/* <Nav.Link className={NavStyle.login}>Android Location Library</Nav.Link>
-                        <Nav.Link className={NavStyle.login}>Pricing</Nav.Link> */}
-                        <Nav.Link className={NavStyle.login}>Log in</Nav.Link>
-                        <Nav.Link className={NavStyle.signup}>Sign up
-                        <FontAwesomeIcon className="pl-1" icon={faLongArrowAltRight} />
-                        </Nav.Link>
+                        <Link to="/intro" className={NavStyle.navTag}>API</Link>
+                        <Link to="/library-intro" className={NavStyle.navTag}>JavaScript Library</Link>
+                        <Link to="/android-intro" className={NavStyle.navTag}>Android Location Library</Link>
+                        <Link to="/pricing-intro" className={NavStyle.navTag}>Pricing</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

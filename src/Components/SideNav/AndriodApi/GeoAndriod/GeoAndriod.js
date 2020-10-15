@@ -57,7 +57,7 @@ const GeoAndriod = () => {
           </pre>
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Autocomplete Library</h2>
-            <pre className={Style.coding}>
+            <pre className={`mb-5 ${Style.coding}`}>
             <code>
                   <div className="mb-3">
                     <div className="txtColor">

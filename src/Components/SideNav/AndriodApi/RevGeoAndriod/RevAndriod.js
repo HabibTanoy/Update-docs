@@ -10,7 +10,7 @@ const RevAndriod = () => {
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Reverse Geocoding</h1>
             <h2 className={`mt-4 mb-3 ${Style.intro}`}>Reverse Geocoding Library</h2>
-            <pre className={Style.coding}>
+            <pre className={`mb-5 ${Style.coding}`}>
             <code>
                   <div className="mb-3">
                     <div className="txtColor">

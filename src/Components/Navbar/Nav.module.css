@@ -23,9 +23,26 @@
 .docs {
     font-size: 25px;
     font-weight: bold;
+    color: rgba(0,0,0,.5);
+    text-decoration: none !important;
+}
+.docs:hover {
+    color: rgba(0,0,0,.5);
 }
 
-.login {
+.navTag {
+    font-size: 18px;
+    text-decoration: none !important;
+    color: rgba(0,0,0,.5);
+    margin-left: 10px;
+    letter-spacing: 0px;
+}
+
+.navTag:hover {
+    color: rgba(0,0,0,.5);
+}
+
+/* .login {
     font-size: 1.3rem;
 }
 
@@ -33,5 +50,5 @@
     font-size: 1.3rem;
     font-weight: bold;
     color: rgba(14,30,37,.87) !important
-}
+} */
 

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ScrollToTopRoute from '../ScrollToTopRoute';
 import { Container, Row, Col } from 'react-bootstrap'
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import HomePage from '../Homepage/HomePage';
 import Api from '../Api/Api';
 import JsApi from '../JsApi/JsLibApi';
 import AndriodApi from '../AndriodApi/AndriodApi';
-import Pricing from '../Pricing/Pricing'
+import Pricing from '../Pricing/Pricing';
+//Api
 import PlaceApi from '../Api/PlaceApi/PlaceApi';
 import RevGeo from '../Api/RevGeo/RevGeo';
 import GeoServer from '../Api/GeoServer/GeoServer';
@@ -89,6 +91,7 @@ class SideNav extends Component {
                         </Col>
                         <Col sm={8}>
                             <Switch>
+                            <ScrollToTopRoute exact path="/" component={HomePage}/>    
                             <ScrollToTopRoute path="/intro" component={PlaceApi}/>
                             <ScrollToTopRoute path="/rev-geo" component={RevGeo} />
                             <ScrollToTopRoute path="/geo-server" component={GeoServer} />

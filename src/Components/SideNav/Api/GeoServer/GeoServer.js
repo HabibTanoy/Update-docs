@@ -102,7 +102,7 @@ const GeoServer = () => {
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
-          <div className="mt-3">
+          <div className="mt-3 mb-5">
           <pre className={Style.coding}>
           <code>
               <div>
