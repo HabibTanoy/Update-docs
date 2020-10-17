@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Radium from 'radium'
 import ApiStyle from '../Api/Api.module.css'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const JsApi = props => {
     const toggler = props.toggle;
@@ -45,41 +45,41 @@ const JsApi = props => {
                     <div className={ApiStyle.subUl}>
                         <ul>
                     <li className="subHeader">
-                        <a className="textCover">Getting started</a>
+                        <span className="textCover">Getting started</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/library-intro">Getting started</Link>
+                        <NavLink exact to="/library-intro">Getting started</NavLink>
                         </li>
                     </ul>
                 </ul>
                 <ul>
                     <li className="subHeader">
-                        <a className="textCover">Barikoi.JS</a>
+                        <span className="textCover">Barikoi.JS</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/search-js">Search</Link>
+                        <NavLink exact to="/search-js">Search</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/geocoding-js">Geocoding</Link>
+                        <NavLink exact to="/geocoding-js">Geocoding</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/rev-geo-js">Reverse Geocoding</Link>
+                        <NavLink exact to="/rev-geo-js">Reverse Geocoding</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}> 
-                        <Link exact to="/nearby-js">Nearby</Link>
+                        <NavLink exact to="/nearby-js">Nearby</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/autocomplete-js">Autocomplete Tutorial</Link> 
+                        <NavLink exact to="/autocomplete-js">Autocomplete Tutorial</NavLink> 
                         </li>
                     </ul>
                 </ul>

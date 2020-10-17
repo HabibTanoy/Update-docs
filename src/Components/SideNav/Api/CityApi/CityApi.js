@@ -214,7 +214,201 @@ const CityApi = () => {
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
               <code>
-                  
+              <div>
+              <div className="txtColor">
+              <div>
+              <span>{"{"}</span>
+              </div>
+              <div className="ml-4">
+              <span className="ml-1">"places": {"["}</span><br />
+              <span className="ml-3"> {"{"} </span>
+              </div>
+              </div>
+              <div className="ml-5 pl-4">
+              <div className="txtColor">
+                <span >"name": <span className="url">"Rajshahi",</span></span><br />
+                <span>"areas": []</span>
+              </div>
+              </div>
+              <span className="ml-5 txtColor"> {"},"} </span>
+              </div>
+              <div className="ml-4">
+              <span className="ml-4 txtColor"> {"{"} </span>
+              <div className="ml-5 pl-4">
+              <div className="txtColor">
+                <span >"name": <span className="url">"Khulna",</span></span><br />
+                <span>"areas": []</span>
+              </div>
+              </div>
+              </div>
+              <span className="ml-5 txtColor"> {"},"} </span>
+              <div className="ml-4">
+              <span className="ml-4 txtColor"> {"{"} </span>
+              <div className="ml-5 pl-4">
+              <div className="txtColor">
+                <span >"name": <span className="url">"Barisal",</span></span><br />
+                <span>"areas": []</span>
+              </div>
+              </div>
+              </div>
+              <span className="ml-5 txtColor"> {"},"} </span>
+              <div className="ml-4">
+              <span className="ml-4 txtColor"> {"{"} </span>
+              <div className="ml-5 pl-4">
+              <div className="txtColor">
+                <span >"name": <span className="url">"Dhaka",</span></span><br />
+                <span>"areas": [</span>
+                {/* objectOne */}
+                <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Moghbazar"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectTwo */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Gendaria"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectThree */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Sher E Bangla Nagar"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectFour */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Tejgaon"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectFive */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Mohakhali"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectSix */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Ramna"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectSeven */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Sadarghat"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectEight */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Banani"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectNine */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Lalmatia"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"},"} </span>
+              </div>
+              </div>
+              </div>
+              {/* objectTen */}
+              <div>
+              <div className="txtColor ml-4">
+              <span> {"{"} </span>
+              <div className="txtColor ml-5">
+                <span >"name": <span className="url">"Dhanmondi"</span></span>
+              </div>
+              <div className="txtColor">
+              <span> {"}"} </span>
+              </div>
+              <span>.......</span><br />
+              </div>
+              <span>]</span>
+              </div>
+              </div>
+              </div>
+              </div>
+              <span className="ml-5 txtColor"> {"},"} </span>
+              <div className="ml-4">
+              <span className="ml-4 txtColor"> {"{"} </span>
+              <div className="ml-5 pl-4">
+              <div className="txtColor">
+                <span >"name": <span className="url">"Chittagong",</span></span><br />
+                <span>"areas": []</span>
+              </div>
+              </div>
+              </div>
+              <span className="ml-5 txtColor"> {"},"} </span>
+              <div className="ml-4">
+              <span className="ml-4 txtColor"> {"{"} </span>
+              <div className="ml-5 pl-4">
+              <div className="txtColor">
+                <span >"name": <span className="url">"Sylhet",</span></span><br />
+                <span>"areas": []</span>
+              </div>
+              </div>
+              </div>
+              <span className="ml-5 txtColor"> {"},"} </span>
+              <div className="ml-3 txtColor">
+                <span>],</span><br />
+                <span>"status": 200</span>
+              </div>
+              <span className="txtColor"> {"},"} </span>
                   {/* <button type="button" className={CityStyle.copyBtn}>Copy</button>   */}
               </code>
           </pre>

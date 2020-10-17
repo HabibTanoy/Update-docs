@@ -55,7 +55,7 @@ const Api = props => {
                     <div className={ApiStyle.subUl}>
                         <ul>
                     <li className="subHeader">
-                        <a className="textCover">Getting started</a>
+                        <span className="textCover">Getting started</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked} >
@@ -65,7 +65,7 @@ const Api = props => {
                 </ul>
                 <ul>
                     <li className="subHeader">
-                        <a className="textCover">Barikoi Places API</a>
+                        <span className="textCover">Barikoi Places API</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
@@ -136,26 +136,26 @@ const Api = props => {
                 </ul>
                 <ul>
                     <li className="subHeader">
-                        <a className="textCover">City Corporation API</a>
+                        <span className="textCover">City Corporation API</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/ward-by-location'>Ward by Geo location</Link>
+                        <NavLink exact to='/ward-by-location'>Ward by Geo location</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to='/zone-by-location'>Zone by Geo location</Link>
+                        <NavLink exact to='/zone-by-location'>Zone by Geo location</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/ward-zone-by-location">Ward {"&"} Zone by Geolocation</Link>
+                        <NavLink exact to="/ward-zone-by-location">Ward {"&"} Zone by Geolocation</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link exact to="/city-corp-by-location">City Corporation by Geolocation</Link>
+                        <NavLink exact to="/city-corp-by-location">City Corporation by Geolocation</NavLink>
                         </li>
                     </ul>
                     

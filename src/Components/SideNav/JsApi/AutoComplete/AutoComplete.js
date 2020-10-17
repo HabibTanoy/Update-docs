@@ -145,8 +145,127 @@ const AutoCompleteJs = () => {
                     <span className="txtColor">{"<"}</span>
                       <span className="url">body</span>
                       <span className="txtColor">{">"}</span>
+                      <div className="txtColor ml-3">
+                      <span>{"<"}</span>
+                      <span className="url">h1</span>
+                      <span>{">"}</span>
+                      <span>Barikoi Autocomplete Demo</span>
+                      <span>{"<"}</span>
+                      <span className="url">h1</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor ml-3 mt-3">
+                      <span>{"<"}</span>
+                      <span className="url">div</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor ml-5">
+                      <span>{"<"}</span>
+                      <span className="url">input </span>
+                      <span>type=</span>
+                      <span className="url">"text" </span>
+                      <span>class=</span>
+                      <span className="url">"bksearch"</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor ml-5">
+                      <span>{"<"}</span>
+                      <span className="url">div </span>
+                      <span>type=</span>
+                      <span className="url">"bklist"</span>
+                      <span>{">"}</span><br />
+                      <span>{"</"}</span>
+                      <span className="url">div</span>
+                      <span>{">"}</span>
+                      </div>
                     </div>
+                    <div className="txtColor ml-3">
+                      <span>{"</"}</span>
+                      <span className="url">div</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor mt-3">
+                      <span>{"<"}</span>
+                      <span className="url">div </span>
+                      <span>id=</span>
+                      <span className="url">"map"</span>
+                      <span> style=</span>
+                      <span className="url">"height: 400px;"</span>
+                      <span>{">"}</span>
+                      <span>{"</"}</span>
+                      <span className="url">div</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor my-5">
+                      <span>{"<"}</span>
+                      <span className="url">script </span>
+                      <span>src=</span>
+                      <span className="url">"https://cdn.jsdelivr.net/gh/barikoi/barikoi-js@b6f6295467c19177a7d8b73ad4db136905e7cad6/dist/barikoi.min.js?key:MTM0MjpTTzVSU0hCOFFO"</span>
+                      <span>{">"}</span>
+                      <span>{"</"}</span>
+                      <span className="url">script</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor">
+                      <span>{"<"}</span>
+                      <span className="url">script</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor">
+                        <span className="txt">const </span>
+                        <span>defaultMarker = [23.7104, 90.40744]</span>
+                      </div>
+                      <div className="txtColor">
+                        <span className="txt">let </span>
+                        <span>map = L.map(</span>
+                        <span className="url">'map'</span>
+                        <span>)</span><br />
+                        <span>map.setView(defaultMarker, 13)</span>
+                      </div>
+                      <span className="override">// Set up the OSM layer</span><br />
+                      <span className="txtColor">L.tileLayer(</span><br />
+                      <span className="url">'http://{"{"}s{"}"}.tile.openstreetmap.org/{"{"}z{"}"}/{"{"}x{"}"}/{"{"}y{"}"}.png'</span>
+                      <span className="txtColor">, {"{"}</span>
+                      <div className="txtColor">
+                        <span className="ml-3">maxZoom: 18</span><br />
+                        <span>{"}"}).addTo(map)</span><br />
+                        <span>L.marker(defaultMarker).addTo(map)</span>
+                        <div>Bkoi.onSelect(<span className="function">function</span> () {"{"}</div>
+                        <div className="ml-3">
+                        <span className="override">// get selected data from dropdown list</span>
+                        <div className="txtColor">
+                        <span className="txt">let </span>
+                        <span>selectedPlace = Bkoi.getSelectedData()</span>
+                      </div>
+                        <span className="override">// center of the map</span>
+                        <div className="txtColor">
+                        <span className="txt">let </span>
+                        <span>center = [selectedPlace.latitude, selectedPlace.longitude]</span>
+                      </div>
+                        <span className="override">// Add marker to the map {"&"} bind popup</span>
+                        <div>
+                          <span>map.setView(center, 19)</span><br />
+                          <span>L.marker(center).addTo(map).bindPopup(selectedPlace.address)</span>
+                        </div>
+                        </div>  
+                        <span>{"}"})</span>
+                      </div>
+                      <div className="txtColor ml-2">
+                      <span>{"</"}</span>
+                      <span className="url">script</span>
+                      <span>{">"}</span>
+                      </div>
+                      <div className="txtColor">
+                      <span>{"</"}</span>
+                      <span className="url">body</span>
+                      <span>{">"}</span>
+                      </div>
                   </div>
+                  <div className="txtColor">
+                      <span>{"</"}</span>
+                      <span className="url">html</span>
+                      <span>{">"}</span>
+                      </div>
                   {/* <button type="button" className={AutoStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>

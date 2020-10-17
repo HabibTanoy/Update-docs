@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Radium from 'radium'
 import ApiStyle from '../Api/Api.module.css'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const AndriodApi = props => {
     const toggler = props.toggle;
@@ -45,51 +45,51 @@ const AndriodApi = props => {
                     <div className={ApiStyle.subUl}>
                         <ul>
                     <li className="subHeader">
-                        <a className="textCover">Getting started</a>
+                        <span className="textCover">Getting started</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-intro">Getting started</Link>
+                        <NavLink to="/android-intro">Getting started</NavLink>
                         </li>
                     </ul>
                 </ul>
                 <ul>
                     <li className="subHeader">
-                        <a className="textCover">Location Library for Android</a>
+                        <span className="textCover">Location Library for Android</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-project">Create an Android Studio project</Link>
+                        <NavLink to="/android-project">Create an Android Studio project</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-location">Barikoi Location Library</Link>
+                        <NavLink to="/android-location">Barikoi Location Library</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-token">Get an access token</Link>
+                        <NavLink to="/android-token">Get an access token</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-search">Search</Link> 
+                        <NavLink to="/android-search">Search</NavLink> 
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}> 
-                        <Link to="/android-geocoding">Geocoding</Link>
+                        <NavLink to="/android-geocoding">Geocoding</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-rev-geocoding">Reverse Geocoding</Link>
+                        <NavLink to="/android-rev-geocoding">Reverse Geocoding</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/android-nearby">Nearby</Link>
+                        <NavLink to="/android-nearby">Nearby</NavLink>
                         </li>
                     </ul>
                 </ul>

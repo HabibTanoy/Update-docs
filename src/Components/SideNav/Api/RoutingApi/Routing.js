@@ -78,17 +78,86 @@ const RoutingApi = () => {
           <div className="mt-3">
           <pre className={Style.coding}>
           <code>
-              <div>
-                  <span className="mr-3">fetch('https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?overview=true&alternatives=true&steps=true&hints=')</span>
+              <div className="txtColor">
+                <span>{"{"}</span>
+              </div>
+              <div className="ml-4 txtColor">
+                <span>"code": </span>
+                <span className="url">"Ok",</span><br />
+                <span>"routes": [</span>
+                  <div className="ml-3">
+                  <span>{"{"}</span>
+                  <div className="txtColor ml-4">
+                  <span>"geometry": </span>
+                  <span className="url">"g{"}"}bqCmhpfPjf@uE_P_~BueAjZ{"}"}sDpCg@~t@_{"{"}DdfF{"}"}ZbrCodA`bCsM{"{"}m@ojCaUw^meAmg@eS_~A_Ok{"}"}AbFmXbQoi@mmAuxEfS",</span><br />
+                  <span>"legs": [</span>
+                    <div className="ml-3">
+                   <span>{"{"}</span>
+                   <div className="txtColor ml-4">
+                   <span>"steps": [],</span><br />
+                    <span>"distance": 33452.2,</span><br />
+                      <span>"duration": 2481.4,</span><br />
+                      <div>
+                        <span>"summary": </span>
+                        <span className="url">"",</span>
+                        </div>
+                          <span>"weight": 2481.4</span>
+                   </div>
+                   <span>{"}"}</span>
+                    </div>
+                    <div>
+                    <span>],</span><br />
+                    <span>"distance": 33452.2,</span><br />
+                    <span>"duration": 2481.4,</span><br />
+                      <div>
+                        <span>"weight_name": </span>
+                        <span className="url">"routability",</span>
+                      </div>
+                        <span>"weight": 2481.4</span>
+                    </div>
+                    <span>{"}"}</span>
                   </div>
-                  <div>
-                  <span>.then(response ={'>'} response.json())</span>
+                  <span>],</span>
+                  <div className="ml-4">
+                    <span>"waypoints": [</span><br />
+                      <span className="ml-3">{"{"}</span>
+                      <div className="ml-5">
+                        <span>"hint": </span>
+                        <span className="url">"V10DgFldA4AAAAAAJwAAAAAAAAAfAQAAAAAAAFZN10EAAAAA6SFHQwAAAAAnAAAAAAAAAB8BAACEAAAA6tliBeZObQG10mIF1E9tAQAATwvGEH3j",</span><br />
+                        <span>"distance": 189.684241,</span>
+                        <div>
+                        <span>"name": </span>
+                        <span className="url">"",</span>
+                        </div>
+                        <span>"location": [</span>
+                        <div className="ml-4">
+                          <span>90.364394,</span><br />
+                          <span>23.940838</span>
+                        </div>
+                        <span>]</span>
+                      </div>
+                      <span className="ml-3">{"},"}</span><br />
+                      <span className="ml-3">{"{"}</span>
+                      <div className="ml-5">
+                        <span>"hint": </span>
+                        <span className="url">"xy0BgPzPAoBDAAAAKwAAAL8QAAAtBgAAjQGVQqNFPkI1VJRFXcnaREMAAAArAAAAvxAAAC0GAACEAAAAsjtiBbBHcAFRHGIFTkJwATMAnwrGEH3j",</span><br />
+                        <span>"distance": 830.734383,</span>
+                        <div>
+                        <span>"name": </span>
+                        <span className="url">"Mouchak - Fulbari Road",</span>
+                        </div>
+                        <span>"location": [</span>
+                        <div className="ml-4">
+                          <span>90.32389,</span><br />
+                          <span>24.1356</span>
+                        </div>
+                        <span>]</span>
+                      </div>
+                      <span className="ml-3">{"}"}</span>
                   </div>
-                  <div>
-                  <span>.catch(error ={'>'} console.error('Error:', error))</span>
+                  <span className="ml-2">]</span>
                   </div>
-                  <div>
-                  <span>.then(response ={'>'} console.log('Success:', response))</span>
+                  <span>{"}"}</span>
               </div>
                       {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
               </code>

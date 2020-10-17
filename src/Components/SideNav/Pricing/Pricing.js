@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import Radium from 'radium'
@@ -44,36 +44,36 @@ const Pricing = props => {
                     <div className={ApiStyle.subUl}>
                         <ul>
                     <li className="subHeader">
-                        <a className="textCover">Getting started</a>
+                        <span className="textCover">Getting started</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/pricing-intro">Getting started</Link>
+                        <NavLink to="/pricing-intro">Getting started</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/pricing-general">General information about our pricing</Link>
+                        <NavLink to="/pricing-general">General information about our pricing</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/pricing-call">API usage and pricing clearification</Link>
+                        <NavLink to="/pricing-call">API usage and pricing clearification</NavLink>
                         </li>
                     </ul>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/pricing-limit">What happens when i go over the call limit</Link>
+                        <NavLink to="/pricing-limit">What happens when i go over the call limit</NavLink>
                         </li>
                     </ul>
                 </ul>
                 <ul>
                     <li className="subHeader">
-                        <a className="textCover">Billing Cycle</a>
+                        <span className="textCover">Billing Cycle</span>
                     </li>
                     <ul>
                         <li className={ApiStyle.linked}>
-                        <Link to="/pricing-details">Billing Cycle</Link>
+                        <NavLink to="/pricing-details">Billing Cycle</NavLink>
                         </li>
                     </ul> 
                 </ul>
