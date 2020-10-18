@@ -97,7 +97,7 @@ class SideNav extends Component {
                         </Col>
                         <Col sm={8}>
                             <Switch>
-                            <ScrollToTopRoute exact path="/" component={HomePage}/>    
+                            <ScrollToTopRoute exact path="/" component={() => <HomePage toggleHandle={this.toggleHandle} toggle={this.state.toggle} />}/>    
                             <ScrollToTopRoute path="/intro" component={PlaceApi}/>
                             <ScrollToTopRoute path="/rev-geo" component={RevGeo} />
                             <ScrollToTopRoute path="/geo-server" component={GeoServer} />
