@@ -57,8 +57,14 @@ class SideNav extends Component {
         pricing: false
      }
 
-     toggleHandle = (flag, current_value) => {
+    toggleHandle = (flag, current_value) => {
+        const tempObj = this.state
+        Object.keys(tempObj).forEach(key => {
+            tempObj[key] = false
+        })
+
         this.setState({
+            ...tempObj,
           [flag]: !current_value
         });
         // console.log("Clicked")
