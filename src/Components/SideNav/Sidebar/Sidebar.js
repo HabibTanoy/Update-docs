@@ -47,7 +47,8 @@ import PricingStart from '../Pricing/StartPricing/PricingStart';
 import AboutPricing from '../Pricing/AboutPricing/AboutPricing';
 import PricingApi from '../Pricing/ApiPricing/PricingApi';
 import LimitCall from '../Pricing/CallLimit/LimitCall';
-import BillCycle from '../Pricing/BillCycle/BillCycle'
+import BillCycle from '../Pricing/BillCycle/BillCycle';
+import MapAdd from '../Pricing/MapAdd/Map'
 
 class SideNav extends Component {
     state = { 
@@ -138,6 +139,7 @@ class SideNav extends Component {
                             <ScrollToTopRoute path="/pricing-call" component={PricingApi} />
                             <ScrollToTopRoute path="/pricing-limit" component={LimitCall} />
                             <ScrollToTopRoute path="/pricing-details" component={BillCycle} />
+                            <ScrollToTopRoute path="/map-add" component={MapAdd} />
                             </Switch>
                         </Col>
                     </Row>

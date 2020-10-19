@@ -76,6 +76,11 @@ const Pricing = props => {
                         <NavLink to="/pricing-details">Billing Cycle</NavLink>
                         </li>
                     </ul> 
+                    <ul>
+                        <li className={ApiStyle.linked}>
+                        <NavLink to="/map-add">Map</NavLink>
+                        </li>
+                    </ul> 
                 </ul>
                 
                     </div> : null

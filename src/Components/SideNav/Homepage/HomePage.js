@@ -10,13 +10,13 @@ const HomePage = ({ toggleHandle, toggle }) => {
                 <Link to="/intro" onClick={ () => toggleHandle("toggle", toggle) }>
                 <Button className="text-uppercase mr-2" variant="outline-info">barikoi api</Button>
                 </Link>
-            <Link to="/library-intro">
+            <Link to="/library-intro" onClick={ () => toggleHandle("jsToggle", toggle) }>
             <Button className="text-uppercase mr-2" variant="outline-info">javascript api</Button>
             </Link>
-            <Link to="/android-intro">
+            <Link to="/android-intro" onClick={ () => toggleHandle("AndApi", toggle) }>
             <Button className="text-uppercase mr-2" variant="outline-info">andriod sdk</Button>
             </Link>
-            <Link to="/pricing-intro">
+            <Link to="/pricing-intro" onClick={ () => toggleHandle("pricing", toggle) }>
             <Button className="text-uppercase" variant="outline-info">pricing</Button>
             </Link>
             </div>

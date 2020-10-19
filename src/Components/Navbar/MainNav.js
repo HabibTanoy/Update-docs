@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {Nav, Navbar} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 import NavStyle from '../Navbar/Nav.module.css'
 
 
@@ -11,6 +9,7 @@ class MainNav extends Component {
     state = { 
         offical_address:'https://barikoi.com/'
      }
+
     
     render() { 
         return ( 
