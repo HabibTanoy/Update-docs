@@ -22,7 +22,7 @@ const CityApi = () => {
                   </div>
                   {/* <button type="button" className={CityStyle.copyBtn}>Copy</button> */}
               </code>
-          </pre>
+            </pre>
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 

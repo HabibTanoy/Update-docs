@@ -119,8 +119,8 @@ const AddApi = () => {
                   </div> 
                   <span className="txtColor"> {"}"} </span>
               </div>
-                    <button type="button" className={Style.copyBtn}
-                    >Copy</button>  
+                    {/* <button type="button" className={Style.copyBtn}
+                    >Copy</button>   */}
                 </code>
           </pre>
           </div>

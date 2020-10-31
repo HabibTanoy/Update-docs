@@ -49,6 +49,15 @@ import PricingApi from '../Pricing/ApiPricing/PricingApi';
 import LimitCall from '../Pricing/CallLimit/LimitCall';
 import BillCycle from '../Pricing/BillCycle/BillCycle';
 import MapAdd from '../Pricing/MapAdd/Map'
+//Bkoi-verify-Auth
+import Login from '../Api/Bkoi-Verify/Login/Login';
+import Registration from '../Api/Bkoi-Verify/Registration/Registration';
+import Logout from '../Api/Bkoi-Verify/Logout/logout';
+//Verify-Api
+import CreateApp from '../Api/Bkoi-Verify/CreateApplication/createApp';
+import AppList from '../Api/Bkoi-Verify/ApplicationList/AppList';
+import AppDetails from '../Api/Bkoi-Verify/ApplicationDetails/AppDetails';
+import AppRequest from '../Api/Bkoi-Verify/RequestRevision/AppRequest';
 
 class SideNav extends Component {
     state = { 
@@ -98,6 +107,7 @@ class SideNav extends Component {
                         </Col>
                         <Col sm={8}>
                             <Switch>
+                            //API
                             <ScrollToTopRoute exact path="/" component={() => <HomePage toggleHandle={this.toggleHandle} toggle={this.state.toggle} />}/>    
                             <ScrollToTopRoute path="/intro" component={PlaceApi}/>
                             <ScrollToTopRoute path="/rev-geo" component={RevGeo} />
@@ -113,18 +123,28 @@ class SideNav extends Component {
                             <ScrollToTopRoute path="/sub-district" component={SubDistrict} />
                             <ScrollToTopRoute path="/city-api" component={CityApi} />
                             <ScrollToTopRoute path="/union-api" component={UnionApi} />
+                            //wardApi
                             <ScrollToTopRoute path="/ward-by-location" component={WardApi} />
                             <ScrollToTopRoute path="/zone-by-location" component={ZoneApi} />
                             <ScrollToTopRoute path="/ward-zone-by-location" component={WardZoneApi} />
                             <ScrollToTopRoute path="/city-corp-by-location" component={GeoLocApi} />
-                          
+                            //Bkoi-Verify-Auth
+                            <ScrollToTopRoute path="/verify-login" component={Login} />
+                            {/* <ScrollToTopRoute path="/verify-registration" component={Registration} /> */}
+                            <ScrollToTopRoute path="/verify-logout" component={Logout} />
+                            //Verify Api
+                            <ScrollToTopRoute path="/app-create" component={CreateApp} />
+                            <ScrollToTopRoute path="/app-list" component={AppList} />
+                            <ScrollToTopRoute path="/app-details" component={AppDetails} />
+                            <ScrollToTopRoute path="/app-request" component={AppRequest} />
+                            //Js-Library
                             <ScrollToTopRoute path="/library-intro" component={JsStart} />
                             <ScrollToTopRoute path="/search-js" component={SearchJs} />
                             <ScrollToTopRoute path="/geocoding-js" component={GeoJs} />
                             <ScrollToTopRoute path="/rev-geo-js" component={RevGeoJs} />
                             <ScrollToTopRoute path="/nearby-js" component={NearbyJs} />
                             <ScrollToTopRoute path="/autocomplete-js" component={AutoCompleteJs} />
-                            
+                            //Andriod 
                             <ScrollToTopRoute path="/android-intro" component={AndriodStart} />
                             <ScrollToTopRoute path="/android-project" component={AndriodProject} />
                             <ScrollToTopRoute path="/android-location" component={LocationAndriod} />
@@ -133,7 +153,7 @@ class SideNav extends Component {
                             <ScrollToTopRoute path="/android-geocoding" component={GeoAndriod} />
                             <ScrollToTopRoute path="/android-rev-geocoding" component={RevAndriod} />
                             <ScrollToTopRoute path="/android-nearby" component={NearbyAndriod} />
-
+                            //Pricing
                             <ScrollToTopRoute path="/pricing-intro" component={PricingStart} />
                             <ScrollToTopRoute path="/pricing-general" component={AboutPricing} />
                             <ScrollToTopRoute path="/pricing-call" component={PricingApi} />

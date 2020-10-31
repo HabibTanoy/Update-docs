@@ -99,16 +99,16 @@ const GeoLocApi = () => {
               </Link>
           </div>
             </Col>
-            {/* <Col sm={6}>
-            <div className={`mb-4 nxt ${WZStyle.previous}`}>
-              <Link to='/city-corp-by-location' className={WZStyle.next}>
-                  <h5 className={WZStyle.onlyNext}>Next</h5>
-                  <h4 className={`mb-0 ${WZStyle.rev}`}> Ward {"&"} City Corporation by Geolocation
+            <Col sm={6}>
+            <div className={`mb-4 ${Style.previous} ${Style.next}`}>
+              <Link to='/app-create'>
+                  <h5>Next</h5>
+                  <h4 className="mb-0">Create Application
                   <FontAwesomeIcon className="pl-1" icon={faAngleDoubleRight} />
                   </h4>
               </Link>
           </div>
-            </Col> */}
+            </Col>
           </Row>
         </div>
      );

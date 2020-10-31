@@ -66,6 +66,11 @@ ul li a {
   border-radius:.25rem;
 }
 
+#sub {
+  font-size: 15px;
+  margin-left: 26px;
+}
+
 .subHeader:hover {
   background-color: rgba(0,0,0,.05);
 }

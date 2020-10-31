@@ -134,6 +134,7 @@ const Api = props => {
                     </ul>
                     
                 </ul>
+                
                 <ul>
                     <li className="subHeader">
                         <span className="textCover">City Corporation API</span>
@@ -159,6 +160,58 @@ const Api = props => {
                         </li>
                     </ul>
                     
+                </ul>
+                <ul>
+                <li className="subHeader">
+                        <span className="textCover">Barikoi Verify API</span>
+                </li>
+                <li className="subHeader" id="sub">
+                        <span className="textCover">Authentication API</span>
+                </li>
+                <ul>
+                    <li className={ApiStyle.linked}>
+                    <NavLink exact to='/verify-login'>Authenticate</NavLink>
+                    </li>
+                </ul>
+                {/* <ul>
+                    <li className={ApiStyle.linked}>
+                    <NavLink exact to='/verify-registration'>User Registration</NavLink>
+                    </li>
+                </ul> */}
+                <ul>
+                    <li className={ApiStyle.linked}>
+                    <NavLink exact to='/verify-logout'>Log Out</NavLink>
+                    </li>
+                </ul>
+
+                <li className="subHeader" id="sub">
+                        <span className="textCover">Verify API</span>
+                </li>
+                <ul>
+                    <li className={ApiStyle.linked}>
+                     <NavLink exact to='/app-create'>Create Application</NavLink>
+                    </li>
+                </ul>
+                <ul>
+                    <li className={ApiStyle.linked}>
+                     <NavLink exact to='/app-list'>Application List</NavLink>
+                    </li>
+                </ul>
+                <ul>
+                    <li className={ApiStyle.linked}>
+                     <NavLink exact to='/app-details'>Application Details</NavLink>
+                    </li>
+                </ul>
+                <ul>
+                    <li className={ApiStyle.linked}>
+                     <NavLink exact to='/app-request'>Request Revision</NavLink>
+                    </li>
+                </ul>
+                <ul>
+                    <li className={ApiStyle.linked}>
+                     <NavLink exact to='/ward-by-location'></NavLink>
+                    </li>
+                </ul>
                 </ul>
                     </div> : null
                 }
