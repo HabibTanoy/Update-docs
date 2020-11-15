@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const Rupantor = () => {
   document.title = "Rupantor Geocoder . Barikoi Documentation";
@@ -28,7 +29,7 @@ const Rupantor = () => {
           <p className={Style.text}>Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>FormData Key and Value</h2>
           <div className="w-75">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -121,77 +122,36 @@ const Rupantor = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3"> 
           <pre className={Style.coding}>
-              <code>
-              <div className="mb-3">
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  </div>
-                  <div className="ml-5">
-                  <div>
-                    <span className="txtColor">"given_address": </span>
-                    <span className="url">"ave#3 barikoi office house no#192 rd#02 mirpur dohs section 12",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"fixed_address": </span>
-                    <span className="url">"barikoi office, house 192, avenue 3, road 2, mirpur dohs, mirpur",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"bangla_address": </span>
-                    <span className="url">"বাড়িকই অফিস, হাউস ১৯২, এভিনিউ ৩, রোড ২, মিরপুর ডিওএইচএস, মিরপুর",</span><br />
-                  </div>
-                  <div>
-                    <span className="txtColor">"address_status": </span>
-                    <span className="url">"complete",</span>
-                  </div>
-                  <span className="txtColor">"geocoded_address": {"{"}</span>
-                  <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"House 192, Road 2, Mirpur DOHS, Mirpur, Dhaka",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span>
-              </div>
-              <div>
-                <span className="txtColor">"district": </span>
-                <span className="url">"Dhaka",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.833979263544503",</span>
-              </div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.36733254790306",</span>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Residential",</span><br />
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"thana": </span>
-                <span className="url">"Pallabi"</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"BKOI2017",</span>
-              </div>
-              </div>
-                  </div>
-                  <div className="txtColor ml-5 pl-3">
-                  <span> {"},"} </span><br />
-                  <span>"confidence_score_percentage": 95,</span><br />
-                  <span> "status": 200</span>
-                  </div>
-                  <span className="txtColor"> {"}"} </span>
-                  </div>
-                  {/* <button type="button" className={RupStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="8"
+             src={
+              {
+                "given_address": "ave#3 barikoi office house no#192 rd#02 mirpur dohs section 12",
+                "fixed_address": "barikoi office, house 192, avenue 3, road 2, mirpur dohs, mirpur",
+                "bangla_address": "বাড়িকই অফিস, হাউস ১৯২, এভিনিউ ৩, রোড ২, মিরপুর ডিওএইচএস, মিরপুর",
+                "address_status": "complete",
+                "geocoded_address": {
+                    "Address": "House 192, Road 2, Mirpur DOHS, Mirpur, Dhaka",
+                    "area": "Mirpur",
+                    "city": "Dhaka",
+                    "district": "Dhaka",
+                    "latitude": "23.833979263544503",
+                    "longitude": "90.36733254790306",
+                    "pType": "Residential",
+                    "postCode": 1216,
+                    "thana": "Pallabi",
+                    "uCode": "CDOG6017"
+                },
+                "confidence_score_percentage": 95,
+                "status": 200
+            }               
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Rupantor Geocoder with basic parameter 2 API call is counted.</p>
           </div>
           <p className={Style.pText}>Address_status denotes whether a given/input address is complete or not based on area. Confidence_score_percentage determines the accuracy level of the geocoded address A complete address might get the maximum confidence_score_percentage. confidence_score_percentage {">"} 95 --- = Exact or be the closest one confidence_score_percentage {">"}= 70 --- = Within the the specific area, subarea , Can be used for zoning confidence_score_percentage {"<"} 70 --- = Not reliable</p>
           <p className={Style.text}>Rupantor Geocoder returns thana and district only if thana and district are added to request body with the value 'yes'. Rupantor Geocoder returns <span className={Style.pText} >null</span> geocoded_address if no geocoded address is found.</p>
@@ -213,7 +173,7 @@ const Rupantor = () => {
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>FormData Key and Value</h2>
           <div className="w-75">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -294,47 +254,31 @@ const Rupantor = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={`mb-5 ${Style.coding}`}>
-          <code>
-                  <div className="mb-3">
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  <div className="ml-4">
-                  <span>"match": {"{"}</span><br />
-                  </div>
-                  </div>
-                  <div className="ml-5 pl-4">
-                  <div>
-                    <span className="txtColor">"address 1": </span>
-                    <span className="url">"হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"address 2": </span>
-                    <span className="url">"house 18, road 5, block G, section 2, mirpur",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"match percentage": </span>
-                    <span className="url">"100%",</span><br />
-                  </div>
-                  <div>
-                    <span className="txtColor">"match status": </span>
-                    <span className="url">"exact",</span>
-                  </div>
-                  </div>
-                  <div className="txtColor ml-4">
-                  <span> {"},"} </span><br />
-                  <span> "status": 200</span><br />
-                  </div>
-                  <span className="txtColor"> {"}"} </span>
-                  </div>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="8"
+             src={
+              {
+                "match": {
+                    "address 1": "হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর",
+                    "address 2": "house 18, road 5, block G, section 2, mirpur",
+                    "match percentage": "100%",
+                    "match status": "exact"
+                },
+                "status": 200
+            }
+              } />
                   <div className="override">
                     <span>// match_status defination</span><br />
                     <span>// match percentage {">"}= 97-100 = exact</span><br />
                     <span>// match percentage {">"}75-96 = approximate</span><br />
                     <span>// match percentage {"<"}75 = not matched</span>
                   </div>
-                  {/* <button type="button" className={geoStyle.copyBtn}>Copy</button>   */}
-              </code>
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Rupantor Address Match with basic parameter 2 API call is counted.</p>
           </div>
 
           <Row>

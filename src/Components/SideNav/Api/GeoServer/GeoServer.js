@@ -4,6 +4,8 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
+
 
 const GeoServer = () => {
   document.title = "Reverse Geocoding (Server) . Barikoi Documentation";
@@ -19,13 +21,12 @@ const GeoServer = () => {
                   <div>
                       <span className="txtColor">https://barikoi.xyz/v1/api/search/reverse/geocode/server/API_KEY/place?longitude=90.1224&latitude=23.7567&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true  </span>
                   </div>
-                  {/* <button type="button" className={serverStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
           <p className={Style.text}>Returns an address given longitude and latitude.</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -97,74 +98,39 @@ const GeoServer = () => {
                     <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
                   </div>
                   </div>
-                      {/* <button type="button" className={geoStyle.copyBtn}>Copy</button> */}
               </code>
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <span> {"{"} </span><br />
-              <div className="ml-4">
-              <span>"place": {"{"}</span><br />
-              <div className="ml-5">
-              <span>"id": 394605,</span><br/>
-              <span>"distance_within_meters": 0,</span><br />
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Charigram"</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Singair",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Manikganj",</span><br />
-                <span className="txtColor">"postCode": 1820,</span>
-              </div>
-              <div>
-                <span className="txtColor">"location_type": </span>
-                <span className="url">"Rural",</span>
-              </div>
-              <div>
-                <span className="txtColor">"district": </span>
-                <span className="url">"Manikganj",</span>
-              </div>
-              <div>
-                <span className="txtColor">"country": </span>
-                <span className="url">"Bangladesh",</span>
-              </div>
-              <div>
-                <span className="txtColor">"sub_district": </span>
-                <span className="url">""Singair",</span>
-              </div>
-              <div>
-                <span className="txtColor">"union": </span>
-                <span className="url">"Charigram",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pauroshova": </span>
-                <span className="txt">"null</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4">
-              <span> {"},"} </span><br />
-              <span> "status": 200</span><br />
-              
-              </div>
-              <span> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={geoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="10"
+             src={
+            {
+              "place": {
+                  "id": 394605,
+                  "distance_within_meters": 0,
+                  "address": "Charigram",
+                  "area": " Singair",
+                  "city": " Manikganj",
+                  "postCode": 1820,
+                  "location_type": "Rural",
+                  "district": "Manikganj",
+                  "country": "Bangladesh",
+                  "sub_district": "Singair",
+                  "union": "Charigram",
+                  "pauroshova": null
+              },
+              "status": 200
+          }    
+          } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Reverse Geocoding (Server) with all parameter 8 API call is counted.</p>
           </div>
           <Row>
             <Col sm={6}> 

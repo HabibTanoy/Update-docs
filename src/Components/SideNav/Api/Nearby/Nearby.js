@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const Nearby = () => {
   document.title = "Nearby . Barikoi Documentation";
@@ -28,7 +29,7 @@ const Nearby = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -84,195 +85,65 @@ const Nearby = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span>
-              <div className="ml-5">
-              <span>"id": 452923,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Artland",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 9.91042449889066,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.36668747663498",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.83714909804975",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Education",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Artland, Jol Torongo, House 555, Road 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur Dohs",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"Art School",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"IDIX1880",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.36668747663498 23.83714909804975)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 485763,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Mulytic Labs",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 11.24627601291792,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.36672234535217",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.837144191228138",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Mulytic Labs, Jol Torongo, House 555, Road 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur Dohs",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"Branch Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"IDVH3378",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.36672234535217 23.837144191228138)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 512618,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Touch-Up Beauty Parlour",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 11.700339826282454,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.366759896278",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.837161365103",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Shop",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Touch-Up Beauty Parlour, Jol Torongo, House 555, Road 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur Dohs",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"Womens Parlour",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"FLDL1270",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.366759896278 23.837161365103)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              <span className="pl-2">.......</span><br />
-              </div>
-              <div className="ml-4 mb-2 txtColor">
-              <span>]</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "places": [
+                    {
+                        "id": 452923,
+                        "name": "Artland",
+                        "distance_in_meters": 9.91042449889066,
+                        "longitude": "90.36668747663498",
+                        "latitude": "23.83714909804975",
+                        "pType": "Education",
+                        "Address": "Artland, Jol Torongo, House 555, Road 9",
+                        "area": "Mirpur Dohs",
+                        "city": "Dhaka",
+                        "postCode": 1216,
+                        "subType": "Art School",
+                        "uCode": "IDIX1880",
+                        "ST_AsText(location)": "POINT(90.36668747663498 23.83714909804975)"
+                    },
+                    {
+                        "id": 485763,
+                        "name": "Mulytic Labs",
+                        "distance_in_meters": 11.24627601291792,
+                        "longitude": "90.36672234535217",
+                        "latitude": "23.837144191228138",
+                        "pType": "Office",
+                        "Address": "Mulytic Labs, Jol Torongo, House 555, Road 9",
+                        "area": "Mirpur Dohs",
+                        "city": "Dhaka",
+                        "postCode": 1216,
+                        "subType": "Branch Office",
+                        "uCode": "IDVH3378",
+                        "ST_AsText(location)": "POINT(90.36672234535217 23.837144191228138)"
+                    },
+                    {
+                        "id": 512618,
+                        "name": "Touch-Up Beauty Parlour",
+                        "distance_in_meters": 11.700339826282454,
+                        "longitude": "90.366759896278",
+                        "latitude": "23.837161365103",
+                        "pType": "Shop",
+                        "Address": "Touch-Up Beauty Parlour, Jol Torongo, House 555, Road 9",
+                        "area": "Mirpur Dohs",
+                        "city": "Dhaka",
+                        "postCode": 1216,
+                        "subType": "Womens Parlour",
+                        "uCode": "FLDL1270",
+                        "ST_AsText(location)": "POINT(90.366759896278 23.837161365103)"
+                    }
+                ]
+            }         
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Nearby API with all parameter 1 API call is counted.</p>
           </div>
           {/* nearby api with Category */}
           <p style={{fontSize:"25px"}} className="mt-5 mb-3">
@@ -290,7 +161,7 @@ const Nearby = () => {
           </pre>
           <p className={Style.text}>This returns data with the specific pTypes from the list below:</p>
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   {/* <th scope="col"></th> */}
@@ -341,7 +212,7 @@ const Nearby = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -402,207 +273,65 @@ const Nearby = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span>
-              <div className="ml-5">
-              <span>"id": 485763,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Mulytic Labs",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 11.24627601291792,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.36672234535217",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.837144191228138",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Mulytic Labs, Jol Torongo, House 555, Road 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                {/* <span className="txtColor">"postCode": 1216,</span> */}
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur Dohs",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"Branch Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"IDVH3378",</span>
-              </div>
-              <div>
-                <span className="txtColor">"contact_person_phone": </span>
-                <span className="url">"+880-131-848-54",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.36672234535217 23.837144191228138)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 515213,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Digitruck Bangladesh",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 67.28097548803157,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.367076396942",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.837723194896",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Digitruck Bangladesh, House 625, Road 10",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                {/* <span className="txtColor">"postCode": 1216,</span> */}
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur Dohs",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"Head Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"HNOM8349",</span>
-              </div>
-              <div>
-                <span className="txtColor">"contact_person_phone": </span>
-                <span className="url">"01312 667373",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.367076396942 23.837723194896)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 415887,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Acme Technologies Limited",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 69.1944507498262,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.36733120679855",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.83742142635796",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Acme Technologies Limited, House 630, Road 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                {/* <span className="txtColor">"postCode": 1216,</span> */}
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur Dohs",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"Head Office",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"QMVA4960",</span>
-              </div>
-              <div>
-                <span className="txtColor">"contact_person_phone": </span>
-                <span className="txt">null</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.36733120679855 23.83742142635796)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              <span className="pl-2">.......</span><br />
-              </div>
-              <div className="ml-4 mb-2 txtColor">
-              <span>]</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "places": [
+                    {
+                        "id": 485763,
+                        "name": "Mulytic Labs",
+                        "distance_in_meters": 11.24627601291792,
+                        "longitude": "90.36672234535217",
+                        "latitude": "23.837144191228138",
+                        "Address": "Mulytic Labs, Jol Torongo, House 555, Road 9",
+                        "city": "Dhaka",
+                        "area": "Mirpur Dohs",
+                        "pType": "Office",
+                        "subType": "Branch Office",
+                        "uCode": "IDVH3378",
+                        "contact_person_phone": "+880-131-848-54",
+                        "ST_AsText(location)": "POINT(90.36672234535217 23.837144191228138)"
+                    },
+                    {
+                        "id": 515213,
+                        "name": "Digitruck Bangladesh",
+                        "distance_in_meters": 67.28097548803157,
+                        "longitude": "90.367076396942",
+                        "latitude": "23.837723194896",
+                        "Address": "Digitruck Bangladesh, House 625, Road 10",
+                        "city": "Dhaka",
+                        "area": "Mirpur Dohs",
+                        "pType": "Office",
+                        "subType": "Head Office",
+                        "uCode": "HNOM8349",
+                        "contact_person_phone": "01312 667373",
+                        "ST_AsText(location)": "POINT(90.367076396942 23.837723194896)"
+                    },
+                    {
+                        "id": 415887,
+                        "name": "Acme Technologies Limited",
+                        "distance_in_meters": 69.1944507498262,
+                        "longitude": "90.36733120679855",
+                        "latitude": "23.83742142635796",
+                        "Address": "Acme Technologies Limited, House 630, Road 9",
+                        "city": "Dhaka",
+                        "area": "Mirpur Dohs",
+                        "pType": "Office",
+                        "subType": "HEAD OFFICE",
+                        "uCode": "QMVA4960",
+                        "contact_person_phone": null,
+                        "ST_AsText(location)": "POINT(90.36733120679855 23.83742142635796)"
+                    }
+                ]
+            }              
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Nearby API with Category with all parameter 1 API call is counted.</p>
           </div>
           {/* nearby api with Multiple types */}
           <h2 className={`mt-5 mb-3 ${Style.intro}`}>Nearby API with Multiple Types</h2>
@@ -681,195 +410,65 @@ const Nearby = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span>
-              <div className="ml-5">
-              <span>"id": 502862,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Standard Chartered Bank (Scb) Atm",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 253.05800281013194,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.418757200241",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.832941430342",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Bank",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Standard Chartered Bank (Scb) Atm, Lotus Kamal Tower 1, New Airport Road, Nikunja 2",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Nikunja",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                <span className="txtColor">"postCode": 1229,</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"ATM",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"UWZO0581",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.418757200241 23.832941430342)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 119584,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Jane Alam Government High School",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 264.91397210547393,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.41447706520559",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.830730510001846",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Education",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Jane Alam Government High School, Tanpara, Nikunja 2",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Nikunja",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                <span className="txtColor">"postCode": 1229,</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"SCHOOL",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"ABLE7705",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.41447706520559 23.830730510001846)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 392671,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"name": </span>
-                <span className="url">"Genius Model School",</span>
-              </div>
-              <span className="txtColor">"distance_in_meters": 330.0645537248065,</span>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.41713178157806",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.829513859028346",</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Education",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Genius Model School, House 27, Road 04, Nikunja 2",</span>
-              </div>
-              <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Nikunja",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                
-                <span className="txtColor">"postCode": 1229,</span>
-              </div>
-              <div>
-                <span className="txtColor">"subType": </span>
-                <span className="url">"SCHOOL",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"KUOX8155",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ST_AsText(location)": </span>
-                <span className="url">"POINT(90.41713178157806 23.829513859028346)"</span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              <span className="pl-2">.......</span><br />
-              </div>
-              <div className="ml-4 mb-2 txtColor">
-              <span>]</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "places": [
+                    {
+                        "id": 502862,
+                        "name": "Standard Chartered Bank (Scb) Atm",
+                        "distance_in_meters": 253.05800281013194,
+                        "longitude": "90.418757200241",
+                        "latitude": "23.832941430342",
+                        "pType": "Bank",
+                        "Address": "Standard Chartered Bank (Scb) Atm, Lotus Kamal Tower 1, New Airport Road, Nikunja 2",
+                        "area": "Nikunja",
+                        "city": "Dhaka",
+                        "postCode": 1229,
+                        "subType": "ATM",
+                        "uCode": "UWZO0581",
+                        "ST_AsText(location)": "POINT(90.418757200241 23.832941430342)"
+                    },
+                    {
+                        "id": 119584,
+                        "name": "Jane Alam Government High School",
+                        "distance_in_meters": 264.91397210547393,
+                        "longitude": "90.41447706520559",
+                        "latitude": "23.830730510001846",
+                        "pType": "Education",
+                        "Address": "Jane Alam Government High School, Tanpara, Nikunja 2",
+                        "area": "Nikunja",
+                        "city": "Dhaka",
+                        "postCode": 1229,
+                        "subType": "SCHOOL",
+                        "uCode": "ABLE7705",
+                        "ST_AsText(location)": "POINT(90.41447706520559 23.830730510001846)"
+                    },
+                    {
+                        "id": 392671,
+                        "name": "Genius Model School",
+                        "distance_in_meters": 330.0645537248065,
+                        "longitude": "90.41713178157806",
+                        "latitude": "23.829513859028346",
+                        "pType": "Education",
+                        "Address": "Genius Model School, House 27, Road 04, Nikunja 2",
+                        "area": "Nikunja",
+                        "city": "Dhaka",
+                        "postCode": 1229,
+                        "subType": "SCHOOL",
+                        "uCode": "KUOX8155",
+                        "ST_AsText(location)": "POINT(90.41713178157806 23.829513859028346)"
+                    }
+                ]
+            }      
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Nearby API with Multiple Types with all parameter 1 API call is counted.</p>
           </div>
           <Row>
             <Col sm={6}> 

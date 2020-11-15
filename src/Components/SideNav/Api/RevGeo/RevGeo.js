@@ -4,6 +4,7 @@ import { Row, Col, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const RevGeo = () => {
   document.title = "Reverse Geocode . Barikoi Documentation";
@@ -25,7 +26,7 @@ const RevGeo = () => {
           <p className={Style.text}>Returns an address given longitude and latitude.</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -108,59 +109,31 @@ const RevGeo = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-              <code>
-                  <div>
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  <div className="ml-4">
-                  <span>"place": {"{"}</span><br />
-                  <div className="ml-5">
-                  <span>"id": 177936,</span><br/>
-                  <span>"distance_within_meters": 1.167,</span><br />
-                  </div>
-                  </div>
-                  </div>
-                  <div className="ml-5 pl-4">
-                  <div>
-                    <span className="txtColor">"address": </span>
-                    <span className="url">"Mohosin Uddin, House 462, West Shewrapara",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"area": </span>
-                    <span className="url">"Mirpur",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"city": </span>
-                    <span className="url">"Dhaka",</span><br />
-                    <span className="txtColor">"postCode": 1216,</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"location_type": </span>
-                    <span className="url">"Urban",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"district": </span>
-                    <span className="url">"Dhaka",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"country": </span>
-                    <span className="url">"Bangladesh",</span>
-                  </div>
-                  <div>
-                    <span className="txtColor">"sub_district": </span>
-                    <span className="url">"Kafrul"</span>
-                  </div>
-                  </div>
-                  <div className="txtColor ml-4">
-                  <span> {"},"} </span><br />
-                  <span> "status": 200</span><br />
-                  
-                  </div>
-                  <span> {"}"} </span><br />
-                  </div>
-                  {/* <button type="button" className={geoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="10"
+             src={
+              {
+                "place": {
+                    "id": 177936,
+                    "distance_within_meters": 1.167,
+                    "address": "Mohosin Uddin, House 462, West Shewrapara",
+                    "area": "Mirpur",
+                    "city": "Dhaka",
+                    "postCode": 1216,
+                    "location_type": "Urban",
+                    "district": "Dhaka",
+                    "country": "Bangladesh",
+                    "sub_district": "Kafrul"
+                },
+                "status": 200
+            }
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Reverse Geocode with all parameter 8 API call is counted.</p>
           </div>
           <Row className={Style.testing}>
             <Col sm={6}> 

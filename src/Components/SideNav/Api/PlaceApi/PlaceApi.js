@@ -4,13 +4,13 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const PlaceApi = () => {
     document.title = "Barikoi Places API . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Barikoi Places API</h1>
-
             <h2 className={`mt-5 mb-3 ${Style.intro}`}>Introduction</h2> 
             <p className={Style.text}>Welcome to Barikoi API. Thank you for checking a Bangladeshi location data provider API. Our API Helps you to find address, geocode and reverse geocode place and city corporation information in Dhaka in our local context.</p>
             <h2 className={`mt-5 mb-3 ${Style.intro}`}>Overview</h2> 
@@ -21,72 +21,72 @@ const PlaceApi = () => {
             <strong className={Style.limit}>API Limit Exceeded</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-                <code>
-                    <div>
-                        <span className="txtColor"> {"{"} </span><br />
-                            <div className="ml-5">
-                            <span className="txtColor">"message":</span>
-                            <span className="url"> "API LIMIT EXCEEDED",</span> <br />
-                            <span className="txtColor">"status": 429</span> 
-                            </div> 
-                            <span className="txtColor"> {"}"} </span>
-                    </div>
-                    {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
-                </code>
+            <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="10"
+             src={
+                {
+                    "message": "API LIMIT EXCEEDED",
+                    "status": 429
+                }
+              } />
             </pre>
             </div>
 
             <strong className={Style.limit}>Invalid or No Regsitered Key</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-                <code>
-                <div>
-                    <span className="txtColor"> {"{"} </span><br />
-                        <div className="ml-5">
-                        <span className="txtColor">"message":</span>
-                        <span className="url"> "Invalid or No Registered Key",</span> <br />
-                        <span className="txtColor">"status": 401</span> 
-                        </div> 
-                        <span className="txtColor"> {"}"} </span>
-                    </div>
-                    {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
-                </code>
+            <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="10"
+             src={
+                {
+                    "message": "Invalid or No Registered Key",
+                    "status": 401
+                }
+              } />
             </pre>
             </div>
 
             <strong className={Style.limit}>Missing Parameter</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-                <code>
-                    <div>
-                    <span className="txtColor"> {"{"} </span><br />
-                        <div className="ml-5">
-                        <span className="txtColor">"message":</span>
-                        <span className="url"> "Parameter missing",</span> <br />
-                        <span className="txtColor">"status": 400</span> 
-                        </div> 
-                        <span className="txtColor"> {"}"} </span>
-                    </div>
-                    {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
-                </code>
+            <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="10"
+             src={
+                {
+                    "message": "Parameter missing",
+                    "status": 400
+                }
+              } />
             </pre>
             </div>
 
             <strong className={Style.limit}>Payment Exception</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-                <code>
-                <div>
-                    <span className="txtColor"> {"{"} </span><br />
-                        <div className="ml-5">
-                        <span className="txtColor">"message":</span>
-                        <span className="url"> "payment exception",</span> <br />
-                        <span className="txtColor">"status": 402</span> 
-                        </div> 
-                        <span className="txtColor"> {"}"} </span>
-                    </div>
-                    {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
-                </code>
+            <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="10"
+             src={
+                {
+                    "message": "payment exception",
+                    "status": 402
+                }                
+              } />
             </pre>
             </div>
             <h2 className={`mt-3 mb-3 ${Style.intro}`}>Rate Limit</h2>

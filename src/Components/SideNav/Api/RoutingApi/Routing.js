@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const RoutingApi = () => {
   document.title = "Routing Api . Barikoi Documentation";
@@ -27,7 +28,7 @@ const RoutingApi = () => {
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -77,93 +78,60 @@ const RoutingApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div className="txtColor">
-                <span>{"{"}</span>
-              </div>
-              <div className="ml-4 txtColor">
-                <span>"code": </span>
-                <span className="url">"Ok",</span><br />
-                <span>"routes": [</span>
-                  <div className="ml-3">
-                  <span>{"{"}</span>
-                  <div className="txtColor ml-4">
-                  <span>"geometry": </span>
-                  <span className="url">"g{"}"}bqCmhpfPjf@uE_P_~BueAjZ{"}"}sDpCg@~t@_{"{"}DdfF{"}"}ZbrCodA`bCsM{"{"}m@ojCaUw^meAmg@eS_~A_Ok{"}"}AbFmXbQoi@mmAuxEfS",</span><br />
-                  <span>"legs": [</span>
-                    <div className="ml-3">
-                   <span>{"{"}</span>
-                   <div className="txtColor ml-4">
-                   <span>"steps": [],</span><br />
-                    <span>"distance": 33452.2,</span><br />
-                      <span>"duration": 2481.4,</span><br />
-                      <div>
-                        <span>"summary": </span>
-                        <span className="url">"",</span>
-                        </div>
-                          <span>"weight": 2481.4</span>
-                   </div>
-                   <span>{"}"}</span>
-                    </div>
-                    <div>
-                    <span>],</span><br />
-                    <span>"distance": 33452.2,</span><br />
-                    <span>"duration": 2481.4,</span><br />
-                      <div>
-                        <span>"weight_name": </span>
-                        <span className="url">"routability",</span>
-                      </div>
-                        <span>"weight": 2481.4</span>
-                    </div>
-                    <span>{"}"}</span>
-                  </div>
-                  <span>],</span>
-                  <div className="ml-4">
-                    <span>"waypoints": [</span><br />
-                      <span className="ml-3">{"{"}</span>
-                      <div className="ml-5">
-                        <span>"hint": </span>
-                        <span className="url">"V10DgFldA4AAAAAAJwAAAAAAAAAfAQAAAAAAAFZN10EAAAAA6SFHQwAAAAAnAAAAAAAAAB8BAACEAAAA6tliBeZObQG10mIF1E9tAQAATwvGEH3j",</span><br />
-                        <span>"distance": 189.684241,</span>
-                        <div>
-                        <span>"name": </span>
-                        <span className="url">"",</span>
-                        </div>
-                        <span>"location": [</span>
-                        <div className="ml-4">
-                          <span>90.364394,</span><br />
-                          <span>23.940838</span>
-                        </div>
-                        <span>]</span>
-                      </div>
-                      <span className="ml-3">{"},"}</span><br />
-                      <span className="ml-3">{"{"}</span>
-                      <div className="ml-5">
-                        <span>"hint": </span>
-                        <span className="url">"xy0BgPzPAoBDAAAAKwAAAL8QAAAtBgAAjQGVQqNFPkI1VJRFXcnaREMAAAArAAAAvxAAAC0GAACEAAAAsjtiBbBHcAFRHGIFTkJwATMAnwrGEH3j",</span><br />
-                        <span>"distance": 830.734383,</span>
-                        <div>
-                        <span>"name": </span>
-                        <span className="url">"Mouchak - Fulbari Road",</span>
-                        </div>
-                        <span>"location": [</span>
-                        <div className="ml-4">
-                          <span>90.32389,</span><br />
-                          <span>24.1356</span>
-                        </div>
-                        <span>]</span>
-                      </div>
-                      <span className="ml-3">{"}"}</span>
-                  </div>
-                  <span className="ml-2">]</span>
-                  </div>
-                  <span>{"}"}</span>
-              </div>
-                      {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "code": "Ok",
+                "routes": [
+                    {
+                        "geometry": "g}bqCmhpfPjf@uE_P_~BueAjZ}sDpCg@~t@_{DdfF}ZbrCodA`bCsM{m@ojCaUw^meAmg@eS_~A_Ok}AbFmXbQoi@mmAuxEfS",
+                        "legs": [
+                            {
+                                "steps": [],
+                                "distance": 33452.2,
+                                "duration": 2481.4,
+                                "summary": "",
+                                "weight": 2481.4
+                            }
+                        ],
+                        "distance": 33452.2,
+                        "duration": 2481.4,
+                        "weight_name": "routability",
+                        "weight": 2481.4
+                    }
+                ],
+                "waypoints": [
+                    {
+                        "hint": "V10DgFldA4AAAAAAJwAAAAAAAAAfAQAAAAAAAFZN10EAAAAA6SFHQwAAAAAnAAAAAAAAAB8BAACEAAAA6tliBeZObQG10mIF1E9tAQAATwvGEH3j",
+                        "distance": 189.684241,
+                        "name": "",
+                        "location": [
+                            90.364394,
+                            23.940838
+                        ]
+                    },
+                    {
+                        "hint": "xy0BgPzPAoBDAAAAKwAAAL8QAAAtBgAAjQGVQqNFPkI1VJRFXcnaREMAAAArAAAAvxAAAC0GAACEAAAAsjtiBbBHcAFRHGIFTkJwATMAnwrGEH3j",
+                        "distance": 830.734383,
+                        "name": "Mouchak - Fulbari Road",
+                        "location": [
+                            90.32389,
+                            24.1356
+                        ]
+                    }
+                ]
+            }
+             
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Routing with all parameter 2 API call is counted.</p>
           </div>
-
+              {/*Nearest Api */}
             <p style={{fontSize:"25px"}} className="mt-5 mb-3">
               <code className={Style.get}>GET</code>
               Nearest
@@ -180,7 +148,7 @@ const RoutingApi = () => {
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -201,34 +169,24 @@ const RoutingApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-              <code>
-              <div className="mb-3">
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  </div>
-                  <div className="ml-5">
-                  <div>
-                    <span className="txtColor">"coordinates": [</span>
-                  </div>
-                  <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">90.36288202934098,</span>
-              </div>
-              <div>
-                <span className="txtColor">23.804755823392888</span>
-              </div>
-              </div>
-                  </div>
-                  <div className="txtColor ml-5 pl-3">
-                  <span> ], </span><br />
-                  <span>"distance": 1.2604423448728288,</span><br />
-                  <span>"type": <span className="url">"Point"</span></span>
-                  </div>
-                  <span className="txtColor"> {"}"} </span>
-                  </div>
-                  {/* <button type="button" className={RoutStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="8"
+             src={
+              {
+                "coordinates": [
+                    90.36288202934098,
+                    23.804755823392888
+                ],
+                "distance": 1.2604423448728288,
+                "type": "Point"
+            }            
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Routing with all parameter 2 API call is counted.</p>
           </div>
           
           <p style={{fontSize:"25px"}} className="mt-5 mb-3">
@@ -247,7 +205,7 @@ const RoutingApi = () => {
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -268,57 +226,34 @@ const RoutingApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={`mb-5 ${Style.coding}`}>
-              <code>
-              <div className="mb-3">
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  </div>
-                  <div className="ml-5">
-                  <div className="txtColor">
-                    <span>"geometry": {"{"} </span>
-                    <div className="ml-4">
-                      <span>"coordinates": [</span>
-                    </div>
-                  </div>
-                  <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">[</span>
-              </div>
-              <div className="ml-4 txtColor">
-                <span>90.384425,</span><br />
-                <span>23.726761</span>
-              </div>
-              <div>
-                <span className="txtColor">],</span>
-              </div>
-              <div>
-                <span className="txtColor">[</span>
-              </div>
-              <div className="ml-4 txtColor">
-                <span>90.384427,</span><br />
-                <span>23.726622</span>
-              </div>
-              <div>
-                <span className="txtColor">]</span>
-              </div>
-              </div>
-                  </div>
-                  <div className="txtColor ml-5 pl-3">
-                  <span> ], </span><br />
-                  {/* <span>"type": 1.2604423448728288,</span><br /> */}
-                  <span>"type": <span className="url">"LineString"</span></span>
-                  </div>
-                  <div className="txtColor ml-4">
-                  <span> {"},"} </span><br />
-                  <span> "distance": 15.5,</span><br />
-                  <span> "status": 200</span>
-                  </div>
-                  <span className="ml-3 txtColor">{"}"}</span>
-                  </div>
-                  {/* <button type="button" className={RoutStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "geometry": {
+                    "coordinates": [
+                        [
+                            90.384425,
+                            23.726761
+                        ],
+                        [
+                            90.384427,
+                            23.726622
+                        ]
+                    ],
+                    "type": "LineString"
+                },
+                "distance": 15.5,
+                "status": 200
+            }
+              } />
           </pre>
-          </div>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Route Match with all parameter 2 API call is counted.</p>
+          </div> 
 
           <Row>
             <Col sm={6}> 

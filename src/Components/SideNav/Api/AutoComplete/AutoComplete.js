@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-
+import ReactJson from 'react-json-view'
 
 const AutoComplete = () => {
   document.title = "Autocomplete . Barikoi Documentation";
@@ -28,7 +28,7 @@ const AutoComplete = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -84,203 +84,65 @@ const AutoComplete = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 613764,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.40037488836059",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.876015798205852",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Shopno Bilash, House 14, Road 7/c, Sector 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Uttara",</span>
-              </div>
-                <span className="txtColor">"postCode": 1230,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Residential",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"ZHOP9326",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 615302,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.39863960696596",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.87394939766196",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Shopn Pori, House 10, Road 36, Sector 7",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Uttara",</span>
-              </div>
-                <span className="txtColor">"postCode": 1230,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Residential",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"OUCU1540",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 615307,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.39847472805957",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.87391826373943",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Shipon Hair Cutting, House 12, Road 36, Sector 7",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Uttara",</span>
-              </div>
-                <span className="txtColor">"postCode": 1230,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Shop",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"IQFM0605",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectFour */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 613150,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.39759377788192",</span>
-              </div>
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.876060113158026",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Daily Shoping, House 4, Road 3/f, Sector 9",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Uttara",</span>
-              </div>
-                <span className="txtColor">"postCode": 1230,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Shop",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"TGKR6447",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor mb-2 ml-4 pl-3">
-              <span> {"}"} </span><br />
-              <span className="pl-2">.......</span><br />
-              </div>
-              <div className="ml-4 txtColor">
-              <span>],</span><br />
-              <span>"status": 200</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "places": [
+                    {
+                        "id": 613764,
+                        "longitude": "90.40037488836059",
+                        "latitude": "23.876015798205852",
+                        "address": "Shopno Bilash, House 14, Road 7/c, Sector 9",
+                        "city": "Dhaka",
+                        "area": "Uttara",
+                        "postCode": 1230,
+                        "pType": "Residential",
+                        "uCode": "ZHOP9326"
+                    },
+                    {
+                        "id": 615302,
+                        "longitude": "90.39863960696596",
+                        "latitude": "23.87394939766196",
+                        "address": "Shopn Pori, House 10, Road 36, Sector 7",
+                        "city": "Dhaka",
+                        "area": "Uttara",
+                        "postCode": 1230,
+                        "pType": "Residential",
+                        "uCode": "OUCU1540"
+                    },
+                    {
+                        "id": 615307,
+                        "longitude": "90.39847472805957",
+                        "latitude": "23.87391826373943",
+                        "address": "Shipon Hair Cutting, House 12, Road 36, Sector 7",
+                        "city": "Dhaka",
+                        "area": "Uttara",
+                        "postCode": 1230,
+                        "pType": "Shop",
+                        "uCode": "IQFM0605"
+                    },
+                    {
+                        "id": 613150,
+                        "longitude": "90.39759377788192",
+                        "latitude": "23.876060113158026",
+                        "address": "Daily Shoping, House 4, Road 3/f, Sector 9",
+                        "city": "Dhaka",
+                        "area": "Uttara",
+                        "postCode": 1230,
+                        "pType": "Shop",
+                        "uCode": "TGKR6447"
+                    }
+                ],
+                "status": 200
+            }
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Autocomplete API with all parameter 1 API call is counted.</p>
           </div>
           <p className={Style.text}>To get post office autocomplete just add post_office param to request body with the value true</p>
           {/* post office Api */}
@@ -301,7 +163,7 @@ const AutoComplete = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered hover>
+            <Table striped bordered hover  className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -346,156 +208,55 @@ const AutoComplete = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 4,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.811978035351842",</span>
-              </div>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.34750800579786",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Chiriyakhana Post Office, Zoo Road, Section 1",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur",</span>
-              </div>
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Government",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"WEST4687",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 5,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.803282712061726",</span>
-              </div>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.36128953099252",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Mirpur Post Office, Main Road, Section 2",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur",</span>
-              </div>
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Government",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"BAND7192",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              <div className="ml-5">
-              <span>"id": 6,</span><br/>
-              </div>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"latitude": </span>
-                <span className="url">"23.820675852230316",</span>
-              </div>
-              <div>
-                <span className="txtColor">"longitude": </span>
-                <span className="url">"90.3647304698825",</span>
-              </div>
-              <div>
-                <span className="txtColor">"address": </span>
-                <span className="url">"Pallabi Post Office, Begum Rokeya Sarani, Purobi",</span>
-              </div>
-              <div>
-                <span className="txtColor">"city": </span>
-                <span className="url">"Dhaka",</span><br />
-                <div>
-                <span className="txtColor">"area": </span>
-                <span className="url">"Mirpur",</span>
-              </div>
-                <span className="txtColor">"postCode": 1216,</span>
-              </div>
-              <div>
-                <span className="txtColor">"pType": </span>
-                <span className="url">"Government",</span>
-              </div>
-              <div>
-                <span className="txtColor">"ucode": </span>
-                <span className="url">"ALSO4104",</span>
-              </div>
-              
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              </div>
-              <div className="ml-4 txtColor">
-              <span>],</span><br />
-              <span>"status": 200</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+          theme="ocean"
+           enableClipboard={false}
+            displayDataTypes={false}
+             displayObjectSize={false}
+             indentWidth="4"
+             src={
+              {
+                "places": [
+                    {
+                        "id": 4,
+                        "latitude": "23.811978035351842",
+                        "longitude": "90.34750800579786",
+                        "address": "Chiriyakhana Post Office, Zoo Road, Section 1",
+                        "city": "Dhaka",
+                        "area": "Mirpur",
+                        "postCode": 1216,
+                        "pType": "Government",
+                        "uCode": "WEST4687"
+                    },
+                    {
+                        "id": 5,
+                        "latitude": "23.803282712061726",
+                        "longitude": "90.36128953099252",
+                        "address": "Mirpur Post Office, Main Road, Section 2",
+                        "city": "Dhaka",
+                        "area": "Mirpur",
+                        "postCode": 1216,
+                        "pType": "Government",
+                        "uCode": "BAND7192"
+                    },
+                    {
+                        "id": 6,
+                        "latitude": "23.820675852230316",
+                        "longitude": "90.3647304698825",
+                        "address": "Pallabi Post Office, Begum Rokeya Sarani, Purobi",
+                        "city": "Dhaka",
+                        "area": "Mirpur",
+                        "postCode": 1216,
+                        "pType": "Government",
+                        "uCode": "ALSO4104"
+                    }
+                ],
+                "status": 200
+            }       
+            
+              } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Post Office Autocomplete API with all parameter 2 API call is counted.</p>
           </div>
           <Row>
             <Col sm={6}> 
