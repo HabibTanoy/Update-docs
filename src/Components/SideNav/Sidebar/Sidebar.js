@@ -61,24 +61,24 @@ import AppRequest from '../Api/Bkoi-Verify/RequestRevision/AppRequest';
 
 class SideNav extends Component {
     state = { 
-        toggle: false,
-        jsToggle: false,
-        AndApi: false,
-        pricing: false
+        // toggle: false,
+        // jsToggle: false,
+        // AndApi: false,
+        // pricing: false
      }
 
-    toggleHandle = (flag, current_value) => {
-        const tempObj = this.state
-        Object.keys(tempObj).forEach(key => {
-            tempObj[key] = false
-        })
+    // toggleHandle = (flag, current_value) => {
+    //     const tempObj = this.state
+    //     Object.keys(tempObj).forEach(key => {
+    //         tempObj[key] = false
+    //     })
 
-        this.setState({
-            ...tempObj,
-          [flag]: !current_value
-        });
-        // console.log("Clicked")
-      };
+    //     this.setState({
+    //         ...tempObj,
+    //       [flag]: !current_value
+    //     });
+    //     // console.log("Clicked")
+    //   };
 
     render() { 
         return ( 
@@ -88,27 +88,27 @@ class SideNav extends Component {
                         <Col sm={4} id="demo" className="pl-0 sidebar scrolling">
                             <div className="mt-2">
                             <Api 
-                            isToggle={() =>this.toggleHandle("toggle", this.state.toggle)} 
-                            toggle={this.state.toggle} 
+                            isToggle={() =>this.props.toggleHandle("toggle", this.props.toggle)} 
+                            toggle={this.props.toggle} 
                             />
                             <JsApi
-                            isToggle={() =>this.toggleHandle("jsToggle", this.state.jsToggle)}
-                            toggle={this.state.jsToggle}
+                            isToggle={() =>this.props.toggleHandle("jsToggle", this.props.jsToggle)}
+                            toggle={this.props.jsToggle}
                              />
                              <AndriodApi
-                             isToggle={() =>this.toggleHandle("AndApi", this.state.AndApi)}
-                             toggle={this.state.AndApi}
+                             isToggle={() =>this.props.toggleHandle("AndApi", this.props.AndApi)}
+                             toggle={this.props.AndApi}
                              />
                              <Pricing
-                             isToggle={() =>this.toggleHandle("pricing", this.state.pricing)}
-                             toggle={this.state.pricing}
+                             isToggle={() =>this.props.toggleHandle("pricing", this.props.pricing)}
+                             toggle={this.props.pricing}
                              />
                             </div>
                         </Col>
                         <Col sm={8}>
                             <Switch>
                             //API
-                            <ScrollToTopRoute exact path="/" component={() => <HomePage toggleHandle={this.toggleHandle} toggle={this.state.toggle} />}/>    
+                            <ScrollToTopRoute exact path="/" component={() => <HomePage toggleHandle={this.props.toggleHandle} toggle={this.props.toggle} />}/>    
                             <ScrollToTopRoute path="/intro" component={PlaceApi}/>
                             <ScrollToTopRoute path="/rev-geo" component={RevGeo} />
                             <ScrollToTopRoute path="/geo-server" component={GeoServer} />

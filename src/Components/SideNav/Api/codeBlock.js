@@ -4,30 +4,14 @@ import { CopyBlock, dracula } from "react-code-blocks";
 function MyCoolCodeBlock() {
     return(
         <CopyBlock
-    text={b}
-    language={"json"}
-    // showLineNumbers={showLineNumbers}
+    text={a}
+    language={"javascript"}
     theme={dracula}
-    // codeBlock
+    showLineNumbers={false}
+    codeBlock
   />
     );
   
 }
 export default MyCoolCodeBlock;
-var b = {
-    "place": {
-        "id": 394605,
-        "distance_within_meters": 0,
-        "address": "Charigram",
-        "area": " Singair",
-        "city": " Manikganj",
-        "postCode": 1820,
-        "location_type": "Rural",
-        "district": "Manikganj",
-        "country": "Bangladesh",
-        "sub_district": "Singair",
-        "union": "Charigram",
-        "pauroshova": null
-    },
-    "status": 200
-} 
+let a = `https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true`

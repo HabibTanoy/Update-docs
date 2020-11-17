@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Nav, Navbar} from 'react-bootstrap';
+import {Nav, Navbar, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import NavStyle from '../Navbar/Nav.module.css'
 
@@ -7,10 +7,9 @@ import NavStyle from '../Navbar/Nav.module.css'
 
 class MainNav extends Component {
     state = { 
-        offical_address:'https://barikoi.com/'
+        offical_address:'https://barikoi.com/',
      }
 
-    
     render() { 
         return ( 
             <div>
@@ -26,10 +25,10 @@ class MainNav extends Component {
                         <Link to="/" className={`${NavStyle.docs} pl-0`}>docs</Link>
                         </Nav>
                         <Nav>
-                        <Link to="/intro" className={NavStyle.navTag}>API</Link>
-                        <Link to="/library-intro" className={NavStyle.navTag}>JavaScript Library</Link>
-                        <Link to="/android-intro" className={NavStyle.navTag}>Android Location Library</Link>
-                        <Link to="/pricing-intro" className={NavStyle.navTag}>Pricing</Link>
+                        <Link to="/intro" onClick={ () => this.props.toggleHandle("toggle", this.props.toggle) } className={NavStyle.navTag}>API</Link>
+                        <Link to="/library-intro" onClick={ () => this.props.toggleHandle("jsToggle", this.props.toggle) } className={NavStyle.navTag}>JavaScript Library</Link>
+                        <Link to="/android-intro" onClick={ () => this.props.toggleHandle("AndApi", this.props.toggle) } className={NavStyle.navTag}>Android Location Library</Link>
+                        <Link to="/pricing-intro" onClick={ () => this.props.toggleHandle("pricing", this.props.toggle) } className={NavStyle.navTag}>Pricing</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

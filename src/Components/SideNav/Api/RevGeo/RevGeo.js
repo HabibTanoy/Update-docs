@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
 import ReactJson from 'react-json-view'
+import MyCoolCodeBlock from '../codeBlock'
+import { CodeBlock, dracula } from 'react-code-blocks';
 
 const RevGeo = () => {
   document.title = "Reverse Geocode . Barikoi Documentation";
@@ -16,12 +18,20 @@ const RevGeo = () => {
               Reverse Geocoding API
           </p>
           <pre className={Style.coding}>
-              <code>
+              {/* <code>
                   <div>
                       <span className="txtColor">https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true   </span>
                   </div>
-                  {/* <button type="button" className={geoStyle.copyBtn}>Copy</button> */}
-              </code>
+              </code> */}
+              <MyCoolCodeBlock />
+              {/* <CodeBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true`
+            }
+            language={"javascript"}
+            showLineNumbers={false}
+            theme={dracula}
+              /> */}
           </pre>
           <p className={Style.text}>Returns an address given longitude and latitude.</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
@@ -89,7 +99,7 @@ const RevGeo = () => {
           </div>
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Reverse Geocoding API Request Example</h2>
           <pre className={Style.coding}>
-              <code>
+              {/* <code>
                   <div>
                       <span className="mr-3">
                         <span className="txtColor">fetch(</span>
@@ -102,8 +112,8 @@ const RevGeo = () => {
                         <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
                       </div>
                       </div>
-                      {/* <button type="button" className={geoStyle.copyBtn}>Copy</button> */}
-              </code>
+              </code> */}
+              <MyCoolCodeBlock />
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
