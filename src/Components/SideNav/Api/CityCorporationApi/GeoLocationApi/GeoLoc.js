@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const GeoLocApi = () => {
   document.title = "City Corporation by Geolocation . Barikoi Documentation";
@@ -27,7 +28,7 @@ const GeoLocApi = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered>
+            <Table striped bordered className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -74,18 +75,19 @@ const GeoLocApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div className="txtColor">
-                  <span>{"{"}</span>
-                      <div className="ml-4">
-                        <span>"message": </span>
-                        <span className="url">"DNCC"</span>
-                      </div> 
-                      <span >{"}"}</span>
-                  </div>
-                  {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+            theme="ocean"
+            enableClipboard={false}
+              displayDataTypes={false}
+              displayObjectSize={false}
+              indentWidth="10"
+              src={
+                {
+                  "message": "DNCC"
+              }     
+            } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of City Corporation by Geolocation API with all parameter 1 API call is counted.</p>
           </div>
 
           <Row>

@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const AutoComplete = () => {
   document.title = "Autocomplete . Barikoi Documentation";
@@ -17,12 +17,15 @@ const AutoComplete = () => {
             </p>
 
             <pre className={Style.coding}>
-              <code>
-                  <div>
-                      <span className="txtColor">https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=shopno&latitude=23.873751&longitude=90.396454&scale=0.5</span>
-                  </div>
-                  {/* <button type="button" className={AutoStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=shopno&latitude=23.873751&longitude=90.396454&scale=0.5`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Barikoi Autocomplete returns a place's id, longitude, latitude, address, city, area, postCode, pType & uCode</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
@@ -65,82 +68,77 @@ const AutoComplete = () => {
           <h2 className={`mt-5 mb-3 ${Style.intro}`}>Geocoding API Request Example</h2>
 
           <pre className={Style.coding}>
-              <code>
-              <div>
-                  <span className="mr-3">
-                    <span className="txtColor">fetch(</span>
-                    <span className="url">'https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=shopno&latitude=23.873751&longitude=90.396454&scale=0.5'</span>
-                    <span className="txtColor">)</span>
-                    </span> <br />
-                    <div className="ml-3">
-                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
-                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-                  </div>
-                      {/* <button type="button" className={AutoStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `fetch('https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=shopno&latitude=23.873751&longitude=90.396454&scale=0.5')\n\t.then(response => response.json())\n\t.catch(error => console.error('Error:', error))\n\t.then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="4"
-             src={
-              {
-                "places": [
-                    {
-                        "id": 613764,
-                        "longitude": "90.40037488836059",
-                        "latitude": "23.876015798205852",
-                        "address": "Shopno Bilash, House 14, Road 7/c, Sector 9",
-                        "city": "Dhaka",
-                        "area": "Uttara",
-                        "postCode": 1230,
-                        "pType": "Residential",
-                        "uCode": "ZHOP9326"
-                    },
-                    {
-                        "id": 615302,
-                        "longitude": "90.39863960696596",
-                        "latitude": "23.87394939766196",
-                        "address": "Shopn Pori, House 10, Road 36, Sector 7",
-                        "city": "Dhaka",
-                        "area": "Uttara",
-                        "postCode": 1230,
-                        "pType": "Residential",
-                        "uCode": "OUCU1540"
-                    },
-                    {
-                        "id": 615307,
-                        "longitude": "90.39847472805957",
-                        "latitude": "23.87391826373943",
-                        "address": "Shipon Hair Cutting, House 12, Road 36, Sector 7",
-                        "city": "Dhaka",
-                        "area": "Uttara",
-                        "postCode": 1230,
-                        "pType": "Shop",
-                        "uCode": "IQFM0605"
-                    },
-                    {
-                        "id": 613150,
-                        "longitude": "90.39759377788192",
-                        "latitude": "23.876060113158026",
-                        "address": "Daily Shoping, House 4, Road 3/f, Sector 9",
-                        "city": "Dhaka",
-                        "area": "Uttara",
-                        "postCode": 1230,
-                        "pType": "Shop",
-                        "uCode": "TGKR6447"
-                    }
-                ],
-                "status": 200
-            }
-              } />
+          <CopyBlock
+              text={
+                `{
+      "places": [
+          {
+              "id": 613764,
+              "longitude": "90.40037488836059",
+              "latitude": "23.876015798205852",
+              "address": "Shopno Bilash, House 14, Road 7/c, Sector 9",
+              "city": "Dhaka",
+              "area": "Uttara",
+              "postCode": 1230,
+              "pType": "Residential",
+              "uCode": "ZHOP9326"
+          },
+          {
+              "id": 615302,
+              "longitude": "90.39863960696596",
+              "latitude": "23.87394939766196",
+              "address": "Shopn Pori, House 10, Road 36, Sector 7",
+              "city": "Dhaka",
+              "area": "Uttara",
+              "postCode": 1230,
+              "pType": "Residential",
+              "uCode": "OUCU1540"
+          },
+          {
+              "id": 615307,
+              "longitude": "90.39847472805957",
+              "latitude": "23.87391826373943",
+              "address": "Shipon Hair Cutting, House 12, Road 36, Sector 7",
+              "city": "Dhaka",
+              "area": "Uttara",
+              "postCode": 1230,
+              "pType": "Shop",
+              "uCode": "IQFM0605"
+          },
+          {
+              "id": 613150,
+              "longitude": "90.39759377788192",
+              "latitude": "23.876060113158026",
+              "address": "Daily Shoping, House 4, Road 3/f, Sector 9",
+              "city": "Dhaka",
+              "area": "Uttara",
+              "postCode": 1230,
+              "pType": "Shop",
+              "uCode": "TGKR6447"
+          }
+          .......
+      ],
+      "status": 200
+}`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Autocomplete API with all parameter 1 API call is counted.</p>
           </div>
@@ -152,12 +150,15 @@ const AutoComplete = () => {
               Post Office API
             </p>
           <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                      <span>https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=Mirpur&post_office=true</span>
-                  </div>
-                  {/* <button type="button" className={AutoStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=Mirpur&post_office=true`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Barikoi Post Office Autocomplete.This API will return only post offices. Returns a place's id, longitude, latitude, address, city, area, postCode, pType & uCode</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
@@ -188,73 +189,66 @@ const AutoComplete = () => {
           <h2 className={`mt-5 mb-3 ${Style.intro}`}>Autocomplete API Request Example</h2>
 
           <pre className={Style.coding}>
-              <code>
-              <div>
-                  <span className="mr-3">
-                    <span className="txtColor">fetch(</span>
-                    <span className="url">'https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=Mirpur&post_office=true'</span>
-                    <span className="txtColor">)</span>
-                    </span> <br />
-                    <div className="ml-3">
-                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
-                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-                  </div>
-                      {/* <button type="button" className={AutoStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `fetch('https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=Mirpur&post_office=true')\n\t.then(response => response.json())\n\t.catch(error => console.error('Error:', error))\n\t.then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="4"
-             src={
-              {
-                "places": [
-                    {
-                        "id": 4,
-                        "latitude": "23.811978035351842",
-                        "longitude": "90.34750800579786",
-                        "address": "Chiriyakhana Post Office, Zoo Road, Section 1",
-                        "city": "Dhaka",
-                        "area": "Mirpur",
-                        "postCode": 1216,
-                        "pType": "Government",
-                        "uCode": "WEST4687"
-                    },
-                    {
-                        "id": 5,
-                        "latitude": "23.803282712061726",
-                        "longitude": "90.36128953099252",
-                        "address": "Mirpur Post Office, Main Road, Section 2",
-                        "city": "Dhaka",
-                        "area": "Mirpur",
-                        "postCode": 1216,
-                        "pType": "Government",
-                        "uCode": "BAND7192"
-                    },
-                    {
-                        "id": 6,
-                        "latitude": "23.820675852230316",
-                        "longitude": "90.3647304698825",
-                        "address": "Pallabi Post Office, Begum Rokeya Sarani, Purobi",
-                        "city": "Dhaka",
-                        "area": "Mirpur",
-                        "postCode": 1216,
-                        "pType": "Government",
-                        "uCode": "ALSO4104"
-                    }
-                ],
-                "status": 200
-            }       
-            
-              } />
+          <CopyBlock
+              text={
+      `{
+        "places": [
+            {
+                "id": 4,
+                "latitude": "23.811978035351842",
+                "longitude": "90.34750800579786",
+                "address": "Chiriyakhana Post Office, Zoo Road, Section 1",
+                "city": "Dhaka",
+                "area": "Mirpur",
+                "postCode": 1216,
+                "pType": "Government",
+                "uCode": "WEST4687"
+            },
+            {
+                "id": 5,
+                "latitude": "23.803282712061726",
+                "longitude": "90.36128953099252",
+                "address": "Mirpur Post Office, Main Road, Section 2",
+                "city": "Dhaka",
+                "area": "Mirpur",
+                "postCode": 1216,
+                "pType": "Government",
+                "uCode": "BAND7192"
+            },
+            {
+                "id": 6,
+                "latitude": "23.820675852230316",
+                "longitude": "90.3647304698825",
+                "address": "Pallabi Post Office, Begum Rokeya Sarani, Purobi",
+                "city": "Dhaka",
+                "area": "Mirpur",
+                "postCode": 1216,
+                "pType": "Government",
+                "uCode": "ALSO4104"
+            }
+        ],
+        "status": 200
+}`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Post Office Autocomplete API with all parameter 2 API call is counted.</p>
           </div>

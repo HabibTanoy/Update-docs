@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const PlaceApi = () => {
     document.title = "Barikoi Places API . Barikoi Documentation";
@@ -21,72 +21,64 @@ const PlaceApi = () => {
             <strong className={Style.limit}>API Limit Exceeded</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-            <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-                {
-                    "message": "API LIMIT EXCEEDED",
-                    "status": 429
-                }
-              } />
+            <CopyBlock
+              text={`{
+    "message": "API LIMIT EXCEEDED",
+    "status": 429
+}`}
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
             </pre>
             </div>
 
             <strong className={Style.limit}>Invalid or No Regsitered Key</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-            <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-                {
-                    "message": "Invalid or No Registered Key",
-                    "status": 401
-                }
-              } />
+            <CopyBlock
+              text={`{
+    "message": "Invalid or No Registered Key",
+    "status": 401
+}`}
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
             </pre>
             </div>
 
             <strong className={Style.limit}>Missing Parameter</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-            <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-                {
-                    "message": "Parameter missing",
-                    "status": 400
-                }
-              } />
+            <CopyBlock
+              text={`{
+    "message": "Parameter missing",
+    "status": 400
+}`}
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
             </pre>
             </div>
 
             <strong className={Style.limit}>Payment Exception</strong>
             <div className="mt-3">
             <pre className={Style.coding}>
-            <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-                {
-                    "message": "payment exception",
-                    "status": 402
-                }                
-              } />
+            <CopyBlock
+              text={`{
+    "message": "payment exception",
+    "status": 402
+}`}
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
             </pre>
             </div>
             <h2 className={`mt-3 mb-3 ${Style.intro}`}>Rate Limit</h2>

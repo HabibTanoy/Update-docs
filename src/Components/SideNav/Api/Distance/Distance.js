@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const Distance = () => {
   document.title = "Distance . Barikoi Documentation";
@@ -17,12 +17,15 @@ const Distance = () => {
             </p>
 
             <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                      <span>https://barikoi.xyz/v1/api/distance/API_KEY/SOURCE_LONGITUDE,SOURCE_LATITUDE/TARGET_LONGITUDE,TARGET_LATITUDE</span>
-                  </div>
-                  {/* <button type="button" className={DistStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/distance/API_KEY/SOURCE_LONGITUDE,SOURCE_LATITUDE/TARGET_LONGITUDE,TARGET_LATITUDE`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Distance API for Developers. This returns the distance between of a two place.</p>
 
@@ -65,37 +68,31 @@ const Distance = () => {
           <h2 className={`mt-5 mb-3 ${Style.intro}`}>Distance API Request Example</h2>
 
           <pre className={Style.coding}>
-              <code>
-              <div>
-                  <span className="mr-3">
-                    <span className="txtColor">fetch(</span>
-                    <span className="url">'https://barikoi.xyz/v1/api/distance/API_KEY/90.39534587,23.86448886/90.3673,23.8340'</span>
-                    <span className="txtColor">)</span>
-                    </span> <br />
-                    <div className="ml-3">
-                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
-                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-              </div>
-                      {/* <button type="button" className={DistStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `fetch('https://barikoi.xyz/v1/api/distance/API_KEY/90.39534587,23.86448886/90.3673,23.8340')\n\t.then(response => response.json())\n\t.catch(error => console.error('Error:', error))\n\t.then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-              {
-                "Distance": "7.8473 KM",
-                "status": 200
-              }     
-              } />
+          <CopyBlock
+              text={
+  `{
+    "Distance": "7.8473 KM",
+    "status": 200
+}`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Distance API with all parameter 1 API call is counted.</p>
           </div>

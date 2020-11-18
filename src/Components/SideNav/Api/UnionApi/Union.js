@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const UnionApi = () => {
   document.title = "Union Api . Barikoi Documentation";
@@ -27,7 +28,7 @@ const UnionApi = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered>
+            <Table striped bordered className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -67,44 +68,25 @@ const UnionApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div className="mb-3">
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  </div>
-                  <div className="ml-5">
-                  <div>
-                    <span className="txtColor">"places": [</span>
-                  </div>
-                  <div className="ml-5 txtColor">
-                    <span>{"{"}</span>
-                  </div>
-                  <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 1,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Abaipur",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"sub_district": <span className="url">"Shailkupa",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [89.32057699103409, 23.59762103167178]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="ml-5 txtColor">
-                    <span>{"}"}</span>
-                  </div>
-                  </div>
-                  <div className="txtColor ml-5 pl-3">
-                  <span> ], </span><br />
-                  <span>"status": 200</span>
-                  </div>
-                  <span className="txtColor"> {"}"} </span>
-                  </div>
-                  {/* <button type="button" className={DistStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+            theme="ocean"
+            enableClipboard={false}
+              displayDataTypes={false}
+              displayObjectSize={false}
+              indentWidth="5"
+              src={
+                {
+                  "places": [
+                      {
+                          "id": 1,
+                          "name": "Abaipur",
+                          "sub_district": "Shailkupa",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [89.32057699103409, 23.59762103167178]}"
+                      }
+                  ],
+                  "status": 200
+              }        
+            } />
           </pre>
           </div>
 
@@ -143,118 +125,45 @@ const UnionApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 1203,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Chikashi",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"sub_district": <span className="url">"Dhunat",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [89.56380109324998, 24.75404197173319]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 1204,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Chikdair",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"sub_district": <span className="url">"Raozan",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [91.8800217668128, 22.54372849367624]{"}"} </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 1205,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Chiknagul",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"sub_district": <span className="url">"Jaintiapur",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [92.00116400240036, 24.956171818679373]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectFour */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 1206,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Chiknikandi",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"sub_district": <span className="url">"Galachipa",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [90.45560794068692, 22.243360479923517]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              <div className="ml-4 txtColor">
-              <span>],</span><br />
-              <span>"status": 200</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+            theme="ocean"
+            enableClipboard={false}
+              displayDataTypes={false}
+              displayObjectSize={false}
+              indentWidth="5"
+              src={
+                {
+                  "places": [
+                      {
+                          "id": 1203,
+                          "name": "Chikashi",
+                          "sub_district": "Dhunat",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [89.56380109324998, 24.75404197173319]}"
+                      },
+                      {
+                          "id": 1204,
+                          "name": "Chikdair",
+                          "sub_district": "Raozan",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [91.8800217668128, 22.54372849367624]}"
+                      },
+                      {
+                          "id": 1205,
+                          "name": "Chiknagul",
+                          "sub_district": "Jaintiapur",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [92.00116400240036, 24.956171818679373]}"
+                      },
+                      {
+                          "id": 1206,
+                          "name": "Chiknikandi",
+                          "sub_district": "Galachipa",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [90.45560794068692, 22.243360479923517]}"
+                      }
+                  ],
+                  "status": 200
+              }         
+            } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Union API with all parameter 0 API call is counted.</p>
           </div>
 
           <Row>

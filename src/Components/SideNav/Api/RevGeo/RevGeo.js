@@ -4,9 +4,7 @@ import { Row, Col, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
-import MyCoolCodeBlock from '../codeBlock'
-import { CodeBlock, dracula } from 'react-code-blocks';
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const RevGeo = () => {
   document.title = "Reverse Geocode . Barikoi Documentation";
@@ -18,20 +16,13 @@ const RevGeo = () => {
               Reverse Geocoding API
           </p>
           <pre className={Style.coding}>
-              {/* <code>
-                  <div>
-                      <span className="txtColor">https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true   </span>
-                  </div>
-              </code> */}
-              <MyCoolCodeBlock />
-              {/* <CodeBlock
-              text={
-                `https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true`
-            }
-            language={"javascript"}
-            showLineNumbers={false}
-            theme={dracula}
-              /> */}
+            <CopyBlock
+              text={`https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true`}
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Returns an address given longitude and latitude.</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
@@ -99,49 +90,42 @@ const RevGeo = () => {
           </div>
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Reverse Geocoding API Request Example</h2>
           <pre className={Style.coding}>
-              {/* <code>
-                  <div>
-                      <span className="mr-3">
-                        <span className="txtColor">fetch(</span>
-                        <span className="url">'https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true'</span>
-                        <span className="txtColor">)</span>
-                        </span> <br />
-                        <div className="ml-3">
-                        <span className="txtColor">.then(response ={'>'} response.json())</span><br />
-                        <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                        <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                      </div>
-                      </div>
-              </code> */}
-              <MyCoolCodeBlock />
+          <CopyBlock
+              text={
+                `fetch('https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.3737&latitude=23.7881&district=true&post_code=true&country=true&sub_district=true&union=false&pauroshova=false&location_type=true')\n\t.then(response => response.json())\n\t.catch(error => console.error('Error:', error))\n\t.then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-              {
-                "place": {
-                    "id": 177936,
-                    "distance_within_meters": 1.167,
-                    "address": "Mohosin Uddin, House 462, West Shewrapara",
-                    "area": "Mirpur",
-                    "city": "Dhaka",
-                    "postCode": 1216,
-                    "location_type": "Urban",
-                    "district": "Dhaka",
-                    "country": "Bangladesh",
-                    "sub_district": "Kafrul"
-                },
-                "status": 200
-            }
-              } />
+          <CopyBlock
+              text={
+                `{
+      "place": {
+          "id": 177936,
+          "distance_within_meters": 1.167,
+          "address": "Mohosin Uddin, House 462, West Shewrapara",
+          "area": "Mirpur",
+          "city": "Dhaka",
+          "postCode": 1216,
+          "location_type": "Urban",
+          "district": "Dhaka",
+          "country": "Bangladesh",
+          "sub_district": "Kafrul"
+      },
+      "status": 200
+}`}
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Reverse Geocode with all parameter 8 API call is counted.</p>
           </div>

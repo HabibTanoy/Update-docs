@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const Rupantor = () => {
   document.title = "Rupantor Geocoder . Barikoi Documentation";
@@ -16,12 +16,15 @@ const Rupantor = () => {
               Rupantor Geocoder
             </p>
             <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                      <span>https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode</span>
-                  </div>
-                  {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete of not.</p>
           <p className={Style.text}>Rupantor Geocoder only supports FormData. So use FormData object to send your data.</p>
@@ -63,93 +66,65 @@ const Rupantor = () => {
           </div>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Rupantor Geocoder API Request Example</h2>
           <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                    <span className="txt">let </span>
-                    <span>formData = </span>
-                    <span className="txt">new </span>
-                    <span>FormData();</span>    
-                  </div>
-                  <div className="mb-3">
-                  <span className="txt">let </span>
-                    <span className="txtColor">url = </span>
-                    <span className="url">'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode'</span>
-                  </div>
-                  <div className="mb-3">
-                  <span className="txt">let </span>
-                    <span className="txtColor">address = </span>
-                    <span className="url">'ave#3 barikoi office house no# 192 rd# 02 mirpur dohs section 12'</span>
-                  </div>
-                  <div className="txtColor">
-                  <span >formData.append(</span>
-                    <span className="url">'q' </span>
-                    <span>address);</span>
-                  </div>
-                  <div className="txtColor">
-                  <span >formData.append(</span>
-                    <span className="url">thana', 'yes' </span>
-                    <span>);</span>
-                  </div>
-                  <div className="txtColor">
-                  <span >formData.append(</span>
-                    <span className="url">'district', 'yes' </span>
-                    <span>);</span>
-                  </div>
-                  <div className="txtColor mb-4">
-                  <span>formData.append(</span>
-                    <span className="url">'bangla', 'yes' </span>
-                    <span>);</span>
-                  </div>
-                  <span className="txtColor">fetch(url, {"{"}</span>
-                  <div className="txtColor ml-5">
-                    <span>method: </span>
-                    <span className="url">'post',</span><br />
-                    <span>body: formData</span>
-                  </div>
-                  <div className="txtColor">
-                  <span className="ml-3">{"}"})</span><br />
-                    <span>.then(response ={">"} response.json())</span>
-                  </div>
-                  <div>
-                  <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-                  
-                      {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+   `
+   let formData = new FormData();
+   let url = 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode'
+   
+   let address = 'ave#3 barikoi office house no# 192 rd# 02 mirpur dohs section 12'
+   
+   formData.append('q', address);
+   formData.append('thana', 'yes');
+   formData.append('district', 'yes');
+   formData.append('bangla', 'yes');
+   
+   fetch(url, {
+           method: 'post',
+           body: formData
+       })
+       .then(response => response.json())
+       .catch(error => console.error('Error:', error))
+       .then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3"> 
           <pre className={Style.coding}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="8"
-             src={
-              {
-                "given_address": "ave#3 barikoi office house no#192 rd#02 mirpur dohs section 12",
-                "fixed_address": "barikoi office, house 192, avenue 3, road 2, mirpur dohs, mirpur",
-                "bangla_address": "বাড়িকই অফিস, হাউস ১৯২, এভিনিউ ৩, রোড ২, মিরপুর ডিওএইচএস, মিরপুর",
-                "address_status": "complete",
-                "geocoded_address": {
-                    "Address": "House 192, Road 2, Mirpur DOHS, Mirpur, Dhaka",
-                    "area": "Mirpur",
-                    "city": "Dhaka",
-                    "district": "Dhaka",
-                    "latitude": "23.833979263544503",
-                    "longitude": "90.36733254790306",
-                    "pType": "Residential",
-                    "postCode": 1216,
-                    "thana": "Pallabi",
-                    "uCode": "CDOG6017"
-                },
-                "confidence_score_percentage": 95,
-                "status": 200
-            }               
-              } />
+          <CopyBlock
+              text={
+  `{
+    "given_address": "ave#3 barikoi office house no#192 rd#02 mirpur dohs section 12",
+    "fixed_address": "barikoi office, house 192, avenue 3, road 2, mirpur dohs, mirpur",
+    "bangla_address": "বাড়িকই অফিস, হাউস ১৯২, এভিনিউ ৩, রোড ২, মিরপুর ডিওএইচএস, মিরপুর",
+    "address_status": "complete",
+    "geocoded_address": {
+        "Address": "House 192, Road 2, Mirpur DOHS, Mirpur, Dhaka",
+        "area": "Mirpur",
+        "city": "Dhaka",
+        "district": "Dhaka",
+        "latitude": "23.833979263544503",
+        "longitude": "90.36733254790306",
+        "pType": "Residential",
+        "postCode": 1216,
+        "thana": "Pallabi",
+        "uCode": "CDOG6017"
+    },
+    "confidence_score_percentage": 95,
+    "status": 200
+}`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Rupantor Geocoder with basic parameter 2 API call is counted.</p>
           </div>
@@ -162,12 +137,15 @@ const Rupantor = () => {
             </p>
 
             <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                      <span>https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode</span>
-                  </div>
-                  {/* <button type="button" className={Style.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Rupantor Address Matcher API matches two different given address and returns match percantage and match status.</p>
 
@@ -200,83 +178,58 @@ const Rupantor = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Rupantor Address Matcher API Request Example</h2>
 
           <pre className={Style.coding}>
-          <code>
-                  <div className="txtColor">
-                    <span className="txt">let </span>
-                    <span>formData = </span>
-                    <span className="txt">new </span>
-                    <span>FormData();</span>    
-                  </div>
-                  <div className="mb-3">
-                  <span className="txt">let </span>
-                    <span className="txtColor">url = </span>
-                    <span className="url">'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode'</span>
-                  </div>
-                  <div className="mb-3">
-                  <span className="txt">let </span>
-                    <span className="txtColor">address = </span>
-                    <span className="url">'ave#3 barikoi office house no# 192 rd# 02 mirpur dohs section 12'</span>
-                  </div>
-                  <div className="txtColor">
-                  <span >formData.append(</span>
-                    <span className="url">'q', 'হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর'</span>
-                    <span>);</span>
-                  </div>
-                  <div className="txtColor">
-                  <span >formData.append(</span>
-                    <span className="url">'q2', 'house 18, road 5, block G, section 2, mirpur'</span>
-                    <span>);</span>
-                  </div>
-                  <div className="txtColor mb-3">
-                  <span >formData.append(</span>
-                    <span className="url">'match', 'yes'</span>
-                    <span>);</span>
-                  </div>
-                  <span className="txtColor">fetch(url, {"{"}</span>
-                  <div className="txtColor ml-5">
-                    <span>method: </span>
-                    <span className="url">'post',</span><br />
-                    <span>body: formData</span>
-                  </div>
-                  <div className="txtColor">
-                  <span className="ml-3">{"}"})</span><br />
-                    <span>.then(response ={">"} response.json())</span>
-                  </div>
-                  <div>
-                  <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-                  
-                      {/* <button type="button" className={RupStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+    `
+    let formData = new FormData();
+    let url = 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode'
+    
+    let address = 'ave#3 barikoi office house no# 192 rd# 02 mirpur dohs section 12'
+    
+    formData.append('q', 'হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর');
+    formData.append('q2', 'house 18, road 5, block G, section 2, mirpur');
+    formData.append('match', 'yes');
+    
+    fetch(url, {
+            method: 'post',
+            body: formData
+        })
+        .then(response => response.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
-          <div className="mt-3">
+          <div className="mt-3 mb-5">
           <pre className={`mb-5 ${Style.coding}`}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="8"
-             src={
-              {
-                "match": {
-                    "address 1": "হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর",
-                    "address 2": "house 18, road 5, block G, section 2, mirpur",
-                    "match percentage": "100%",
-                    "match status": "exact"
-                },
-                "status": 200
-            }
-              } />
-                  <div className="override">
-                    <span>// match_status defination</span><br />
-                    <span>// match percentage {">"}= 97-100 = exact</span><br />
-                    <span>// match percentage {">"}75-96 = approximate</span><br />
-                    <span>// match percentage {"<"}75 = not matched</span>
-                  </div>
+          <CopyBlock
+              text={
+  `{
+    "match": {
+        "address 1": "হাউস ১৮, রোড ৫,  ব্লক জি, সেকশন ২ মিরপুর",
+        "address 2": "house 18, road 5, block G, section 2, mirpur",
+        "match percentage": "100%",
+        "match status": "exact"
+    },
+    "status": 200
+}
+
+// match_status defination
+// match percentage >= 97-100 = exact
+// match percentage >75-96 = approximate
+// match percentage <75 = not matched`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Rupantor Address Match with basic parameter 2 API call is counted.</p>
           </div>

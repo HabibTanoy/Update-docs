@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const SubDistrict = () => {
   document.title = "Sub-District Api . Barikoi Documentation";
@@ -27,7 +28,7 @@ const SubDistrict = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered>
+            <Table striped bordered className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -67,44 +68,25 @@ const SubDistrict = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div className="mb-3">
-                  <div className="txtColor">
-                  <span> {"{"} </span><br />
-                  </div>
-                  <div className="ml-5">
-                  <div>
-                    <span className="txtColor">"places": [</span>
-                  </div>
-                  <div className="ml-5 txtColor">
-                    <span>{"{"}</span>
-                  </div>
-                  <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 280,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Khilgaon",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Dhaka",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [90.45477443959228, 23.759899924349806]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="ml-5 txtColor">
-                    <span>{"}"}</span>
-                  </div>
-                  </div>
-                  <div className="txtColor ml-5 pl-3">
-                  <span> ], </span><br />
-                  <span>"status": 200</span>
-                  </div>
-                  <span className="txtColor"> {"}"} </span>
-                  </div>
-                  {/* <button type="button" className={DistStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+            theme="ocean"
+            enableClipboard={false}
+              displayDataTypes={false}
+              displayObjectSize={false}
+              indentWidth="5"
+              src={
+                {
+                  "places": [
+                      {
+                          "id": 280,
+                          "name": "Khilgaon",
+                          "district": "Dhaka",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [90.45477443959228, 23.759899924349806]}"
+                      }
+                  ],
+                  "status": 200
+              }        
+            } />
           </pre>
           </div>
 
@@ -143,169 +125,57 @@ const SubDistrict = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div>
-              <div className="txtColor">
-              <div className="mb-2">
-              <span> {"{"} </span><br />
-              </div>
-              <div className="ml-4">
-              <span className="ml-1">"places": {"["}</span><br />
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 1,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Abhaynagar",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Jessore",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [89.42057859019934, 23.01760534615544]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectTwo */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 2,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Adabor",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Dhaka",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [90.3533353289662, 23.770166931185912]{"}"} </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              </div>
-              {/* objectThree */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span>
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 3,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Adamdighi",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Bogra",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [89.05945382380858, 24.79924085609132]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectFour */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 4,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Aditmari",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Lalmonirhat",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [89.36945393829866, 25.94501576520455]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectFive */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 5,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Agailjhara",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Barisal",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [90.14076039190546, 22.96784467745809]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"},"} </span><br />
-              </div>
-              </div>
-              {/* objectSix */}
-              <div>
-              <div className="txtColor">
-              <div className="ml-4">
-              <span className="ml-3"> {"{"} </span><br />
-              </div>
-              </div>
-              <div className="ml-5 pl-4">
-              <div>
-                <span className="txtColor">"id": 6,</span>
-              </div>
-              <div>
-                <span className="txtColor">"name": <span className="url">"Ajmiriganj",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"district": <span className="url">"Habiganj",</span></span>
-              </div>
-              <div>
-                <span className="txtColor">"center": <span className="url">"{"{"}\"type\": \"Point\", \"coordinates\": [91.2841877763222, 24.55331228982608]{"}"}" </span></span>
-              </div>
-              </div>
-              <div className="txtColor ml-4 pl-3">
-              <span> {"}"} </span><br />
-              <span>.......</span>
-              </div>
-              </div>
-              <div className="ml-4 txtColor">
-              <span>],</span><br />
-              <span>"status": 200</span><br />
-              </div>
-              <span className="txtColor"> {"}"} </span><br />
-              </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+            theme="ocean"
+            enableClipboard={false}
+              displayDataTypes={false}
+              displayObjectSize={false}
+              indentWidth="5"
+              src={
+                {
+                  "places": [
+                      {
+                          "id": 1,
+                          "name": "Abhaynagar",
+                          "district": "Jessore",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [89.42057859019934, 23.01760534615544]}"
+                      },
+                      {
+                          "id": 2,
+                          "name": "Adabor",
+                          "district": "Dhaka",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [90.3533353289662, 23.770166931185912]}"
+                      },
+                      {
+                          "id": 3,
+                          "name": "Adamdighi",
+                          "district": "Bogra",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [89.05945382380858, 24.79924085609132]}"
+                      },
+                      {
+                          "id": 4,
+                          "name": "Aditmari",
+                          "district": "Lalmonirhat",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [89.36945393829866, 25.94501576520455]}"
+                      },
+                      {
+                          "id": 5,
+                          "name": "Agailjhara",
+                          "district": "Barisal",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [90.14076039190546, 22.96784467745809]}"
+                      },
+                      {
+                          "id": 6,
+                          "name": "Ajmiriganj",
+                          "district": "Habiganj",
+                          "center": "{\"type\": \"Point\", \"coordinates\": [91.2841877763222, 24.55331228982608]}"
+                      }
+                  ],
+                  "status": 200
+              }         
+            } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Sub-District API with all parameter 0 API call is counted.</p>
           </div>
 
           <Row>

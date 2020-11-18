@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const GeoCoding = () => {
   document.title = "Geocoding . Barikoi Documentation";
@@ -17,12 +17,15 @@ const GeoCoding = () => {
           </p>
 
           <pre className={Style.coding}>
-              <code>
-                  <div>
-                      <span className="txtColor">https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/place_id</span>
-                  </div>
-                  {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/place_id`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Geocode API for Developers. This returns location data of a specific place.</p>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
@@ -48,49 +51,43 @@ const GeoCoding = () => {
 
           <h2 className={`mt-5 mb-3 ${Style.intro}`}>Geocoding API Request Example</h2>
           <pre className={Style.coding}>
-          <code>
-              <div>
-                  <span className="mr-3">
-                    <span className="txtColor">fetch(</span>
-                    <span className="url">'https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/3354'</span>
-                    <span className="txtColor">)</span>
-                    </span> <br />
-                    <div className="ml-3">
-                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
-                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-                  </div>
-                      {/* <button type="button" className={geoStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `fetch('https://barikoi.xyz/v1/api/search/geocode/API_KEY/place/3354')\n\t.then(response => response.json())\n\t.catch(error => console.error('Error:', error))\n\t.then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <ReactJson 
-          theme="ocean"
-           enableClipboard={false}
-            displayDataTypes={false}
-             displayObjectSize={false}
-             indentWidth="10"
-             src={
-              {
-                "place": {
-                    "id": 177936,
-                    "distance_within_meters": 1.167,
-                    "address": "Mohosin Uddin, House 462, West Shewrapara",
-                    "area": "Mirpur",
-                    "city": "Dhaka",
-                    "postCode": 1216,
-                    "location_type": "Urban",
-                    "district": "Dhaka",
-                    "country": "Bangladesh",
-                    "sub_district": "Kafrul"
-                },
-                "status": 200
-            }
-              } />
+          <CopyBlock
+              text={
+                `{
+        "place": {
+          "id": 3354,
+          "address": "Barikoi Office, House 192, Road 2",
+          "area": "Mirpur Dohs",
+          "city": "Dhaka",
+          "postcode": 1216,
+          "ucode": "BKOI2017",
+          "longitude": "90.3673348642485",
+          "latitude": "23.8340107016275",
+          "pType": "Office",
+          "subType": "Head Office"
+      },
+      "status": 200
+}`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Geocoding API with all parameter 1 API call is counted.</p>
           </div>

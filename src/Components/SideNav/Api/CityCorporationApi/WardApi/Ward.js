@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import ReactJson from 'react-json-view'
 
 const WardApi = () => {
   document.title = "Ward by Geo location . Barikoi Documentation";
@@ -27,7 +28,7 @@ const WardApi = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
 
           <div className="w-50">
-            <Table striped bordered>
+            <Table striped bordered className="text-center">
             <thead>
                 <tr>
                   <th scope="col">Parameter</th>
@@ -74,23 +75,22 @@ const WardApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <code>
-              <div>
-                  <span className="txtColor">[</span><br />
-                      <div className="ml-5">
-                      <span className="txtColor">{"{"}</span>
-                      <div className="ml-4 txtColor">
-                        <span>"Ward": 17</span>
-                      </div>
-                      <span className="txtColor">{"}"}</span> 
-                      </div> 
-                      <span className="txtColor">]</span>
-                  </div>
-                  {/* <button type="button" className={placeStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <ReactJson 
+            theme="ocean"
+            enableClipboard={false}
+              displayDataTypes={false}
+              displayObjectSize={false}
+              indentWidth="5"
+              src={
+                [
+                  {
+                      "Ward": 17
+                  }
+              ]   
+            } />
           </pre>
+          <p className={`font-weight-bold ${Style.text}`}>For each request of Ward by Geolocation API with all parameter 1 API call is counted.</p>
           </div>
-
           <Row>
             <Col sm={6}> 
             <div className={`mb-4 ${Style.previous}`}>
