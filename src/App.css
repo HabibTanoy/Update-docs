@@ -141,3 +141,13 @@ ul li a {
  .irsCXf {
     padding: 15px !important
  }
+
+ .linked {
+  padding:4px 13px;
+  margin:0;
+  border-radius:.25rem;
+}
+
+.linked:hover {
+    background-color: rgba(0,0,0,.05);
+}

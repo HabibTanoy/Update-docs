@@ -4,6 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const SearchJs = () => {
   document.title = "Search . Barikoi Documentation";
@@ -14,21 +15,16 @@ const SearchJs = () => {
             <p className={Style.text}>This method performs location search using Barikoi Search API. It accepts two arguments a query string and a callback function and returns an array of locations</p>
             <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example</h2>
             <pre className={Style.coding}>
-              <code>
-                  <div className="mb-3">
-                    <span className="txtColor">// </span>
-                    <span className="txt">Search for</span>
-                    <span className="url">'cafe'</span>
-                  </div>
-                  <div>
-                  <span className="txtColor">Bkoi.</span>
-                  <span className="txt">search</span>
-                  <span className="txtColor">(</span>
-                  <span className="url">'cafe'</span>
-                  <span className="txtColor">, response ={">"} console.log(response))</span>
-                  </div>
-                  {/* <button type="button" className={SearchStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `//  Search for 'cafe'
+    Bkoi.search('cafe', response => console.log(response)) `
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`mb-5 ${Style.text}`}>Barikoi.js provides Autocomplete UI for search. Tutorial on Autocomplete UI can be found 
           <a style={{color:"#2ddbac"}} href="https://medium.com/@barikoibd/how-to-add-location-search-autocomplete-functionality-to-your-website-in-2-minutes-using-barikoi-js-f99b351ba997"> here</a></p>

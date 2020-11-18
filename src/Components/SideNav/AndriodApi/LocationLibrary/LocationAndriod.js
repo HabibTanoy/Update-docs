@@ -4,8 +4,10 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const LocationAndriod = () => {
+  document.title = "Barikoi Location Library . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Barikoi Location Library</h1>
@@ -15,49 +17,33 @@ const LocationAndriod = () => {
 
             <div className="mt-3 mb-5">
               <pre className={Style.coding}>
-                  <code>
-                      <div className={`mb-4 ${Style.comments}`}>
-                      <span>//in addition to the rest of your build.gradle contents</span> <br />
-                      <span>//you should include the following repository and dependency</span>
-                      </div>
-                      <div className="mb-3">
-                        <div className="txtColor">
-                        <span>android {"{"} </span> <br />
-                        <span className="ml-5">compileOptions {"{"}</span> <br />
-                        </div>
-                        <div className="ml-5 pl-5 txtColor">
-                        <span className="txt">sourceCompatibility</span> <span>JavaVersion.VERSION_1_8</span> <br />
-                        <span className="txt">targetCompatibility</span> <span>JavaVersion.VERSION_1_8</span> <br />
-                        </div>
-                        <div className="txtColor">
-                        <span className="ml-5">{"}"}</span> <br />
-                        <span>{"}"} </span> <br />
-                        </div>
-                      </div>
-                      
-                      <div className="mb-3">
-                        <div >
-                        <span className="txt">allprojects</span> <span className="txtColor">{"{"}</span>  <br />
-                        <span className="ml-5 txt">repositories</span> <span className="txtColor">{"{"}</span> <br />
-                        </div>
-                        <span className="ml-5 pl-5 txtColor">...</span> <br />
-                        <div className="ml-5 pl-5">
-                          <span className="txtColor">maven {"{"} url</span> <span className="url">'https://jitpack.io'</span> <span className="txtColor">{"}"}</span> 
-                          </div> 
-                        <div className="txtColor">
-                        <span className="ml-5">{"}"}</span> <br />
-                        <span>{"}"} </span> <br />
-                        </div>
-                      </div>
-                    <div className="mb-3">
-                    <span className="txt">dependencies</span> <span className="txtColor">{"{"} </span>  <br />
-                    <div className="ml-5">
-                      <span className="txtColor">implementation</span> <span className="url">'com.github.barikoi:BarikoiLocationLibrary:v1.2.2'</span>
-                    </div> 
-                    <span className="txtColor">{"}"} </span> <br />
-                    </div>
-                      {/* <button type="button" className={LocationStyle.copyBtn}>Copy</button>   */}
-                  </code>
+              <CopyBlock
+              text={
+        `//in addition to the rest of your build.gradle contents\n//you should include the following repository and dependency
+        
+      android {
+          compileOptions {
+              sourceCompatibility JavaVersion.VERSION_1_8
+              targetCompatibility JavaVersion.VERSION_1_8
+          }
+      }
+      
+      allprojects {
+          repositories {
+              ...
+              maven { url 'https://jitpack.io' }
+          }
+      }
+      
+      dependencies {
+          implementation 'com.github.barikoi:BarikoiLocationLibrary:v1.2.2'
+      }`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
               </pre>
           </div>
 

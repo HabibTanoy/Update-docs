@@ -61,24 +61,8 @@ import AppRequest from '../Api/Bkoi-Verify/RequestRevision/AppRequest';
 
 class SideNav extends Component {
     state = { 
-        // toggle: false,
-        // jsToggle: false,
-        // AndApi: false,
-        // pricing: false
+
      }
-
-    // toggleHandle = (flag, current_value) => {
-    //     const tempObj = this.state
-    //     Object.keys(tempObj).forEach(key => {
-    //         tempObj[key] = false
-    //     })
-
-    //     this.setState({
-    //         ...tempObj,
-    //       [flag]: !current_value
-    //     });
-    //     // console.log("Clicked")
-    //   };
 
     render() { 
         return ( 
@@ -129,14 +113,13 @@ class SideNav extends Component {
                             <ScrollToTopRoute path="/ward-zone-by-location" component={WardZoneApi} />
                             <ScrollToTopRoute path="/city-corp-by-location" component={GeoLocApi} />
                             //Bkoi-Verify-Auth
-                            <ScrollToTopRoute path="/verify-login" component={Login} />
-                            {/* <ScrollToTopRoute path="/verify-registration" component={Registration} /> */}
+                            {/* <ScrollToTopRoute path="/verify-login" component={Login} />
                             <ScrollToTopRoute path="/verify-logout" component={Logout} />
                             //Verify Api
                             <ScrollToTopRoute path="/app-create" component={CreateApp} />
                             <ScrollToTopRoute path="/app-list" component={AppList} />
                             <ScrollToTopRoute path="/app-details" component={AppDetails} />
-                            <ScrollToTopRoute path="/app-request" component={AppRequest} />
+                            <ScrollToTopRoute path="/app-request" component={AppRequest} /> */}
                             //Js-Library
                             <ScrollToTopRoute path="/library-intro" component={JsStart} />
                             <ScrollToTopRoute path="/search-js" component={SearchJs} />

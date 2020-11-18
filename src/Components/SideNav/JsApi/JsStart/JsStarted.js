@@ -4,6 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const JsStart = () => {
   document.title = "Getting Started . Barikoi Documentation";
@@ -19,22 +20,18 @@ const JsStart = () => {
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Authentication</h2>
           <p className={Style.text}>API Key is needed to use the API's. <a style={{color:"#2ddbac", textDecoration:"none"}} href="https://barikoi.com/signup">Sign up</a> in Barikoi Developers Account and get an Account API KEY. Include Barikoi.js in the end of the body tag of your page with your API key:</p>
           <pre className={`mb-5 ${Style.coding}`}>
-              <code>
-                  <div className="">
-                    <span className="txtColor">{"<"}</span>
-                    <span className="url">script </span> 
-                    <span className="txtColor">src=</span>
-                    <span className="url">"https://cdn.jsdelivr.net/gh/barikoi/barikoi-js@b6f6295467c19177a7d8b73ad4db136905e7cad6/dist/barikoi.min.js?key:YOUR_API_KEY"</span>
-                    <span className="txtColor">{"><"}/</span>
-                    <span className="url">script</span>
-                    <span className="txtColor">{">"}</span>
-                  </div>
-                  {/* <button type="button" className={StartStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+                `<script src="https://cdn.jsdelivr.net/gh/barikoi/barikoi-js@b6f6295467c19177a7d8b73ad4db136905e7cad6/dist/barikoi.min.js?key:YOUR_API_KEY"></script>`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <Row>
             <Col sm={6}> 
-            
             </Col>
             <Col sm={6}>
             <div className={`mb-4 ${Style.previous} ${Style.next}`}>

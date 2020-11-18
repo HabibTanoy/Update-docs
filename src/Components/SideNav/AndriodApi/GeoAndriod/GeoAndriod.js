@@ -4,103 +4,64 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const GeoAndriod = () => {
+  document.title = "Geocoding . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Geocoding</h1>
             <h2 className={`mt-4 mb-3 ${Style.intro}`}>Geocoding Library Example</h2>
             <pre className={Style.coding}>
-              <code>
-                  <div className="mb-3">
-                    <div className="txtColor">
-                    <span>GeoCodeAPI.builder(getApplicationContext())</span><br/>
-                    <div className="ml-5 pl-3">
-                    <span>.idOrCode(idOrCode)</span><br/>
-                    <span>.build()</span><br/>
-                    <span>.generateList(new PlaceGeoCodeListener() {"{"}</span><br />
-                    <div className="ml-4 ">
-                    <span className="override">@Override</span><br />
-                    <span className="function">public void </span>
-                    <span className="url" style={{fontWeight:"bold"}}>onGeoCodePlace</span>
-                    <span className="txtColor">(GeoCodePlace place) {"{"}</span>
-                    <div className="ml-5">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">""</span>
-                      <span className="txtColor">+place.getAddress(), Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor">{"}"}</span>
-                    </div>
-                    </div>
-                    </div>
+            <CopyBlock
+              text={
+        `
+    GeoCodeAPI.builder(getApplicationContext())
+            .idOrCode(idOrCode)
+            .build()
+            .generateList(new PlaceGeoCodeListener() {
+                @Override
+                public void onGeoCodePlace(GeoCodePlace place) {
+                    Toast.makeText(MainActivity.this, ""+place.getAddress(), Toast.LENGTH_SHORT).show();    
+                }
 
-                    <div className="ml-5 pl-2 mt-3">
-                    <div className="ml-4">
-                    <span className="override">@Override</span> <br />
-                      <span className="function">public void </span> 
-                      <span className="url" style={{fontWeight:"bold"}}>onFailure</span>
-                      <span className="txtColor">(String message) {"{"}</span>
-                    </div>
-                    <div className="ml-5 pl-4">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">""</span>
-                      <span className="txtColor">+ message, Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor ml-4">{"}"}</span>
-                    </div>
-                    <span className="txtColor">{"}"});</span>
-                  </div>  
-                {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
-              </code>
+                @Override
+                public void onFailure(String message) {
+                    Toast.makeText(MainActivity.this, ""+ message, Toast.LENGTH_SHORT).show();
+                }
+            });`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Autocomplete Library</h2>
             <pre className={`mb-5 ${Style.coding}`}>
-            <code>
-                  <div className="mb-3">
-                    <div className="txtColor">
-                    <span>SearchAutoCompleteAPI.builder(getApplicationContext())</span><br/>
-                    <div className="ml-5 pl-3">
-                    <span>.nameOrCode(nameOrCode)</span><br/>
-                    <span>.build()</span><br/>
-                    <span>.generateList(new SearchAutoCompleteListener() {"{"}</span><br />
-                    <div className="ml-4 ">
-                    <span className="override">@Override</span><br />
-                    <span className="function">public void </span>
-                    <span className="url" style={{fontWeight:"bold"}}>onPlaceListReceived</span>
-                    <span className="txtColor">(ArrayList{"<"}SearchAutoCompletePlace{">"} places) {"{"}</span>
-                    <div className="ml-5">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Selected Place"</span>
-                      <span className="txtColor">+places.get(0).getAddress(), Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor">{"}"}</span>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div className="ml-5 pl-2 mt-3">
-                    <div className="ml-4">
-                    <span className="override">@Override</span> <br />
-                      <span className="function">public void </span> 
-                      <span className="url" style={{fontWeight:"bold"}}>onFailure</span>
-                      <span className="txtColor">(String message) {"{"}</span>
-                    </div>
-                    <div className="ml-5 pl-4">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Error Message"</span>
-                      <span className="txtColor">message, Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor ml-4">{"}"}</span>
-                    </div>
-                    <span className="txtColor">{"}"});</span>
-                  </div>  
-                {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+        `
+        SearchAutoCompleteAPI.builder(getApplicationContext())
+                  .nameOrCode(nameOrCode)
+                  .build()
+                  .generateList(new SearchAutoCompleteListener() {
+                    @Override
+                    public void onPlaceListReceived(ArrayList<SearchAutoCompletePlace> places) {
+                        Toast.makeText(MainActivity.this, "Selected Place"+places.get(0).getAddress(), Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onFailure(String message) {
+                        Toast.makeText(MainActivity.this, "Error Message"+message, Toast.LENGTH_SHORT).show();
+                    }
+        });`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <Row>

@@ -4,6 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const GeoJs = () => {
   document.title = "Geocoding . Barikoi Documentation";
@@ -15,15 +16,16 @@ const GeoJs = () => {
 
             <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example</h2>
             <pre className={`mb-5 ${Style.coding}`}>
-              <code>
-              <div>
-                  <span className="override">//  Get Geo Address</span><br />
-                  <div className="mt-3">
-                  <span className="txtColor">Bkoi.geocode(147, response ={">"} console.log(JSON.parse(response)))</span>
-                  </div>
-                </div>
-                  {/* <button type="button" className={RevJsStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `//  Get Geo Address
+    Bkoi.geocode(147, response => console.log(JSON.parse(response)))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <Row>
             <Col sm={6}> 

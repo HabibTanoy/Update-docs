@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const AddApi = () => {
   document.title = "Add Place . Barikoi Documentation";
@@ -17,12 +17,15 @@ const AddApi = () => {
             </p>
 
             <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                      <span>https://barikoi.xyz/v1/API_KEY/add/place</span>
-                  </div>
-                  {/* <button type="button" className={AddStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/API_KEY/add/place`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>API PARAMS</h2>
@@ -108,21 +111,21 @@ const AddApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <ReactJson 
-            theme="ocean"
-            enableClipboard={false}
-              displayDataTypes={false}
-              displayObjectSize={false}
-              indentWidth="10"
-              src={
-                {
-                  "message": "place added successfully",
-                  "status": 200,
-                  "uCode": "MKQJ3341"
-              }              
-            } />
+          <CopyBlock
+              text={
+    `{
+      "message": "place added successfully",
+      "status": 200,
+      "uCode": "MKQJ3341"
+}`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
-          <p className={`font-weight-bold ${Style.text}`}>For each request of Add Place with all parameter 1 API call is counted.</p>
+          <p className={`font-weight-bold mb-5 ${Style.text}`}>For each request of Add Place with all parameter 1 API call is counted.</p>
           </div>
 
           <Row>

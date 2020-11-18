@@ -4,8 +4,10 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const NearbyAndriod = () => {
+  document.title = "Nearby . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Nearby</h1>
@@ -13,100 +15,60 @@ const NearbyAndriod = () => {
             <p className={Style.text}>Nearby Request Example Without Place Type</p>
 
             <pre className={Style.coding}>
-            <code>
-                  <div className="mb-3">
-                    <div className="txtColor">
-                    <span>NearbyPlaceAPI.builder(getApplicationContext())</span><br/>
-                    <div className="ml-5 pl-3">
-                    <span>.setDistance(.5)</span><br/>
-                    <span>.setLimit(10)</span><br/>
-                    <span>.setLatLng(latitude,longitude)</span><br/>
-                    <span>.build()</span><br/>
-                    <span>.generateNearbyPlaceList(new NearbyPlaceListener() {"{"}</span><br />
-                    <div className="ml-4 ">
-                    <span className="override">@Override</span><br />
-                    <span className="function">public void </span>
-                    <span className="url" style={{fontWeight:"bold"}}>onPlaceListReceived</span>
-                    <span className="txtColor">(ArrayList{"<"}NearbyPlace{">"} places) {"{"}</span>
-                    <div className="ml-5">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Nearby Place First Address: "</span>
-                      <span className="txtColor">+places.get(0).getAddress(), Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor">{"}"}</span>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div className="ml-5 pl-2 mt-3">
-                    <div className="ml-4">
-                    <span className="override">@Override</span> <br />
-                      <span className="function">public void </span> 
-                      <span className="url" style={{fontWeight:"bold"}}>onFailure</span>
-                      <span className="txtColor">(String message) {"{"}</span>
-                    </div>
-                    <div className="ml-5 pl-4">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Error Message"</span>
-                      <span className="txtColor">+message, Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor ml-4">{"}"}</span>
-                    </div>
-                    <span className="txtColor">{"}"});</span>
-                  </div>  
-                {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+        `
+        NearbyPlaceAPI.builder(getApplicationContext())
+                    .setDistance(.5)
+                    .setLimit(10)
+                    .setLatLng(latitude,longitude)
+                    .build()
+                    .generateNearbyPlaceList(new NearbyPlaceListener() {
+                        @Override
+                        public void onPlaceListReceived(ArrayList<NearbyPlace> places) {
+                            Toast.makeText(MainActivity.this, "Nearby Place First Address: "+places.get(0).getAddress(),                       Toast.LENGTH_SHORT).show();
+    
+                        }
+                        @Override
+                        public void onFailure(String message) {
+                            Toast.makeText(MainActivity.this, "Error Message"+message, Toast.LENGTH_SHORT).show();
+                        }
+                    });`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <p className={Style.text}>Nearby Request Example with Specific Place Type</p>
           <pre className={Style.coding}>
-          <code>
-                  <div className="mb-3">
-                    <div className="txtColor">
-                    <span>NearbyPlaceAPI.builder(getApplicationContext())</span><br/>
-                    <div className="ml-5 pl-3">
-                    <span>.setDistance(.5)</span><br/>
-                    <span>.setLimit(10)</span><br/>
-                    <span>.setLatLng(latitude,longitude)</span><br/>
-                    <span>.build()</span><br/>
-                    <span>.generateNearbyPlaceListByType (new NearbyPlaceListener() {"{"}</span><br />
-                    <div className="ml-4 ">
-                    <span className="override">@Override</span><br />
-                    <span className="function">public void </span>
-                    <span className="url" style={{fontWeight:"bold"}}>onPlaceListReceived</span>
-                    <span className="txtColor">(ArrayList{"<"}NearbyPlace{">"} places) {"{"}</span>
-                    <div className="ml-5">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Nearby Place First Address: "</span>
-                      <span className="txtColor">+places.get(0).getAddress()+" "+places.get(0).getCode(), Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor">{"}"}</span>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div className="ml-5 pl-2 mt-3">
-                    <div className="ml-4">
-                    <span className="override">@Override</span> <br />
-                      <span className="function">public void </span> 
-                      <span className="url" style={{fontWeight:"bold"}}>onFailure</span>
-                      <span className="txtColor">(String message) {"{"}</span>
-                    </div>
-                    <div className="ml-5 pl-4">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Error: "</span>
-                      <span className="txtColor">+message, Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor ml-4">{"}"}</span>
-                    </div>
-                    <span className="txtColor">{"}"});</span>
-                  </div>  
-                {/* <button type="button" className={GeoStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+        `
+        NearbyPlaceAPI.builder(getApplicationContext())
+                      .setDistance(.5)
+                      .setLimit(10)
+                      .setLatLng(latitude,longitude)
+                      .setType("Bank")
+                      .build()
+                      .generateNearbyPlaceListByType(new NearbyPlaceListener() {
+                          @Override
+                          public void onPlaceListReceived(ArrayList<NearbyPlace> places) {
+                              Toast.makeText(MainActivity.this, "Nearby Place First Address: "+places.get(0).getAddress()+" "+places.get(0).getCode(), Toast.LENGTH_SHORT).show();                        
+                          }
+                          @Override
+                          public void onFailure(String message) {
+                              Toast.makeText(MainActivity.this, "Error: "+message, Toast.LENGTH_SHORT).show();
+                          }
+                      });`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <Row>

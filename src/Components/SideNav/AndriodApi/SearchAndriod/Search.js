@@ -4,8 +4,10 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { CopyBlock, dracula, xml } from 'react-code-blocks';
 
 const SearchAndriod = () => {
+  document.title = "Search . Barikoi Documentation";
     return ( 
         <div>
             <h1 className={`mt-4 ${Style.api}`}>Search</h1>
@@ -13,77 +15,46 @@ const SearchAndriod = () => {
             <p className={Style.text}>To use the Barikoi Search Autocomplete Activity first add the below code snippet in your activity xml file.</p>
             <h2 className={`mt-4 mb-3 ${Style.intro}`}>activity_main.xml</h2>
             <pre className={Style.coding}>
-              <code>
-                  <div className="mb-3">
-                    <span className="txtColor">{"<"}fragment</span> <br/>
-                    <div className="ml-5">
-                    <div>
-                      <span className="txtColor">android:</span>
-                      <span className="url">id="@+id/barikoiSearchAutocompleteFragment"</span>
-                      </div>
-                      <div>
-                      <span className="txtColor">android:</span>
-                      <span className="url">layout_width="match_parent"</span>
-                      </div>
-                      <div>
-                      <span className="txtColor">android:</span>
-                      <span className="url">layout_height="wrap_content"</span>
-                      </div>
-                      <div>
-                      <span className="txtColor">android:</span>
-                      <span className="url">name="barikoi.barikoilocation.SearchAutoComplete.SearchAutocompleteFragment"</span>
-                      <span className="txtColor">/{">"}</span>
-                      </div>
-                    </div>
-                  </div>
-                  {/* <button type="button" className={LocationStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+        `<fragment 
+        android:id="@+id/barikoiSearchAutocompleteFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="barikoi.barikoilocation.SearchAutoComplete.SearchAutocompleteFragment"/>`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <h2 className={`mt-4 mb-3 ${Style.intro}`}>Then in you activity add the below code:</h2>
           <pre className={`mb-5 ${Style.coding}`}>
-              <code>
-                  <div className="mb-3">
-                    <div className="txtColor mb-3">
-                    <span>SearchAutocompleteFragment searchAutocompleteFragment;</span><br/>
-                    <span>searchAutocompleteFragment=(SearchAutocompleteFragment)getSupportFragmentManager().findFragmentById(R.id.barikoiSearchAutocompleteFragment);</span><br/>
-                    <span>searchAutocompleteFragment.setPlaceSelectionListener(new SearchAutocompleteFragment.PlaceSelectionListener() {"{"}</span><br/>
-                    </div>
-                    
-                    <div className="mb-4">
-                    <div className="ml-5">
-                    <span className="override">@Override</span> <br />
-                      <span className="function">public void </span> 
-                      <span className="url" style={{fontWeight:"bold"}}>onPlaceSelected</span>
-                      <span className="txtColor">(GeoCodePlace place) {"{"}</span>
-                    </div>
-                    <div className="ml-5 pl-4">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Place Selected: "</span>
-                      <span className="txtColor">+place.getAddress(), Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor ml-5">{"}"}</span>
-                    </div>
-
-                    <div>
-                    <div className="ml-5">
-                    <span className="override">@Override</span> <br />
-                      <span className="function">public void </span> 
-                      <span className="url" style={{fontWeight:"bold"}}>onFailure</span>
-                      <span className="txtColor">(String error) {"{"}</span>
-                    </div>
-                    <div className="ml-5 pl-4">
-                      <span className="txtColor">Toast.makeText(MainActivity.</span>
-                      <span className="txt">this,</span>
-                      <span className="url">"Error Message"</span>
-                      <span className="txtColor">+place.getAddress(), Toast.LENGTH_SHORT).show();</span> <br />
-                    </div>
-                    <span className="txtColor ml-5">{"}"}</span>
-                    </div>
-                    <span className="txtColor">{"}"});</span>
-                  </div>
-                  {/* <button type="button" className={LocationStyle.copyBtn}>Copy</button> */}
-              </code>
+          <CopyBlock
+              text={
+        `
+        SearchAutocompleteFragment searchAutocompleteFragment;
+        searchAutocompleteFragment=(SearchAutocompleteFragment)getSupportFragmentManager().findFragmentById(R.id.barikoiSearchAutocompleteFragment);
+        searchAutocompleteFragment.setPlaceSelectionListener(new SearchAutocompleteFragment.PlaceSelectionListener() {
+        
+            @Override
+            public void onPlaceSelected(GeoCodePlace place) {
+                Toast.makeText(MainActivity.this, "Place Selected: "+place.getAddress(), Toast.LENGTH_SHORT).show();
+            }
+        
+            @Override
+             public void onFailure(String error) {
+                Toast.makeText(MainActivity.this, "Error Message"+error, Toast.LENGTH_SHORT).show();
+            }
+        
+        });`
+              }
+              language={"java"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
 
           <Row>

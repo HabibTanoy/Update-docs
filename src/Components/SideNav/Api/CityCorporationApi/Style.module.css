@@ -56,7 +56,7 @@
     color: rgb(191, 199, 213);
     background-color: rgb(41, 45, 62);
     border-radius: 5px;
-    padding: 1.5rem 1.5rem;
+    /* padding: 1.5rem 1.5rem; */
     font-size: 14px;
     /* padding-bottom: 0px; */
 }

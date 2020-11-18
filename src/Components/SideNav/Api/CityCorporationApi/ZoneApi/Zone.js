@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
-import ReactJson from 'react-json-view'
+import { CopyBlock, dracula } from 'react-code-blocks';
 
 const ZoneApi = () => {
   document.title = "Zone by Geo location . Barikoi Documentation";
@@ -16,12 +16,15 @@ const ZoneApi = () => {
               Zone by Geolocation
             </p>
             <pre className={Style.coding}>
-              <code>
-                  <div className="txtColor">
-                      <span>https://barikoi.xyz/v1/api/search/zone/API_KEY/LONGITUDE/LATITUDE</span>
-                  </div>
-                  {/* <button type="button" className={ZoneStyle.copyBtn}>Copy</button> */}
-              </code>
+            <CopyBlock
+              text={
+                `https://barikoi.xyz/v1/api/search/zone/API_KEY/LONGITUDE/LATITUDE`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={Style.text}>Returns the zone of given longitude and latitude.</p>
 
@@ -54,40 +57,34 @@ const ZoneApi = () => {
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Ward by Geolocation API Request Example</h2>
           <div className="mt-3">
           <pre className={Style.coding}>
-          <code>
-              <div>
-                  <span className="mr-3">
-                    <span className="txtColor">fetch(</span>
-                    <span className="url">'https://barikoi.xyz/v1/api/search/zone/API_KEY/90.4186194745721/23.83136348674859'</span>
-                    <span className="txtColor">)</span>
-                    </span> <br />
-                    <div className="ml-3">
-                    <span className="txtColor">.then(response ={'>'} response.json())</span><br />
-                    <span className="txtColor">.catch(error ={'>'} console.error(<span className="url">'Error:'</span>, error))</span><br />
-                    <span className="txtColor">.then(response ={'>'} console.log(<span className="url">'Success:'</span>, response))</span>
-                  </div>
-              </div>
-                  {/* <button type="button" className={CityStyle.copyBtn}>Copy</button>   */}
-              </code>
+          <CopyBlock
+              text={
+                `fetch('https://barikoi.xyz/v1/api/search/zone/API_KEY/90.4186194745721/23.83136348674859')\n\t.then(response => response.json())\n\t.catch(error => console.error('Error:', error))\n\t.then(response => console.log('Success:', response))`
+              }
+              language={"javascript"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           </div> 
 
           <h2 className={`mt-3 mb-3 ${Style.intro}`}>Example Response</h2>
           <div className="mt-3 mb-5">
           <pre className={Style.coding}>
-          <ReactJson 
-            theme="ocean"
-            enableClipboard={false}
-              displayDataTypes={false}
-              displayObjectSize={false}
-              indentWidth="5"
-              src={
-                [
-                  {
-                      "Zone": 1
-                  }
-              ]
-            } />
+          <CopyBlock
+              text={
+    `[
+      {
+          "Zone": 1
+      }
+]`
+              }
+              language={"json"}
+              showLineNumbers={false}
+              theme={dracula}
+              codeBlock
+            />
           </pre>
           <p className={`font-weight-bold ${Style.text}`}>For each request of Zone by Geolocation API with all parameter 1 API call is counted.</p>
           </div>

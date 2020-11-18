@@ -161,7 +161,7 @@ const Api = props => {
                     </ul>
                     
                 </ul>
-                <ul>
+                {/* <ul>
                 <li className="subHeader">
                         <span className="textCover">Barikoi Verify API</span>
                 </li>
@@ -173,11 +173,6 @@ const Api = props => {
                     <NavLink exact to='/verify-login'>Authenticate</NavLink>
                     </li>
                 </ul>
-                {/* <ul>
-                    <li className={ApiStyle.linked}>
-                    <NavLink exact to='/verify-registration'>User Registration</NavLink>
-                    </li>
-                </ul> */}
                 <ul>
                     <li className={ApiStyle.linked}>
                     <NavLink exact to='/verify-logout'>Log Out</NavLink>
@@ -212,7 +207,7 @@ const Api = props => {
                      <NavLink exact to='/ward-by-location'></NavLink>
                     </li>
                 </ul>
-                </ul>
+                </ul> */}
                     </div> : null
                 }
             </ul>

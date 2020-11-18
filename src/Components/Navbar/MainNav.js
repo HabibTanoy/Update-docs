@@ -25,10 +25,10 @@ class MainNav extends Component {
                         <Link to="/" className={`${NavStyle.docs} pl-0`}>docs</Link>
                         </Nav>
                         <Nav>
-                        <Link to="/intro" onClick={ () => this.props.toggleHandle("toggle", this.props.toggle) } className={NavStyle.navTag}>API</Link>
-                        <Link to="/library-intro" onClick={ () => this.props.toggleHandle("jsToggle", this.props.toggle) } className={NavStyle.navTag}>JavaScript Library</Link>
-                        <Link to="/android-intro" onClick={ () => this.props.toggleHandle("AndApi", this.props.toggle) } className={NavStyle.navTag}>Android Location Library</Link>
-                        <Link to="/pricing-intro" onClick={ () => this.props.toggleHandle("pricing", this.props.toggle) } className={NavStyle.navTag}>Pricing</Link>
+                        <Link to="/intro" onClick={ () => this.props.toggleHandle("toggle", this.props.toggle) } className={`linked ${NavStyle.navTag}`}>API</Link>
+                        <Link to="/library-intro" onClick={ () => this.props.toggleHandle("jsToggle", this.props.toggle) } className={`linked ${NavStyle.navTag}`}>JavaScript Library</Link>
+                        <Link to="/android-intro" onClick={ () => this.props.toggleHandle("AndApi", this.props.toggle) } className={`linked ${NavStyle.navTag}`}>Android Location Library</Link>
+                        <Link to="/pricing-intro" onClick={ () => this.props.toggleHandle("pricing", this.props.toggle) } className={`linked ${NavStyle.navTag}`}>Pricing</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
